@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<%@ include file="/WEB-INF/include/header.jspf"  %>
+</head>
 <style>
 	.logo {
 		max-width:200px; 
@@ -44,18 +50,25 @@
 	.footer-info span{
 		font-size:20px;
 	}
+	#logout{
+		cursor: pointer;
+	}
+	a{
+		color: black;
+	}
 </style>
-
+<body>
 <header style="width:100%;">
 	<div class="margin-35px-top margin-50px-bottom">
 		<div class="container">
 			<div class="width-100">
+				<a class = "menulogo" href="/" title="메인으로 이동">
 				<img src="/resources/image/logo_b.png" class="logo"/>
+				</a>
 				<div>
 				<input type="text" name="search" class="form-control search-input"/>
 				<input type="submit" class="search-btn" value="검색"/>
 				</div>
-				
 			</div>
 		</div>
 		<div class="header-menu margin-35px-top">
@@ -71,10 +84,26 @@
 					<li>인재검색</li>
 					
 					<li class="float-right">공고등록</li>
-					<li class="float-right">로그인</li>
+				
+					<sec:authorize access="isAnonymous()">
+   						<li class="float-right"><a href="login.do">로그인</a></li>
+					</sec:authorize>
+					<sec:authorize access="isAuthenticated()">
+   					<form action="logout" method="post" id="logout">
+						<li class="float-right" id="logout"><a id="a_tag" onclick="logoutsubmit()">로그아웃</a></li>
+						<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+					</form>
+					</sec:authorize>
 				</ul>
 				</div>
 			</div>
 		</div>
 	</div>
 </header>
+</body>
+<script type="text/javascript">
+	function logoutsubmit(){
+		$("#logout").submit();
+	}
+</script>
+</html>

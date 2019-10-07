@@ -8,6 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <%@ include file="/WEB-INF/include/header.jspf"  %>
+<%@ include file="/WEB-INF/include/header.jsp"  %>
 <title>Insert title here</title>
 </head>
 <body>
