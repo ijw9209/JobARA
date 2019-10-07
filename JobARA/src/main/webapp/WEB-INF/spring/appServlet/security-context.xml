@@ -29,8 +29,11 @@
 			<security:intercept-url pattern="/member/**" access="permitAll()"/>
 			<security:intercept-url pattern="/login.do" access="permitAll()"/>
 			<security:intercept-url pattern="/logout.do" access="isAuthenticated()"/>
-			<security:intercept-url pattern="/" access="permitAll()"/>
 			<security:intercept-url pattern="/resources/**" access="permitAll()"/>
+	  	    <security:intercept-url pattern="/css/**" access="permitAll()"/>
+	    	<security:intercept-url pattern="/js/**" access="permitAll()"/>
+	    	<security:intercept-url pattern="/image/**" access="permitAll()"/>
+			<security:intercept-url pattern="/" access="permitAll()"/>
 			<security:intercept-url pattern="/**" access="permitAll()"/>
 			
 			<security:access-denied-handler

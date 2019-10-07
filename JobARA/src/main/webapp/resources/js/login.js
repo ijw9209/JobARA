@@ -1,71 +1,8 @@
-var token;
-var header;
 window.onload = function() {
 	token = $('meta[name="_csrf"]').attr('th:content');
 	header = $('meta[name="_csrf_header"]').attr('th:content');
 	$(".buis_regist_btn").hide();
 }
-
-Kakao.init('10ebbec45f0bab4b9e878300976afda2');
-// 카카오 로그인 버튼을 생성합니다.
-function kakaoLogin() {
-	Kakao.Auth.loginForm({
-		success : function(authObj) {
-			Kakao.API.request({
-				url : '/v1/user/me',
-				success : function(res) {
-					var member_id = "KakaoSns" + res.id;
-					var member_pw = "KakaoSns" + res.id;
-					var member_email = res.kaccount_email;
-					$.ajax({
-						type : "post",
-						url : "snslogin.do?member_id=" + member_id
-								+ "&member_pw=" + member_pw + "&member_email="
-								+ member_email,
-						dataType : "Json",
-						beforeSend : function(xhr) {
-							xhr.setRequestHeader("${_csrf.headerName}",
-									"${_csrf.token}");
-						},
-						success : function(data) {
-							alert(data.id);
-							console.log(data);
-							if (data.id != null && data.id != "") {
-								$("#id").val(data.id);
-								$("#pw").val(data.pw);
-								$("#email").val(data.email);
-								document.snsinfo.action = "/snsplusinfo.do";
-								document.snsinfo.submit();
-								// self.close();
-							} else {
-								$("#snsId").val(member_id);
-								$("#snsPw").val(member_pw);
-								$("#snsLogin").submit();
-								window.self.close();
-							}
-						}
-					});
-				}
-			});
-		},
-		fail : function(error) {
-			alert(JSON.stringify(error));
-		}
-
-	});
-}
-// callback-url
-var naver_id_login = new naver_id_login("DB_MUgASGdvy82XeU3Xz",
-		"http://localhost:8787/naverlogin.do");
-var state = naver_id_login.getUniqState();
-naver_id_login.setPopup();
-naver_id_login.setButton("green", 3, 49);
-// service-url
-naver_id_login.setDomain("http://localhost:8787/naverlogin.do");
-naver_id_login.setState(state);
-naver_id_login.init_naver_id_login();
-/* 설정정보를 초기화하고 연동을 준비 */
-
 
 //메뉴 회원/기업 나누기
 function changeMenu(flag) {
