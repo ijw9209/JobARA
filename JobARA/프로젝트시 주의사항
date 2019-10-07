@@ -1,0 +1,71 @@
+필독
+컨트롤러 경로설정 (컨트롤러에서 경로 이렇게 써줘야함)
+유저가볼수있는 페이지 @RequestMapping(value = "/user/**) user만 접근가능하게 해놓음 전체다풀지고민중
+사업자가 볼수있는페이지 @RequestMapping(value = "/buis/**) buis만 접근가능
+모두허용하는 페이지 @ReqeustMappgin(value = "/**") 모두접근가능
+
+<%@ include file="/WEB-INF/include/header.jspf"%>
+넣어주면 jquery , 부트스트랩 넣어짐
+
+
+jsp 에서 폼태그로 post전송시 
+<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
+넣어줘야함
+
+
+ajax 이용시 
+<meta name="_csrf" th:content="${_csrf.token}"/>
+<meta name="_csrf_header" th:content="${_csrf.headerName}"/>
+넣어줘야함?? 자세히는모르겠음 안되면 넣어봐야함
+
+
+src/main/resource 폴더아래에 js , css 파일 넣을것
+js파일이 안읽히면 파일제일위에다 
+window.onload=function(){
+	token = $('meta[name="_csrf"]').attr('th:content');
+	header = $('meta[name="_csrf_header"]').attr('th:content');
+}
+넣어줄것
+
+db는 왠만하면 변경하지않음 혹여나 변경할시 조장에게 상의하고 알릴것
+
+힘들겠지만 왠만하면 주석도달아줄것 적어도 컨트롤러와 다오까지만이라도
+
+
+
+Git 사용법(주의사항)
+(빈폴더 시작시)
+1.이클립스 git에 URI를 통한 해당 프로젝트의 master branch를 clone을 이용해 생성한다.
+2.최신 버전이 아니라면 Pull을 한다.
+3.worktree안에 프로젝트를 import한다.
+
+!!!!!!!!중요!!!!!!!!!!!(반복)
+4.작업전 master branch가 아래화살표라면  pull로 최신화 한다.
+5.master branch를 기점으로 작업할 branch를 생성한다."NAME"
+6.프로젝트우클릭 - team - switch to - 생성한 branch 클릭 - 프로젝트 옆에 [ NAME] 확인!
+7.그후 코딩을 시작한다.
+(!!!!!!!선택적 반복 !!어느정도 기능 완성 후!)
+7.add to Index는 사용하지않고 git stats?를 통해 작업한 file만을 commit한다. .classpath 금지!
+(컴퓨터마다 자바위치설정, 톰캣설정이 다르기때문에 매번 바꿔줘야함! 항상 자신이 작업한 내용만 index 추가할것)
+(마스터 브런치는 팀장의 설정을 중심으로 간다.)
+8.commit ->  작업량을 local(git설정폴더)에 저장한다.
+(어느정도 양을 하시면 선택적으로 하시면됩니다. 매일할 필요X 너무 많이하면 LOG가 보기힘듬)
+(현재저장지점을 기점으로 LOG가생성된다 commitMessage로 첫번째 줄에 제목(한눈에알수있게) 두번째줄에 본문을 작성할것!)
+9.push -> local에 저장된 작업을 gitHub에 업데이트한다.
+!!!!!!!!!!!선택적 반복 끝
+10.기능이 완성되면  마지막 Push이후 프로젝트우클릭 - team - switch to - 생성한 branch 클릭 - masterbranch 로 변경!
+11.master branch가 아래화살표라면  pull로 최신화 한다.
+12.프로젝트 옆에[master](화살표없는상태!)에서 프로젝트우클릭 - team - merge 클릭
+13.Local에 있는 작업한 브런치[name] 을 클릭, merge를 누룬다.
+14.Merge가 완료된 후 충돌난 부분은 캡처하고 충돌 수정후에도 다시한번 캡처. 카카오톡에 보낼것.
+(충돌양이 많다면 팀장이 확인한다.)
+15.최신화된 master 브런치를 실행하고 오류가 없는지 확인한다.
+16.작업한 브런치[name]를 삭제하고 4로 돌아간다.
+
+주의사항!!!!!
+1.빈폴더는 저장되지않는다.
+2.merge는 꼭 한가지 기능을 완료한 후에 한다.
+3.commit 전 오류가 없는지 확인한다!(이전 버전으로 돌아가기 위해서꼭 필요)
+4.추가로 작업중 문제발생시 절대로 push 금지. commit과 push를 나눠서 사용하는 습관을 기를것!
+5.충돌의 원인은 같은 기간에 같은 파일을 둘 이상이 작업할때 일어난다.(왠만하면 임시 파일을 만들어서 필요한 정보만 전달받고 임시파일 삭제!)
+6.기타 문의 사항이나 건의사항은 언제나 환영!

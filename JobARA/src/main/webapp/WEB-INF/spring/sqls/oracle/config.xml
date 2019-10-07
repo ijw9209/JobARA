@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd" >
+<configuration>
+
+	<typeAliases>
+		<typeAlias type="com.job.prj.dto.AdminAnswerDto" alias="AdminAnswerDto"/>
+		<typeAlias type="com.job.prj.dto.BuisHireEnrollDto" alias="BuisHireEnrollDto"/>
+		<typeAlias type="com.job.prj.dto.BuisMemberDto" alias="BuisMemberDto"/>
+		<typeAlias type="com.job.prj.dto.BuisResumeReadDto" alias="BuisResumeReadDto"/>
+		<typeAlias type="com.job.prj.dto.CustomerServiceDto" alias="CustomerServiceDto"/>
+		<typeAlias type="com.job.prj.dto.FAQDto" alias="FAQDto"/>
+		<typeAlias type="com.job.prj.dto.PasserSelfDto" alias="PasserSelfDto"/>
+		<typeAlias type="com.job.prj.dto.UserGoalDto" alias="UserGoalDto"/>
+		<typeAlias type="com.job.prj.dto.UserMemberDto" alias="UserMemberDto"/>
+		<typeAlias type="com.job.prj.dto.UserResumeCareerDto" alias="UserResumeCareerDto"/>
+		<typeAlias type="com.job.prj.dto.UserResumeDetailDto" alias="UserResumeDetailDto"/>
+		<typeAlias type="com.job.prj.dto.UserResumeDto" alias="UserResumeDto"/>
+		<typeAlias type="com.job.prj.dto.UserResumeHopeDto" alias="UserResumeHopeDto"/>
+		<typeAlias type="com.job.prj.dto.VolunteerReadDto" alias="VolunteerReadDto"/>
+		<typeAlias type="com.job.prj.dto.TestDto" alias="TestDto"/>
+	</typeAliases>
+
+	<mappers>
+		<mapper resource="/sqls/AdminAnswermapper.xml"/>
+		<mapper resource="/sqls/BuisHireEnrollmapper.xml"/>
+		<mapper resource="/sqls/BuisMembermapper.xml"/>
+		<mapper resource="/sqls/BuisResumeReadmapper.xml"/>
+		<mapper resource="/sqls/CustomerServicemapper.xml"/>
+		<mapper resource="/sqls/FAQmapper.xml"/>
+		<mapper resource="/sqls/PasserSelfmapper.xml"/>
+		<mapper resource="/sqls/UserGoalmapper.xml"/>
+		<mapper resource="/sqls/UserMembermapper.xml"/>
+		<mapper resource="/sqls/UserResumeCareermapper.xml"/>
+		<mapper resource="/sqls/UserResumeDetailmapper.xml"/>
+		<mapper resource="/sqls/UserResumemapper.xml"/>
+		<mapper resource="/sqls/UserResumeHopemapper.xml"/>
+		<mapper resource="/sqls/VolunteerReadmapper.xml"/>
+	</mappers>
+
+
+
+
+</configuration>
