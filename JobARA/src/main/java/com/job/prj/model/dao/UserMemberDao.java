@@ -14,4 +14,7 @@ public interface UserMemberDao {
 	public int insert(UserMemberDto dto);
 	//회원가입
 	public int regist(UserMemberDto dto);
+	//기업회원 회원가입
+	public int buis_regist(UserMemberDto dto);
+	
 }

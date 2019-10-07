@@ -25,7 +25,7 @@ public class UserMemberDto implements UserDetails{
 	private int member_point;
 	private Date member_regdate;
 	private String member_role;
-	private int member_buis_num;
+	private String member_buis_num;
 	
 	
 	public int getMember_no_seq() {
@@ -112,10 +112,10 @@ public class UserMemberDto implements UserDetails{
 	public void setMember_role(String member_role) {
 		this.member_role = member_role;
 	}
-	public int getMember_buis_num() {
+	public String getMember_buis_num() {
 		return member_buis_num;
 	}
-	public void setMember_buis_num(int member_buis_num) {
+	public void setMember_buis_num(String member_buis_num) {
 		this.member_buis_num = member_buis_num;
 	}
 	@Override

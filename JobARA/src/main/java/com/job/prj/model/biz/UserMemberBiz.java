@@ -12,4 +12,5 @@ public interface UserMemberBiz extends UserDetailsService {
 	public int idchk(String id);
 	public int insert(UserMemberDto dto);
 	public int regist(UserMemberDto dto);
+	public int buis_regist(UserMemberDto dto);
 }

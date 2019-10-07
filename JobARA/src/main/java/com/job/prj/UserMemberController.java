@@ -99,7 +99,7 @@ public class UserMemberController {
 	  public String regist() {
 		  return "registform";
 	  }
-	  //회원가입후 바로로그인
+	  //회원가입후
 	  @RequestMapping(value="/regist" ,method = RequestMethod.POST)
 	  public String registafter(Model model, UserMemberDto dto,String member_email_addr) {
 		  System.out.println(member_email_addr);

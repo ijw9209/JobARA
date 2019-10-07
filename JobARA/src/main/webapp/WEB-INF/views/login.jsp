@@ -11,45 +11,6 @@
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script type="text/javascript">
-
-/* 	$(function(){
-		$("#loginchk").hide();
-	})
-	
-	function login(){
-		var idVal = $("#id").val();
-		var pwVal = $("#password").val();
-		
-		if(idVal == "" || idVal == null){
-			alert("ID를 다시한번 확인해 주세요.");
-		}else if(pwVal == "" || pwVal == null){
-			alert("PW를 다시한번 확인해 주세요.");
-		}else{
-			
-			$("#loginchk").show();
-			
-			$.ajax({
-				type:"post",
-				url:"loginajax",
-				data:"id="+idVal+"&password="+pwVal,
-				success:function(msg){
-					alert(msg.loginchk);
-				 	if(msg.loginchk == true){
-						location.href='list';
-					}else{
-						document.getElementById("loginchk").innerHTML="ID혹은 비밀번호를 확인해주세요.";
-					}
-				},
-				error:function(){
-					alert("로그인 실패");
-				}
-			})
-			
-		}
-	} */
-	
-</script>
 </head>
 <body>
 
@@ -83,7 +44,8 @@
 							        </font>
 							   	</c:if>
 								<button type="submit" class="btn btn-primary">로그인</button>
-								<button type="button" class="btn" onclick="location.href='registform'">회원가입</button>
+								<button type="button" class="btn user_regist_btn" onclick="location.href='registform'">회원가입</button>
+								<button type="button" class="btn buis_regist_btn" onclick="location.href='buisregistform'">기업회원 회원가입</button>
 							</form>
 							<div class="margin-15px-top"  style="float:left;">
 								<input type="checkbox" id="id-remember" name="id-remember">
@@ -103,10 +65,6 @@
 							<div id="naver_id_login" class="col-xs-6"></div>
 						</div>
 						<div>
-						<%-- <form action="logout" method="post">
-							<input type="submit" value="로그아웃">
-							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-						</form> --%>
 						</div>
 					</div>
 				</div>

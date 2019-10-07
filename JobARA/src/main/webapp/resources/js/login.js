@@ -3,6 +3,7 @@ var header;
 window.onload = function() {
 	token = $('meta[name="_csrf"]').attr('th:content');
 	header = $('meta[name="_csrf_header"]').attr('th:content');
+	$(".buis_regist_btn").hide();
 }
 
 Kakao.init('10ebbec45f0bab4b9e878300976afda2');
@@ -72,8 +73,12 @@ function changeMenu(flag) {
 	$("#" + flag).addClass("active");
 	if (flag == "client") {
 		$(".sns-login").removeClass("hide");
+		$(".user_regist_btn").show();
+		$(".buis_regist_btn").hide();
 	} else {
 		$(".sns-login").addClass("hide");
+		$(".user_regist_btn").hide();
+		$(".buis_regist_btn").show();
 	}
 }
 

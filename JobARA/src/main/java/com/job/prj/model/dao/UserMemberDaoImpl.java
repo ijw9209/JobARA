@@ -76,5 +76,18 @@ public class UserMemberDaoImpl implements UserMemberDao {
 		}
 		return res;
 	}
+	//기업회원 회원가입
+	@Override
+	public int buis_regist(UserMemberDto dto) {
+		int res = 0;
+		
+		try {
+			res = sqlSession.insert(namespace + "buis_registinsert", dto);
+		} catch (Exception e) {
+			System.out.println("buis_regist insert error");
+			e.printStackTrace();
+		}
+		return res;
+	}
 
 }
