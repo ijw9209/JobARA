@@ -90,4 +90,10 @@ public class UserMemberDaoImpl implements UserMemberDao {
 		return res;
 	}
 
+	@Override
+	public void newPassword(UserMemberDto dto) throws Exception {
+			String password = dto.getMember_pw();
+			dto.setMember_pw(password);
+			sqlSession.update(namespace + "update_pw",dto);
+	}
 }

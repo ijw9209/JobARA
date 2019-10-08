@@ -17,4 +17,5 @@ public interface UserMemberDao {
 	//기업회원 회원가입
 	public int buis_regist(UserMemberDto dto);
 	
+	public void newPassword(UserMemberDto dto) throws Exception;
 }

@@ -8,6 +8,7 @@
 <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
 <%@ include file="/WEB-INF/include/header.jspf"%>
 <%@ include file="/WEB-INF/include/header.jsp"%>
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <style>
 	.regist-table {
 		border-collapse: separate;
@@ -56,7 +57,15 @@
 								</tr>
 								<tr>
 									<th>주소</th>
-									<td><input type="text" name="member_addr" id="job_addr" class="form-control"></td>
+									<td>
+									<input type="button" id="originfindaddr" class="form-control" value="주소 찾기" /><br/>
+									<input type="text" name="member_addr" id="originaddr1" readonly="readonly" class="form-control"/>&nbsp;
+									<input type="text" name="member_addr" id="originaddr2" readonly="readonly" class="form-control"/>
+									</td>
+								</tr>
+								<tr>
+									<th>상세주소</th>
+									<td><input type="text" name="member_addr" id="addrDetail" class="form-control"></td>
 								</tr>
 								<tr>
 									<th>전화번호</th>

@@ -28,6 +28,27 @@ public class UserMemberDto implements UserDetails{
 	private String member_buis_num;
 	
 	
+	
+	public UserMemberDto(int member_no_seq, String member_id, String member_pw, String member_name, String member_birth,
+			String member_addr, String member_tel, String member_email, String member_email_addr, String member_enabled,
+			String member_gender, int member_point, Date member_regdate, String member_role, String member_buis_num) {
+		super();
+		this.member_no_seq = member_no_seq;
+		this.member_id = member_id;
+		this.member_pw = member_pw;
+		this.member_name = member_name;
+		this.member_birth = member_birth;
+		this.member_addr = member_addr;
+		this.member_tel = member_tel;
+		this.member_email = member_email;
+		this.member_email_addr = member_email_addr;
+		this.member_enabled = member_enabled;
+		this.member_gender = member_gender;
+		this.member_point = member_point;
+		this.member_regdate = member_regdate;
+		this.member_role = member_role;
+		this.member_buis_num = member_buis_num;
+	}
 	public int getMember_no_seq() {
 		return member_no_seq;
 	}

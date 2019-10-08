@@ -24,4 +24,9 @@
 	<insert id="buis_registinsert" parameterType="UserMemberDto">
 	INSERT INTO USER_MEMBER VALUES(MEMBERSEQ.NEXTVAL,#{member_id},#{member_pw},#{member_name},#{member_birth},#{member_addr},#{member_tel},#{member_email}||'@'||#{member_email_addr},'Y',#{member_gender},1000,SYSDATE,'ROLE_BUIS',#{member_buis_num})
 	</insert>
+	
+	<update id="update_pw" parameterType="UserMemberDto">
+	UPDATE USER_MEMBER SET 
+	MEMBER_PW = #{member_pw} WHERE MEMBER_EMAIL = #{member_email}
+	</update>
 </mapper>

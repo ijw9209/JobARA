@@ -21,14 +21,14 @@
 					<div class="sec_title_wrap margin-50px-bottom">
 						<h1>비밀번호 찾기/재설정</h1>
 					</div>
-					<div>
+					<div id="pwsearch">
 						※ 회원가입시 등록된 아이디와 이름,이메일을 입력해주세요.
-						<form action="" method="post" class="padding-25px-top find-frm" name="fr" onsubmit="return check();">
+						<form action="newPassword.do" method="post" class="padding-25px-top find-frm" name="fr" onsubmit="return check();">
 							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 							<ul>
-								<li class="margin-20px-bottom"><input type="text" name="id" placeholder="아이디" class="form-control"/></li>
-								<li class="margin-20px-bottom"><input type="text" name="id" placeholder="이름" class="form-control"/></li>
-								<li class="margin-25px-bottom"><input type="text" name="password" placeholder="이메일" class="form-control"/></li>
+								<li class="margin-20px-bottom"><input type="text" name="member_id" placeholder="아이디" class="form-control"/></li>
+								<li class="margin-20px-bottom"><input type="text" name="member_name" placeholder="이름" class="form-control"/></li>
+								<li class="margin-25px-bottom"><input type="text" name="member_email" placeholder="이메일" class="form-control"/></li>
 								<li><button type="submit" class="btn btn-primary width-100">비밀번호 재설정</button></li>
 							</ul>
 						</form>

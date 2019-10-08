@@ -2,9 +2,11 @@ package com.job.prj;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,7 +16,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.job.prj.dto.Email;
 import com.job.prj.dto.UserMemberDto;
+import com.job.prj.model.biz.EmailSender;
+import com.job.prj.model.biz.Emailbiz;
 import com.job.prj.model.biz.TestBizImpl;
 import com.job.prj.model.biz.UserMemberBiz;
 
@@ -25,7 +30,12 @@ public class UserMemberController {
 	  private TestBizImpl TestBizImpl;
 	  @Autowired
 	  private UserMemberBiz UserMemberBiz;
-
+	  @Autowired
+	  private Email email;
+	  @Autowired
+	  private EmailSender emailSender;
+	  @Autowired
+	  private Emailbiz emailbiz;
 	  
 	  //로그인 화면으로 이동
 	  @RequestMapping("/login.do")
@@ -99,7 +109,7 @@ public class UserMemberController {
 	  public String regist() {
 		  return "registform";
 	  }
-	  //회원가입후
+	  //회원가입후 바로로그인
 	  @RequestMapping(value="/regist" ,method = RequestMethod.POST)
 	  public String registafter(Model model, UserMemberDto dto,String member_email_addr) {
 		  System.out.println(member_email_addr);
@@ -120,6 +130,24 @@ public class UserMemberController {
 	  
 	  @RequestMapping(value="/findPw.do",method = RequestMethod.GET)
 	  public String findPw() {
+		  return "findPw";
+	  }
+	  
+	  //새 비밀번호 생성
+	  @RequestMapping(value = "/newPassword.do")
+	  public String newPassword(@Valid UserMemberDto memberdto, HttpSession session) throws Exception{
+		  Random r = new Random();
+		  int num = r.nextInt(8999)+1000;
+		  String npassword = Integer.toString(num);
+		  memberdto.setMember_pw(npassword);
+		  emailbiz.newPassword(memberdto);
+		  session.setAttribute("UserMember", memberdto);
+		  email.setContent("새로운 비밀번호 " + npassword + " 입니다.");
+		  email.setReceiver(memberdto.getMember_email());
+		  email.setSubject("안녕하세요." + memberdto.getMember_email()+"님 재설정된 비밀번호를 확인해 주세요.");
+		  
+		  emailSender.SendEmail(email);
+		  
 		  return "findPw";
 	  }
 }
