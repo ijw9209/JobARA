@@ -1,7 +1,9 @@
 package com.job.prj.model.dao;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +38,6 @@ public class UserMemberDaoImpl implements UserMemberDao {
 
 	@Override
 	public UserMemberDto selectOne(String id) {
-		System.out.println(id);
 		return sqlSession.selectOne(namespace + "UserOne",id);
 	}
 
@@ -95,5 +96,24 @@ public class UserMemberDaoImpl implements UserMemberDao {
 			String password = dto.getMember_pw();
 			dto.setMember_pw(password);
 			sqlSession.update(namespace + "update_pw",dto);
+	}
+
+	@Override
+	public String idsearch(String member_name, String member_email) {
+		UserMemberDto dto = new UserMemberDto();
+		dto.setMember_name(member_name);
+		dto.setMember_email(member_email);
+		String id = "";
+		Map<String,String> map = new HashMap<String, String>();
+		map.put("member_name", member_name);
+		map.put("member_email", member_email);		
+		try {
+			id = sqlSession.selectOne(namespace + "idsearch", map);
+		} catch (Exception e) {
+			System.out.println("idsearch error");
+			e.printStackTrace();
+		}
+		
+		return id;
 	}
 }

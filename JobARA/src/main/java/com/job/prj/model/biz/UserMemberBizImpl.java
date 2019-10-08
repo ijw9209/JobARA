@@ -61,6 +61,11 @@ public class UserMemberBizImpl implements UserMemberBiz,UserDetailsService {
 		dto.setMember_pw(passwordEncoder.encode(dto.getPassword()));
 		return dao.buis_regist(dto);
 	}
+
+	@Override
+	public String idsearch(String member_name, String member_email) {
+		return dao.idsearch(member_name, member_email);
+	}
 	
 
 }

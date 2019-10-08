@@ -38,6 +38,7 @@ SELECT * FROM USER_MEMBER;
 SELECT * FROM USER_MEMBER WHERE MEMBER_ID = 'user123'
 DELETE FROM USER_MEMBER WHERE MEMBER_NO_SEQ = 43;
 
+
 ----------------기업회원 테이블 일단 사용 X---------------------------------
 DROP SEQUENCE BUISSEQ;
 DROP TABLE BUISNESS_MEMBER CASCADE CONSTRAINTS PURGE;
@@ -303,6 +304,19 @@ INSERT INTO USER_GOAL VALUES(USERGOALSEQ.NEXTVAL,1,'백엔드개발자로..','JA
 
 SELECT * FROM USER_GOAL;
 
+-----------------------회사정보--------------------------
+CREATE SEQUENCE COMPANY_NO;
+
+
+CREATE TABLE COMPANY_INFO(
+	COMPANY_NO NUMBER,				--회사정보 번호 SEQ
+	COMPANY_NAME VARCHAR2(200),		--회사 이름
+	COMPANY_ADDR VARCHAR2(500),		--회사 주소
+	COMPANY_CATE VARCHAR2(500),	    --회사 카테고리
+	COMPANY_REGDATE VARCHAR2(500),  --회사 설립일
+	COMPANY_ALL_PEOPLE NUMBER, 	  --회사 사원수
+	COMPANY_SALRAY VARCHAR2(500)  --회사 평균연봉
+);
 
 
 ------------------------------------------------------------------------------------------

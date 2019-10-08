@@ -29,4 +29,8 @@
 	UPDATE USER_MEMBER SET 
 	MEMBER_PW = #{member_pw} WHERE MEMBER_EMAIL = #{member_email}
 	</update>
+	
+	<select id="idsearch" parameterType="map" resultType="String">
+	SELECT MEMBER_ID FROM USER_MEMBER WHERE MEMBER_NAME = #{member_name} AND MEMBER_EMAIL = #{member_email}
+	</select>
 </mapper>

@@ -13,4 +13,6 @@ public interface UserMemberBiz extends UserDetailsService {
 	public int insert(UserMemberDto dto);
 	public int regist(UserMemberDto dto);
 	public int buis_regist(UserMemberDto dto);
+	//아이디찾기
+	public String idsearch(String member_name,String member_email);
 }

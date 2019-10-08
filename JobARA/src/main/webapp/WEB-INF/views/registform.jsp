@@ -276,6 +276,31 @@ var pwConfirm2 = false;
 			return false;
 		}
 	}
+	$(function(){
+	      $("#originfindaddr").click(function(){
+	         new daum.Postcode({
+	             oncomplete: function(data) {
+	             var fullRoadAddr = data.roadAddress;
+	             var extraRoadAddr = '';
+	             
+	             if(data.bname !== '' && data.apartment === 'Y'){
+	                extraRoadAddr += data.bname;
+	             }
+	             if(data.buildingName !== '' && data.apartment === 'Y'){
+	                extraRoadAddr += (extraRoadAddr !== '' ? ', ' +data.buildingName : data.build)
+	             }
+	             if(extraRoadAddr !== ''){
+	                extraRoadAddr = ' (' + extraRoadAddr + ')';
+	             }
+	             if(fullRoadAddr !== ''){
+	                fullRoadAddr += extraRoadAddr;
+	             }
+	            document.getElementById("originaddr1").value = data.zonecode; // 우편번호
+	            document.getElementById("originaddr2").value = fullRoadAddr;
+	             }
+	         }).open();
+	      })
+	   });
 
 </script>
 </html>

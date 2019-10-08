@@ -18,4 +18,7 @@ public interface UserMemberDao {
 	public int buis_regist(UserMemberDto dto);
 	
 	public void newPassword(UserMemberDto dto) throws Exception;
+	
+	//아이디찾기
+	public String idsearch(String member_name,String member_email);
 }

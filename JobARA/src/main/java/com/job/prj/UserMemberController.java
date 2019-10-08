@@ -113,7 +113,7 @@ public class UserMemberController {
 	  @RequestMapping(value="/regist" ,method = RequestMethod.POST)
 	  public String registafter(Model model, UserMemberDto dto,String member_email_addr) {
 		  System.out.println(member_email_addr);
-		  System.out.println(dto.getMember_email_addr());
+		  System.out.println("여기" + dto.getMember_email_addr());
 		  UserMemberBiz.regist(dto);
 		  return "login";
 	  }
@@ -149,5 +149,18 @@ public class UserMemberController {
 		  emailSender.SendEmail(email);
 		  
 		  return "findPw";
+	  }
+	  
+	  //아이디 찾기
+	  @RequestMapping(value = "/idsearch" , method = RequestMethod.POST)
+	  public String idsearch(UserMemberDto dto,Model model) {
+		  String id = UserMemberBiz.idsearch(dto.getMember_name(), dto.getMember_email());
+		  System.out.println(id);
+		  if(id != "" && id != null) { 
+		  model.addAttribute("id",id);
+		  return "idresult";
+		  }else {
+		  return "idfail";  
+		  }
 	  }
 }

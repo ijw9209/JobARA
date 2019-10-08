@@ -28,7 +28,9 @@ public class UserMemberDto implements UserDetails{
 	private String member_buis_num;
 	
 	
-	
+	public UserMemberDto() {
+		super();
+	}
 	public UserMemberDto(int member_no_seq, String member_id, String member_pw, String member_name, String member_birth,
 			String member_addr, String member_tel, String member_email, String member_email_addr, String member_enabled,
 			String member_gender, int member_point, Date member_regdate, String member_role, String member_buis_num) {
