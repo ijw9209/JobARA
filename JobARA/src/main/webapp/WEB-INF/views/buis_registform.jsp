@@ -209,7 +209,10 @@ var buisNumConfirm = false;
 			return false;
 			}
 		}
-		return true;
+	
+		
+		
+		return false;
 		
 	}
 	function numchk(){
