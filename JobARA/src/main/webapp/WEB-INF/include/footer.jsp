@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 
-<div class="width-100">
+<div class="width-100 foot_area">
 	<div class="footer-menu margin-50px-top">
 		<div class="container">
 			<ul class="display-block width-100 margin-0px-bottom">
 				<li>서비스 이용약관</li>
-				<li>개인 정보처리 방침</li>
+				<li>개인 정보방침</li>
 				<li>고객센터</li>
 			</ul>
 		</div>

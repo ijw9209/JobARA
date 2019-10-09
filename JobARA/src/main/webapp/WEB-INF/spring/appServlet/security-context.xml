@@ -17,7 +17,7 @@
 			<security:form-login
 			login-page="/login.do"
 			login-processing-url="/login"
-			default-target-url="/"
+			default-target-url="/main"
 			authentication-failure-url="/login.do?error=1"
 			always-use-default-target="true"
 			username-parameter="id"

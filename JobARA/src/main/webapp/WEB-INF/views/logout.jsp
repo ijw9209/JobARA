@@ -29,7 +29,7 @@
 				if($("#login").length){
 					$("#login").submit();
 				}else{
-					location.href="/";
+					location.href="main";
 				}
 			}
 			

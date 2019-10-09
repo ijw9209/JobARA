@@ -32,8 +32,14 @@ public class HomeController {
 	  private UserMemberBiz UserMemberBiz;
 	  
 	  
-	  //인덱스 페이지 로그인후 역할에따라 유저 / 기업페이지가 바뀌어서보이게작성할것임
 	  @RequestMapping(value = "/")
+	  public String loading() {
+		  return "loading";
+	  }
+	  
+	  
+	  //인덱스 페이지 로그인후 역할에따라 유저 / 기업페이지가 바뀌어서보이게작성할것임
+	  @RequestMapping(value = "/main")
 	  public String index(Principal account,Model model) {
 		  if(account != null) {
 			// 시큐리티 컨텍스트 객체를 얻습니다. 
