@@ -35,19 +35,19 @@
 							<table class="width-100 regist-table">
 								<tr>
 									<th>아이디</th>
-									<td><input type="text" name="member_id" id="job_id" onchange="idchk()" class="form-control">
+									<td><input type="text" name="member_id" id="job_id" onchange="idchk()" class="form-control" placeholder="아이디">
 									<span id="id_span"></span></td>
 								</tr>					
 								<tr>
 									<th>비밀번호</th>
 									<td>
-										<input type="text" name="member_pw" id="job_pw" onchange="pwchk()" class="form-control">
+										<input type="text" name="member_pw" id="job_pw" onchange="pwchk()" class="form-control" placeholder="비밀번호">
 										<span id="pw_span"></span>
 									</td>
 								</tr>
 								<tr>
 									<th>비밀번호확인</th>
-									<td><input type="text" id="chk_pw" onchange="repwchk()" class="form-control">
+									<td><input type="text" id="chk_pw" onchange="repwchk()" class="form-control" placeholder="비밀번호 확인">
 										<span id="repw_span"></span></td>
 								</tr> 
 								<tr>
@@ -56,23 +56,23 @@
 								</tr>
 								<tr>
 									<th>생년월일</th>
-									<td><input type="text" name="member_birth" id="job_birth" class="form-control" readonly="readonly"></td>
+									<td><input type="text" name="member_birth" id="job_birth" class="form-control" readonly="readonly" placeholder="텍스트상자를 클릭하여 주세요."></td>
 								</tr>
 								<tr>
 									<th>주소</th>
 									<td>
-									<input type="button" id="originfindaddr" class="form-control" value="주소 찾기" /><br/>
-									<input type="text" name="member_addr" id="originaddr1" readonly="readonly" class="form-control"/>&nbsp;
-									<input type="text" name="member_addr" id="originaddr2" readonly="readonly" class="form-control"/>
+									<input type="text" name="member_addr" id="originaddr1" readonly="readonly" class="form-control" placeholder="주소찾기 버튼을 클릭하여주세요."/><br/>
+									<input type="text" name="member_addr" id="originaddr2" readonly="readonly" class="form-control"/><br/>
+									<input type="button" id="originfindaddr" class="form-control" value="주소 찾기" />
 									</td>
 								</tr>
 								<tr>
 									<th>상세주소</th>
-									<td><input type="text" name="member_addr" id="addrDetail" class="form-control"></td>
+									<td><input type="text" name="member_addr" id="addrDetail" class="form-control" placeholder="상세주소를 입력해주세요"></td>
 								</tr>
 								<tr>
 									<th>전화번호</th>
-									<td><input type="text" name="member_tel" id="job_tel" class="form-control"></td>
+									<td><input type="text" name="member_tel" id="job_tel" class="form-control" placeholder="전화번호 예)010-0000-0000"></td>
 								</tr>
 								<tr>
 									<th>이메일</th>
@@ -102,7 +102,7 @@
 									</td>
 								</tr>	
 							</table>
-							<input type="submit" value="회원가입" class="btn">
+							<input type="submit" value="회원가입" class="btn btn-primary">
 							</form>	
 						</div>
 					</div>
@@ -172,9 +172,14 @@ var pwConfirm2 = false;
 			fr.job_birth.focus();
 			return false;
 		}
-		if(fr.job_addr.value == ""){
-			alert("주소를 입력해주세요");
-			fr.job_addr.focus();
+		if(fr.originaddr1.value == ""){
+			alert("주소찾기 버튼을 클릭하여주세요.");
+			fr.originaddr1.focus();
+			return false;
+		}
+		if(fr.addrDetail.value == ""){
+			alert('상세주소를 입력해주세요');
+			fr.addrDetail.focus();
 			return false;
 		}
 		if(fr.job_tel.value == ""){

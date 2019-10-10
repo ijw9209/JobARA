@@ -36,61 +36,61 @@
 							<input type="hidden" name="member_no_seq" value="${member_no_seq}"/>
 							<table class="width-100 regist-table">
 								 <tr>
-									<th>회사이름</th>
-									<td><input type="text" name="company_title" id="com_title" onchange="numchk()" class="form-control">
+									<th>회사명</th>
+									<td><input type="text" name="company_title" id="com_title" class="form-control" placeholder="회사이름을 입력해주세요">
 									<span id="com_title_span"></span></td>
 								 </tr>
 								 <tr>
 									<th>대표자</th>
-									<td><input type="text" name="company_name" id="com_name" onchange="numchk()" class="form-control">
+									<td><input type="text" name="company_name" id="com_name" class="form-control"  placeholder="대표자 성명을 입력해주세요">
 									<span id="com_name_span"></span></td>
 								 </tr>
 								 <tr>
 									<th>업종/카테고리</th>
-									<td><input type="text" name="company_cate" id="com_cate" onchange="idchk()" class="form-control">
+									<td><input type="text" name="company_cate" id="com_cate"  class="form-control">
 									<span id="com_cate_span"></span></td>
 								</tr>
 								<tr>
 									<th>회사 자본금</th>
 									<td>
-										<input type="text" name="company_capital" id="com_capital" onchange="pwchk()" class="form-control">	
+										<input type="text" name="company_capital" id="com_capital" class="form-control" placeholder="회사 자본금을 입력해주세요">	
 										<span id="com_capital_span"></span>
 									</td>
 								</tr>
 								<tr>
 									<th>회사 매출액</th>
-									<td><input type="text" name="company_take" id="com_take"onchange="repwchk()" class="form-control">
+									<td><input type="text" name="company_take" id="com_take" class="form-control"  placeholder="회사 매출액을 입력해주세요">
 										<span id="com_take_span"></span></td>
 								</tr>
 								<tr>
 									<th>회사 설립일</th>
-									<td><input type="text" name="company_regdate" id="com_regdate"onchange="repwchk()" class="form-control" readonly="readonly">
+									<td><input type="text" name="company_regdate" id="com_regdate" class="form-control" readonly="readonly" placeholder="텍스트를 클릭하여 주세요.">
 										<span id="com_regdate_span"></span></td>
 								</tr>
 								<tr>
 									<th>회사 전화번호</th>
-									<td><input type="text" name="company_tel" id="com_tel"onchange="repwchk()" class="form-control">
+									<td><input type="text" name="company_tel" id="com_tel" class="form-control" placeholder="회사 전화번호 예)010-0000-0000">
 										<span id="com_tel_span"></span></td>
 								</tr>
 								<tr>
 									<th>총 사원수</th>
-									<td><input type="text" name="company_all_people" id="com_people" onchange="repwchk()" class="form-control">
+									<td><input type="text" name="company_all_people" id="com_people" class="form-control" placeholder="총 사원수를 입력하여 주세요">
 										<span id="com_people_span"></span></td>
 								</tr>
 								<tr>
 									<th>평균 연봉</th>	
-									<td><input type="text" name="company_salary" id="com_salary" class="form-control">
+									<td><input type="text" name="company_salary" id="com_salary" class="form-control" placeholder="평균연봉을 입력해주세요 단위:만원">
 										<span id="com_salary_span"></span>
 									</td>
 								</tr>
 								<tr>
 									<th>회사 url</th>	
-									<td><input type="text" name="company_url" id="com_url" class="form-control">
+									<td><input type="text" name="company_url" id="com_url" class="form-control" placeholder="회사 홈페이지 주소를 입력하여 주세요">
 										<span id="com_url_span"></span>
 									</td>
 								</tr>
 							</table>
-							<input type="submit" value="정보입력" class="btn">
+							<input type="submit" value="정보입력" class="btn btn-primary">
 							</form>
 						</div>		
 					</div>
@@ -161,7 +161,7 @@
 		
 		if(fr.com_url.value == ""){
 			$("#com_url_span").css('color','red');
-			$("#com_url_span").html('회사 사이트 주소를 입력해주세요');
+			$("#com_url_span").html('회사홈페이지 주소를 입력해주세요');
 			fr.com_url.focus();
 			return false;
 		}

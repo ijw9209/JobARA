@@ -27,8 +27,6 @@ import com.job.prj.model.biz.UserMemberBiz;
 public class UserMemberController {
 	
 	  @Autowired
-	  private TestBizImpl TestBizImpl;
-	  @Autowired
 	  private UserMemberBiz UserMemberBiz;
 	  @Autowired
 	  private Email email;
@@ -68,6 +66,7 @@ public class UserMemberController {
 	  }
 	  
 	  //sns로그인 
+	  @SuppressWarnings("rawtypes")
 	  @RequestMapping(value = "/snslogin.do",method = RequestMethod.POST)
 	  @ResponseBody
 	  public Map kakaologin(UserMemberDto dto) {

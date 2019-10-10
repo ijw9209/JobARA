@@ -326,9 +326,9 @@ CREATE TABLE COMPANY_INFO(
 	COMPANY_SALRAY VARCHAR2(500),  	--회사 평균연봉
 	COMPANY_URL VARCHAR2(500)		--회사 URL
 );
-INSERT INTO COMPANY_INFO VALUES(2,COMPANYNOSEQ.NEXTVAL,'(주)손오공','손오공','IT/솔루션','20억','1억5천만원','00-01-01','031-1234-5678','60','2400~2600만원','http://www.inbus.co.kr/');
+INSERT INTO COMPANY_INFO VALUES(24,COMPANYNOSEQ.NEXTVAL,'(주)손오공','손오공','IT/솔루션','20억','1억5천만원','00-01-01','031-1234-5678','60','2400~2600만원','http://www.inbus.co.kr/');
 INSERT INTO COMPANY_INFO VALUES(95,COMPANYNOSEQ.NEXTVAL,'(주)손오공','손오공','IT/솔루션','20억','1억5천만원','00-01-01','031-1234-5678','60','2400~2600만원','http://www.inbus.co.kr/');
-SELECT * FROM COMPANY_INFO WHERE MEMBER_NO_SEQ = 105;
+SELECT * FROM COMPANY_INFO WHERE MEMBER_NO_SEQ = 24;
 ------------------------------------------------------------------------------------------
 
 				--MYSQL --
