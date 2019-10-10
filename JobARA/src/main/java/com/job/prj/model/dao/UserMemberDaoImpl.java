@@ -116,4 +116,21 @@ public class UserMemberDaoImpl implements UserMemberDao {
 		
 		return id;
 	}
+
+	@Override
+	public int noSelectOne(String id) {
+		int no = 0;
+		
+		try {
+			no = sqlSession.selectOne(namespace+"noselectOne",id);
+		} catch (Exception e) {
+			System.out.println("noselect one error");
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+		return no;
+	}
 }

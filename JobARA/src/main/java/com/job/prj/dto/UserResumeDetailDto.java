@@ -4,6 +4,7 @@ public class UserResumeDetailDto {
 	
 	private int resume_no_seq;
 	private int member_no_seq;
+	private String resume_title;
 	private String resume_photo;
 	private String resume_miltary_chk;
 	private String resume_miltary_group;

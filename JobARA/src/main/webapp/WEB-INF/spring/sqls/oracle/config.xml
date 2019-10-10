@@ -17,6 +17,7 @@
 		<typeAlias type="com.job.prj.dto.UserResumeDto" alias="UserResumeDto"/>
 		<typeAlias type="com.job.prj.dto.UserResumeHopeDto" alias="UserResumeHopeDto"/>
 		<typeAlias type="com.job.prj.dto.VolunteerReadDto" alias="VolunteerReadDto"/>
+		<typeAlias type="com.job.prj.dto.CompanyInfoDto" alias="CompanyInfoDto"/>
 		<typeAlias type="com.job.prj.dto.TestDto" alias="TestDto"/>
 	</typeAliases>
 
@@ -35,6 +36,7 @@
 		<mapper resource="/sqls/UserResumemapper.xml"/>
 		<mapper resource="/sqls/UserResumeHopemapper.xml"/>
 		<mapper resource="/sqls/VolunteerReadmapper.xml"/>
+		<mapper resource="/sqls/CompanyInfomapper.xml"/>
 	</mappers>
 
 

@@ -33,4 +33,8 @@
 	<select id="idsearch" parameterType="map" resultType="String">
 	SELECT MEMBER_ID FROM USER_MEMBER WHERE MEMBER_NAME = #{member_name} AND MEMBER_EMAIL = #{member_email}
 	</select>
+	
+	<select id="noselectOne" parameterType="String" resultType="int">
+	SELECT MEMBER_NO_SEQ FROM USER_MEMBER WHERE MEMBER_ID = #{member_id}
+	</select>
 </mapper>

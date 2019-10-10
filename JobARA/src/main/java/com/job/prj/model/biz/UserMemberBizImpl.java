@@ -66,6 +66,12 @@ public class UserMemberBizImpl implements UserMemberBiz,UserDetailsService {
 	public String idsearch(String member_name, String member_email) {
 		return dao.idsearch(member_name, member_email);
 	}
+
+	@Override
+	public int noSelectOne(String id) {
+		// TODO Auto-generated method stub
+		return dao.noSelectOne(id);
+	}
 	
 
 }

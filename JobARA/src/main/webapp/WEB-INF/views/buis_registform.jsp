@@ -8,6 +8,9 @@
 <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
 <%@ include file="/WEB-INF/include/header.jspf"%>
 <%@ include file="/WEB-INF/include/header.jsp"%>
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <style>
 	.regist-table {
 		border-collapse: separate;
@@ -17,7 +20,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div><a href="testte.do">ㅇㄹ</a></div>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-7 col-sm-10 col-xs-12 center-col">
@@ -58,10 +60,10 @@
 								</tr>
 								<tr>
 									<th>생년월일</th>
-									<td><input type="text" name="member_birth" id="job_birth" class="form-control"></td>
+									<td><input type="text" name="member_birth" id="job_birth" class="form-control" readonly="readonly"></td>
 								</tr>
 								<tr>
-									<th>주소</th>
+									<th>회사주소</th>
 									<td><input type="text" name="member_addr" id="job_addr" class="form-control"></td>
 								</tr>
 								<tr>
@@ -305,7 +307,16 @@ var buisNumConfirm = false;
 			return false;
 		}
 	}
+	$(function() {
+		//  $("#job_birth").datepicker();
 
+		$("#job_birth").datepicker({
+			dateFormat : 'yy-mm-dd',
+			changeYear : true,
+			changeMonth : true,
+			yearRange: '1950:2013',
+		});
+	}); 
 
 
 

@@ -177,67 +177,50 @@ color: #fff;
 				</div>
 				</nav>
 			</header>
-		</div><!-- /container -->
-   		
-   		<!-- 여기부터 -->
-   		<!-- <header class="header">
-   			<div class="container">
-   				<div class="width-100">
-					<a class = "menulogo" href="/" title="메인으로 이동">
-						<img src="/resources/image/logo_w.png" class="logo"/>
-					</a>
-   				</div>
-   				<div class="header_menu">
-   					<div class="container">
-   						<div class="width-100 display-block">
-							<ul class="header_menu_ul">
-								<li class="menu_list"><a style="padding-left: 20px;">채용공고</a></li>
-								<li class="menu_list"><a>기업정보</a></li>
-								<li class="menu_list"><a>취업박람회</a></li>
-								<li class="menu_list"><a>고객센터</a></li>
-		   					</ul>
-   					</div>
-   				</div>
-   			</div>
-   			</div>
-   			
-   			
-   			
-   			
-   			
-   		</header>
-   		
-   		<p>메인</p> -->
+		</div>
    		
 	<%@ include file="/WEB-INF/include/footer.jsp"%>
    		</c:if>
    		
    		<c:if test="${not empty role and role eq 'ROLE_BUIS'}">
-   		<p>기업페이지</p>
+   		<div class="container">
+			<!-- Top Navigation -->
+			<div class="codrops-top clearfix">
+				<a class="logo_a" href="#"><img src="/resources/image/logo_w.png" class="logo"/></a>
+				<div class="header_menu"><ul class="header_menu_ul">
+								<li class="menu_list"><a class="menu_a" style="color: #fff; padding-left: 10px;">공고등록</a></li>
+								<li class="menu_list"><a class="menu_a" style="color: #fff;">지원자관리</a></li>
+								<li class="menu_list"><a class="menu_a" style="color: #fff;">인재검색</a></li>
+								<li class="menu_list"><a class="menu_a" style="color: #fff;">고객센터</a></li>
+								<li class="menu_list"><a class="menu_a" style="color: #fff;">마이페이지</a></li>
+		   					</ul></div>
+			</div>
+			<div id="boxgallery" class="boxgallery" data-effect="effect-1">
+				<div class="panel"><img src="/resources/image/main1.jpg" alt="Image 1"/></div>
+				<div class="panel"><img src="/resources/image/main2.jpg" alt="Image 2"/></div>
+				<div class="panel"><img src="/resources/image/main3.jpg" alt="Image 3"/></div>
+				<div class="panel"><img src="/resources/image/main4.jpg" alt="Image 4"/></div>
+			</div>
+			<header class="codrops-header">
+				<h1 style="color: #fff;">Create your future<span style="color: #ebebeb;">I will be with you forever </span></h1>
+				<nav class="codrops-demos">
+				<sec:authorize access="isAnonymous()">
+					<a class="login" href="login.do">로그인</a>
+				</sec:authorize>
+				<sec:authorize access="isAuthenticated()">
+   				<form action="logout" method="post" name="fr">
+					<a class="logout_a" style="cursor: pointer; color: #fff;" onclick="logout();">로그아웃</a>
+				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+				</form>
+				</sec:authorize>
+				<div class="scroll">
+				<a class="scroll_a" style="color: #fff;"><span></span><span></span><span></span>Scroll</a>
+				</div>
+				</nav>
+			</header>
+		</div>
+   		<%@ include file="/WEB-INF/include/footer.jsp"%>
    		</c:if>
-   		
-   
-	<a href="maria.do">maria</a>
-	
-	<a href="user.do">user</a> 
-	
-	<a href="login.do">loginform</a>
-	
-	<a href="/user/userpage">user</a>
-	
-	<a href="/buis/buispage">buis</a>
-	
-	<h1>메인</h1><br>
-        <sec:authorize access="isAnonymous()">
-   			<a href="login.do">로그인</a>
-		</sec:authorize>
-		<sec:authorize access="isAuthenticated()">
-   			<form action="logout" method="post">
-			<input type="submit" value="로그아웃">
-			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-		</form>
-   		<p><sec:authentication property="principal.username"/>님, 반갑습니다.</p>
-		</sec:authorize> 
 </body>
 <script src="/resources/js/classie.js"></script>
 <script src="/resources/js/boxesFx.js"></script>

@@ -8,6 +8,9 @@
 <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
 <%@ include file="/WEB-INF/include/header.jspf"%>
 <%@ include file="/WEB-INF/include/header.jsp"%>
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <style>
 	.regist-table {
@@ -53,7 +56,7 @@
 								</tr>
 								<tr>
 									<th>생년월일</th>
-									<td><input type="text" name="member_birth" id="job_birth" class="form-control"></td>
+									<td><input type="text" name="member_birth" id="job_birth" class="form-control" readonly="readonly"></td>
 								</tr>
 								<tr>
 									<th>주소</th>
@@ -301,6 +304,17 @@ var pwConfirm2 = false;
 	         }).open();
 	      })
 	   });
+	
+	$(function() {
+		//  $("#job_birth").datepicker();
+
+		$("#job_birth").datepicker({
+			dateFormat : 'yy-mm-dd',
+			changeYear : true,
+			changeMonth : true,
+			yearRange: '1950:2013',
+		});
+	}); 
 
 </script>
 </html>
