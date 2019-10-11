@@ -141,6 +141,7 @@ color: #fff;
 </head>
 <body>
           
+          
 		<c:if test="${empty role or role eq 'ROLE_USER'}">
    		<div class="container">
 			<!-- Top Navigation -->
@@ -149,7 +150,7 @@ color: #fff;
 				<div class="header_menu"><ul class="header_menu_ul">
 								<li class="menu_list"><a class="menu_a" style="color: #fff; padding-left: 10px;">채용공고</a></li>
 								<li class="menu_list"><a class="menu_a" style="color: #fff;">기업정보</a></li>
-								<li class="menu_list"><a class="menu_a" style="color: #fff;">취업박람회</a></li>
+								<li class="menu_list"><a class="menu_a" style="color: #fff;" href="calendar.do">취업박람회</a></li>
 								<li class="menu_list"><a class="menu_a" style="color: #fff;">고객센터</a></li>
 								<li class="menu_list"><a class="menu_a" style="color: #fff;">마이페이지</a></li>
 		   					</ul></div>
