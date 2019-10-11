@@ -1,0 +1,30 @@
+1. web.xml 2.5v -> 4.0 (dynamic web project 4.0v로 만들고 web.xml)
+2. pom.xml - java 1.6v -> 1.8v
+		   - springframework 3.1.1 -> 5.1.9
+		   - servlet-api 2.0 -> 4.0.1 (<artifactId>javax.servlet-api</artifactId>)
+		   - jsp-api 2.1 -> 2.3.3 (<artifactId>javax.servlet.jsp-api</artifactId>)
+		   - maven-compiler-plugin source/target 1.6 -> 1.8   
+3. project facet - java 1.6 -> 1.8
+				 - web-module 2.5 -> 4.0	
+4. maven update
+----------------------------------------(mybatis)
+5. pom.xml - ojdbc6, mybatis, mybatis-spring, commons-dbc, spring-orm
+6. WEB-INF/srping/sqls/*.sql
+7. dto, dao, biz
+8. src/main/resources/sqls/mapper.xml
+9. WEB-INF/spring/sqls/config.xml
+10. src/main/resources/properties/db.properties
+11. applicationContext.xml
+----------------------------------------(aop)
+12. pom.xml -aspectjweaver, aspectjrt
+13. ~.common.aop.LogAop
+14. aop-context.xml
+15. web.xml
+16. log4j.xml 
+----------------------------------------(filter)
+17. ~.common.filter.LogFilter (impl javax.servlet.Filter)
+18. web.xml
+----------------------------------------(interceptor)
+19. ~common.interceptor.MyInterceptor (impl HandlerInterceptor)
+20. servlet-context.xml
+----------------------------------------(transaction)				
