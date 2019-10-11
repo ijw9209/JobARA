@@ -3,7 +3,7 @@
 <mapper namespace="Company">
 	
 	<insert id="companyinsert" parameterType="CompanyInfoDto">
-	INSERT INTO COMPANY_INFO VALUES(#{member_no_seq},COMPANYNOSEQ.NEXTVAL,#{company_title},#{company_name},#{company_cate},#{company_capital},#{company_take},#{company_regdate},#{company_tel},#{company_all_people},#{company_salary},#{company_url})
+	INSERT INTO COMPANY_INFO VALUES(#{member_no_seq},COMPANYNOSEQ.NEXTVAL,#{company_title},#{company_name},#{company_cate},#{company_capital},#{company_take},#{company_regdate},#{company_all_people},#{company_salary},#{company_url})
 	</insert>
 
 </mapper>

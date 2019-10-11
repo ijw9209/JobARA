@@ -68,11 +68,6 @@
 										<span id="com_regdate_span"></span></td>
 								</tr>
 								<tr>
-									<th>회사 전화번호</th>
-									<td><input type="text" name="company_tel" id="com_tel" class="form-control" placeholder="회사 전화번호 예)010-0000-0000">
-										<span id="com_tel_span"></span></td>
-								</tr>
-								<tr>
 									<th>총 사원수</th>
 									<td><input type="text" name="company_all_people" id="com_people" class="form-control" placeholder="총 사원수를 입력하여 주세요">
 										<span id="com_people_span"></span></td>
@@ -138,12 +133,6 @@
 			$("#com_regdate_span").css('color','red');
 			$("#com_regdate_span").html('회사 설립일을 입력해주세요');
 			fr.com_regdate.focus();
-			return false;
-		}
-		if(fr.com_tel.value == ""){
-			$("#com_tel_span").css('color','red');
-			$("#com_tel_span").html('회사 전화번호를 입력해주세요');
-			fr.com_tel.focus();
 			return false;
 		}
 		if(fr.com_people.value ==""){

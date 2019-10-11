@@ -10,7 +10,6 @@ public class CompanyInfoDto {
 	private String company_capital;
 	private String company_take;
 	private String company_regdate;
-	private String company_tel;
 	private String company_all_people;
 	private String company_salary;
 	private String company_url;
@@ -90,11 +89,4 @@ public class CompanyInfoDto {
 	public void setCompany_salary(String company_salary) {
 		this.company_salary = company_salary;
 	}
-	public String getCompany_tel() {
-		return company_tel;
-	}
-	public void setCompany_tel(String company_tel) {
-		this.company_tel = company_tel;
-	}
-	
 }
