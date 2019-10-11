@@ -13,9 +13,20 @@ public class CompanyInfoDto {
 	private String company_all_people;
 	private String company_salary;
 	private String company_url;
+	private String company_logo_url;
+	
+	
 	
 	public CompanyInfoDto() {
 		super();
+	}
+	
+	public String getCompany_logo_url() {
+		return company_logo_url;
+	}
+
+	public void setCompany_logo_url(String company_logo_url) {
+		this.company_logo_url = company_logo_url;
 	}
 	
 	public String getCompany_cate() {
