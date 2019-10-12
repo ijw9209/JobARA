@@ -1,5 +1,7 @@
 package com.job.prj.model.biz;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +17,11 @@ public class CompanyInfoBizImpl implements CompanyInfoBiz {
 	@Override
 	public int Companyinfoinsert(CompanyInfoDto dto) {
 		return dao.Companyinfoinsert(dto);
+	}
+
+	@Override
+	public List<CompanyInfoDto> companylist() {
+		return dao.companylist();
 	}
 
 }

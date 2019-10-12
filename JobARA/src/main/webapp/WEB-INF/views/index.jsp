@@ -1,4 +1,3 @@
-<%@page import="com.job.prj.dto.UserMemberDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -149,7 +148,7 @@ color: #fff;
 				<a class="logo_a" href="#"><img src="/resources/image/logo_w.png" class="logo"/></a>
 				<div class="header_menu"><ul class="header_menu_ul">
 								<li class="menu_list"><a class="menu_a" style="color: #fff; padding-left: 10px;">채용공고</a></li>
-								<li class="menu_list"><a class="menu_a" style="color: #fff;">기업정보</a></li>
+								<li class="menu_list"><a class="menu_a" style="color: #fff;" href="companylist">기업정보</a></li>
 								<li class="menu_list"><a class="menu_a" style="color: #fff;" href="calendar.do">취업박람회</a></li>
 								<li class="menu_list"><a class="menu_a" style="color: #fff;">고객센터</a></li>
 								<li class="menu_list"><a class="menu_a" style="color: #fff;">마이페이지</a></li>

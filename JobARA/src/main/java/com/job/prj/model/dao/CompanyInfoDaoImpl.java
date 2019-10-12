@@ -1,5 +1,8 @@
 package com.job.prj.model.dao;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -25,6 +28,20 @@ public class CompanyInfoDaoImpl implements CompanyInfoDao {
 		}
 		
 		return res;
+	}
+
+	@Override
+	public List<CompanyInfoDto> companylist() {
+		List<CompanyInfoDto> list = new ArrayList<CompanyInfoDto>();
+		
+		try {
+			list = sqlSession.selectList(namespace+"companylist");
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("companylist error");
+		}
+		
+		return list;
 	}
 
 }
