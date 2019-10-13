@@ -9,4 +9,9 @@
 	<select id="companylist" resultType="CompanyInfoDto">
 	SELECT * FROM COMPANY_INFO
 	</select>
+	
+	<select id="category_1_list" resultType="CompanyInfoDto">
+	SELECT * FROM COMPANY_INFO
+	WHERE COMPANY_CATE = '제조/화학'
+	</select>
 </mapper>

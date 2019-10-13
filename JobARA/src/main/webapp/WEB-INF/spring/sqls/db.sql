@@ -330,49 +330,49 @@ CREATE TABLE COMPANY_INFO(
 );
 --INSERT INTO COMPANY_INFO VALUES(24,COMPANYNOSEQ.NEXTVAL,'(주)손오공','손오공','IT/솔루션','20억','1억5천만원','00-01-01','031-1234-5678','60','2400~2600만원','http://www.inbus.co.kr/','/resources/image/company_logo1.gif');
 --INSERT INTO COMPANY_INFO VALUES(95,COMPANYNOSEQ.NEXTVAL,'(주)손오공','손오공','IT/솔루션','20억','1억5천만원','00-01-01','031-1234-5678','60','2400~2600만원','http://www.inbus.co.kr/','/resources/image/');
-INSERT INTO COMPANY_INFO VALUES(1,COMPANYNOSEQ.NEXTVAL,'한국농수산식품유통공사','이병호','농수산물도매/통신판매/유통','683억 3천만원','90억 1천만원','1967-12-01','684','대졸초임 3,444만원','http://www.at.or.kr/','/resources/image/company_logo1.gif');
-INSERT INTO COMPANY_INFO VALUES(3,COMPANYNOSEQ.NEXTVAL,'(주)이머니','이인복','온라인정보제공/대출중개','8억 3000만원','149억 4천만원','2003-06-11','36','4,675','http://www.x1.co.kr','/resources/image/company_logo2.jpg');
-INSERT INTO COMPANY_INFO VALUES(4,COMPANYNOSEQ.NEXTVAL,'(주)기아자동차','박한우/최준영','제조/판매/정비',NULL,NULL,'1944-01-01',NULL,'5,616','http://career.kia.com/kfront/main.do','/resources/image/company_logo3.jpg');
-INSERT INTO COMPANY_INFO VALUES(5,COMPANYNOSEQ.NEXTVAL,'(주)우아한형제들','김봉진','모바일/APP','1억 8만원','3,129억 5천만','2011-03-10','734','회사내규에 따름','http://www.woowahan.com','/resources/image/company_logo4.png');
-INSERT INTO COMPANY_INFO VALUES(6,COMPANYNOSEQ.NEXTVAL,'㈜오리온','이경재','제조 및 판매','197억 6천만원','1조 9,269억','2017-06-01','1773','회사내규에 따름','http://www.orionworld.com/','/resources/image/company_logo5.jpg');
-INSERT INTO COMPANY_INFO VALUES(7,COMPANYNOSEQ.NEXTVAL,'(주)큐로컴','조중기','솔루션/SI/CRM/ERP',NULL,NULL,'1997-04-25','65','회사내규에 따름','http://www.curocom.com','/resources/image/company_logo6.jpg');
-INSERT INTO COMPANY_INFO VALUES(8,COMPANYNOSEQ.NEXTVAL,'현대무벡스','진정호,현기봉','소프트웨어 개발 및 공급업','72억 9천만원','1,347억 3천만원','2005-07-01','302','5,279','http://www.hyundaimovex.com','/resources/image/non_company_logo.png');
-INSERT INTO COMPANY_INFO VALUES(9,COMPANYNOSEQ.NEXTVAL,'한국정보통신(주)','권순배','네트워크/통신서비스','194억원','3739억','1986-01-01','248','3,800','http://www.kicc.co.kr/','/resources/image/company_logo7.jpg');
-INSERT INTO COMPANY_INFO VALUES(10,COMPANYNOSEQ.NEXTVAL,'(주)하나금융티아이','유시완','솔루션/SI/CRM/ERP','1,000억원','1664억원','1990-08-30','750','4,781','https://www.hanati.co.kr','/resources/image/company_logo8.png');
-INSERT INTO COMPANY_INFO VALUES(11,COMPANYNOSEQ.NEXTVAL,'(주)엔디에스','김중원','시스템 통합 자문/구축/소프트웨어','63억원','1,032억 7천만원','1993-01-08','381','4,874','http://nds.nongshim.co.kr','/resources/image/company_logo9.png');
-INSERT INTO COMPANY_INFO VALUES(12,COMPANYNOSEQ.NEXTVAL,'(주)퀄리소프트','변유신','소프트웨어 개발/공급','500만원','2억 3,352만원','2014-09-12','6','면접후 결정','http://www.qualisoft.co.kr','/resources/image/non_company_logo.png');
-INSERT INTO COMPANY_INFO VALUES(13,COMPANYNOSEQ.NEXTVAL,'KCC정보통신(주)','권혁상/이상현','시스템통합 구축/소프트웨어개발','30억원','1,011억 3천만원','1967-10-12','405','회사내규에 따름','http://www.kcc.co.kr','/resources/image/company_logo10.jpg');
-INSERT INTO COMPANY_INFO VALUES(14,COMPANYNOSEQ.NEXTVAL,'(주)마이셀럽스','신지현','포털/컨텐츠/커뮤니티','41억원','6억 9천만원','2014-11-05','50','3,210','https://www.mycelebs.com/','/resources/image/company_logo11.png');
-INSERT INTO COMPANY_INFO VALUES(15,COMPANYNOSEQ.NEXTVAL,'갤럭시아커뮤니케이션즈(주)','김용광','소프트웨어 자문,개발,공급','196억 1천만원','813억 8천만원','1994-10-05','120','4,000','http://www.galaxiacommunications.co.kr','/resources/image/company_logo12.png');
-INSERT INTO COMPANY_INFO VALUES(16,COMPANYNOSEQ.NEXTVAL,'엠비아이솔루션','김범수/오윤석','솔루션/SI/CRM/ERP',NULL,NULL,'2016-02-22','31','2,900','https://happytalk.io','/resources/image/non_company_logo.png');
-INSERT INTO COMPANY_INFO VALUES(17,COMPANYNOSEQ.NEXTVAL,'(주)티머니','김태극','솔루션/SI/CRM/ERP','594억 7천만원','2500억','2003-10-06','258','5,616','http://www.tmoney.co.kr','/resources/image/company_logo13.jpg');
-INSERT INTO COMPANY_INFO VALUES(18,COMPANYNOSEQ.NEXTVAL,'세아상역(주)','하정수','섬유/의류/패션','242억 1천만원','1조 7,658억원','1986-03-06','882','4,520','http://www.sae-a.com','/resources/image/company_logo14.png');
-INSERT INTO COMPANY_INFO VALUES(19,COMPANYNOSEQ.NEXTVAL,'수협은행','이동빈','은행/신탁/부동산 임대/판매대행','6,600억원','1조 4,983억원','2016-12-01','1728','4,400','http://www.suhyup-bank.com','/resources/image/company_logo15.jpg');
-INSERT INTO COMPANY_INFO VALUES(20,COMPANYNOSEQ.NEXTVAL,'안랩','권치중','시스템소프트웨어개발/공급업','51억8천만원','1565억5천만원','1995-03-18','1169','5,237','http://www.ahnlab.com','/resources/image/company_logo16.png');
-INSERT INTO COMPANY_INFO VALUES(21,COMPANYNOSEQ.NEXTVAL,'(주)마이다스아이티','정승식','응용 소프트웨어 개발 및 공급업','20억 2천만원','721억 5천만원','2000-09-01','371','4,300','http://www.midasit.com','/resources/image/company_logo17.jpg');
-INSERT INTO COMPANY_INFO VALUES(22,COMPANYNOSEQ.NEXTVAL,'스몰빌','박세환','광고대행업','900만원','1억6604만원','2010-09-15','4',null,null,'/resources/image/non_company_logo.png');
-INSERT INTO COMPANY_INFO VALUES(23,COMPANYNOSEQ.NEXTVAL,'뮤직엔닷컴','오재명','네트워크/통신서비스','8000만원','4억3천만원','2006-04-01','7',null,'http://musicen.com','/resources/image/non_company_logo.png');
-INSERT INTO COMPANY_INFO VALUES(24,COMPANYNOSEQ.NEXTVAL,'대한적십자사','박경서','보건업','1990억1천만원','6440억3천만원','1948-10-27','3479','5,414','http://www.redcross.or.kr','/resources/image/company_logo18.jpg');
-INSERT INTO COMPANY_INFO VALUES(25,COMPANYNOSEQ.NEXTVAL,'건국대학교병원','한설희','제약/보건/바이오',null,null,'1931-01-01','2400',null,'http://www.kuh.ac.kr/bin/main/main.asp','/resources/image/company_logo19.png');
-INSERT INTO COMPANY_INFO VALUES(26,COMPANYNOSEQ.NEXTVAL,'대교','박수완','방문/교육/학원','521억원','8207억원','1976-07-09','2547','4,073','http://www.daekyo.com','/resources/image/company_logo19.png');
+INSERT INTO COMPANY_INFO VALUES(1,COMPANYNOSEQ.NEXTVAL,'한국농수산식품유통공사','이병호','유통/무역/운송','683억 3천만원','90억 1천만원','1967-12-01','684','대졸초임 3,444만원','http://www.at.or.kr/','/resources/image/company_logo1.gif');
+INSERT INTO COMPANY_INFO VALUES(3,COMPANYNOSEQ.NEXTVAL,'(주)이머니','이인복','은행/금융업','8억 3000만원','149억 4천만원','2003-06-11','36','4,675','http://www.x1.co.kr','/resources/image/company_logo2.jpg');
+INSERT INTO COMPANY_INFO VALUES(4,COMPANYNOSEQ.NEXTVAL,'(주)기아자동차','박한우/최준영','제조/화학',NULL,NULL,'1944-01-01',NULL,'5,616','http://career.kia.com/kfront/main.do','/resources/image/company_logo3.jpg');
+INSERT INTO COMPANY_INFO VALUES(5,COMPANYNOSEQ.NEXTVAL,'(주)우아한형제들','김봉진','IT/웹/통신','1억 8만원','3,129억 5천만','2011-03-10','734','회사내규에 따름','http://www.woowahan.com','/resources/image/company_logo4.png');
+INSERT INTO COMPANY_INFO VALUES(6,COMPANYNOSEQ.NEXTVAL,'㈜오리온','이경재','제조/화학','197억 6천만원','1조 9,269억','2017-06-01','1773','회사내규에 따름','http://www.orionworld.com/','/resources/image/company_logo5.jpg');
+INSERT INTO COMPANY_INFO VALUES(7,COMPANYNOSEQ.NEXTVAL,'(주)큐로컴','조중기','IT/웹/통신',NULL,NULL,'1997-04-25','65','회사내규에 따름','http://www.curocom.com','/resources/image/company_logo6.jpg');
+INSERT INTO COMPANY_INFO VALUES(8,COMPANYNOSEQ.NEXTVAL,'현대무벡스','진정호,현기봉','IT/웹/통신','72억 9천만원','1,347억 3천만원','2005-07-01','302','5,279','http://www.hyundaimovex.com','/resources/image/non_company_logo.png');
+INSERT INTO COMPANY_INFO VALUES(9,COMPANYNOSEQ.NEXTVAL,'한국정보통신(주)','권순배','IT/웹/통신','194억원','3739억','1986-01-01','248','3,800','http://www.kicc.co.kr/','/resources/image/company_logo7.jpg');
+INSERT INTO COMPANY_INFO VALUES(10,COMPANYNOSEQ.NEXTVAL,'(주)하나금융티아이','유시완','IT/웹/통신','1,000억원','1664억원','1990-08-30','750','4,781','https://www.hanati.co.kr','/resources/image/company_logo8.png');
+INSERT INTO COMPANY_INFO VALUES(11,COMPANYNOSEQ.NEXTVAL,'(주)엔디에스','김중원','IT/웹/통신','63억원','1,032억 7천만원','1993-01-08','381','4,874','http://nds.nongshim.co.kr','/resources/image/company_logo9.png');
+INSERT INTO COMPANY_INFO VALUES(12,COMPANYNOSEQ.NEXTVAL,'(주)퀄리소프트','변유신','IT/웹/통신','500만원','2억 3,352만원','2014-09-12','6','면접후 결정','http://www.qualisoft.co.kr','/resources/image/non_company_logo.png');
+INSERT INTO COMPANY_INFO VALUES(13,COMPANYNOSEQ.NEXTVAL,'KCC정보통신(주)','권혁상/이상현','IT/웹/통신','30억원','1,011억 3천만원','1967-10-12','405','회사내규에 따름','http://www.kcc.co.kr','/resources/image/company_logo10.jpg');
+INSERT INTO COMPANY_INFO VALUES(14,COMPANYNOSEQ.NEXTVAL,'(주)마이셀럽스','신지현','미디어/디자인','41억원','6억 9천만원','2014-11-05','50','3,210','https://www.mycelebs.com/','/resources/image/company_logo11.png');
+INSERT INTO COMPANY_INFO VALUES(15,COMPANYNOSEQ.NEXTVAL,'갤럭시아커뮤니케이션즈(주)','김용광','IT/웹/통신','196억 1천만원','813억 8천만원','1994-10-05','120','4,000','http://www.galaxiacommunications.co.kr','/resources/image/company_logo12.png');
+INSERT INTO COMPANY_INFO VALUES(16,COMPANYNOSEQ.NEXTVAL,'엠비아이솔루션','김범수/오윤석','IT/웹/통신',NULL,NULL,'2016-02-22','31','2,900','https://happytalk.io','/resources/image/non_company_logo.png');
+INSERT INTO COMPANY_INFO VALUES(17,COMPANYNOSEQ.NEXTVAL,'(주)티머니','김태극','IT/웹/통신','594억 7천만원','2500억','2003-10-06','258','5,616','http://www.tmoney.co.kr','/resources/image/company_logo13.jpg');
+INSERT INTO COMPANY_INFO VALUES(18,COMPANYNOSEQ.NEXTVAL,'세아상역(주)','하정수','유통/무역/운송','242억 1천만원','1조 7,658억원','1986-03-06','882','4,520','http://www.sae-a.com','/resources/image/company_logo14.png');
+INSERT INTO COMPANY_INFO VALUES(19,COMPANYNOSEQ.NEXTVAL,'수협은행','이동빈','은행/금융업','6,600억원','1조 4,983억원','2016-12-01','1728','4,400','http://www.suhyup-bank.com','/resources/image/company_logo15.jpg');
+INSERT INTO COMPANY_INFO VALUES(20,COMPANYNOSEQ.NEXTVAL,'안랩','권치중','IT/웹/통신','51억8천만원','1565억5천만원','1995-03-18','1169','5,237','http://www.ahnlab.com','/resources/image/company_logo16.png');
+INSERT INTO COMPANY_INFO VALUES(21,COMPANYNOSEQ.NEXTVAL,'(주)마이다스아이티','정승식','IT/웹/통신','20억 2천만원','721억 5천만원','2000-09-01','371','4,300','http://www.midasit.com','/resources/image/company_logo17.jpg');
+INSERT INTO COMPANY_INFO VALUES(22,COMPANYNOSEQ.NEXTVAL,'스몰빌','박세환','미디어/디자인','900만원','1억6604만원','2010-09-15','4',null,null,'/resources/image/non_company_logo.png');
+INSERT INTO COMPANY_INFO VALUES(23,COMPANYNOSEQ.NEXTVAL,'뮤직엔닷컴','오재명','IT/웹/통신','8000만원','4억3천만원','2006-04-01','7',null,'http://musicen.com','/resources/image/non_company_logo.png');
+INSERT INTO COMPANY_INFO VALUES(24,COMPANYNOSEQ.NEXTVAL,'대한적십자사','박경서','의료/제약/복지','1990억1천만원','6440억3천만원','1948-10-27','3479','5,414','http://www.redcross.or.kr','/resources/image/company_logo18.jpg');
+INSERT INTO COMPANY_INFO VALUES(25,COMPANYNOSEQ.NEXTVAL,'건국대학교병원','한설희','의료/제약/복지',null,null,'1931-01-01','2400',null,'http://www.kuh.ac.kr/bin/main/main.asp','/resources/image/company_logo19.png');
+INSERT INTO COMPANY_INFO VALUES(26,COMPANYNOSEQ.NEXTVAL,'대교','박수완','의료/제약/복지','521억원','8207억원','1976-07-09','2547','4,073','http://www.daekyo.com','/resources/image/company_logo19.png');
 --서울 관악구 보라매동 729-28 대교타워
-INSERT INTO COMPANY_INFO VALUES(27,COMPANYNOSEQ.NEXTVAL,'더이앤엠','이승환,신환률','방송/케이블/프로덕션','91억8천만원','271억4천만원','2002-07-01','93',null,'http://www.theenm.com','/resources/image/company_logo20.png');
+INSERT INTO COMPANY_INFO VALUES(27,COMPANYNOSEQ.NEXTVAL,'더이앤엠','이승환,신환률','미디어/디자인','91억8천만원','271억4천만원','2002-07-01','93',null,'http://www.theenm.com','/resources/image/company_logo20.png');
 --서울특별시 강남구 논현로 842 (신사동) 압구정빌딩 8층
-INSERT INTO COMPANY_INFO VALUES(28,COMPANYNOSEQ.NEXTVAL,'엔씨소프트','김택진','게임/애니메이션','100억원','1조7587억원','1997-03-11','3378','5,416','http://kr.ncsoft.com','/resources/image/company_logo21.jpg');
+INSERT INTO COMPANY_INFO VALUES(28,COMPANYNOSEQ.NEXTVAL,'엔씨소프트','김택진','IT/웹/통신','100억원','1조7587억원','1997-03-11','3378','5,416','http://kr.ncsoft.com','/resources/image/company_logo21.jpg');
 --경기 성남시 분당구 삼평동 668번지
-INSERT INTO COMPANY_INFO VALUES(29,COMPANYNOSEQ.NEXTVAL,'액토즈소프트','구오하이빈','온라인게임/소프트웨어',null,null,'1996-10-29','100',null,'http://www.actoz.com','/resources/image/non_company_logo.png');
+INSERT INTO COMPANY_INFO VALUES(29,COMPANYNOSEQ.NEXTVAL,'액토즈소프트','구오하이빈','IT/웹/통신',null,null,'1996-10-29','100',null,'http://www.actoz.com','/resources/image/non_company_logo.png');
 --서울 강남구 역삼동 706-19 아이콘역삼빌딩 15층
-INSERT INTO COMPANY_INFO VALUES(30,COMPANYNOSEQ.NEXTVAL,'모리스','문윤호','생활용품/소비재/기타','2억8800만원',null,'1997-10-10','68',null,'http://www.morris.co.kr','/resources/image/company_logo22.jpg');
+INSERT INTO COMPANY_INFO VALUES(30,COMPANYNOSEQ.NEXTVAL,'모리스','문윤호','유통/무역/운송','2억8800만원',null,'1997-10-10','68',null,'http://www.morris.co.kr','/resources/image/company_logo22.jpg');
 --인천 미추홀구 도화동 952번지 모리스빌딩 (주)모리스
-INSERT INTO COMPANY_INFO VALUES(31,COMPANYNOSEQ.NEXTVAL,'한세실업','김익환','근무복/작업복/유사의류','200억원','1조3166억원','2009-01-06','624','6,607','http://www.hansae.com','/resources/image/company_logo23.jpg');
+INSERT INTO COMPANY_INFO VALUES(31,COMPANYNOSEQ.NEXTVAL,'한세실업','김익환','유통/무역/운송','200억원','1조3166억원','2009-01-06','624','6,607','http://www.hansae.com','/resources/image/company_logo23.jpg');
 --서울 영등포구 여의도동 정우빌딩
-INSERT INTO COMPANY_INFO VALUES(32,COMPANYNOSEQ.NEXTVAL,'디쉐어','현승원','IT컨설팅','5000만원','500억','2011-01-06','800',null,'http://www.dshare.co.kr/','/resources/image/non_company_logo.png');
+INSERT INTO COMPANY_INFO VALUES(32,COMPANYNOSEQ.NEXTVAL,'디쉐어','현승원','IT/웹/통신','5000만원','500억','2011-01-06','800',null,'http://www.dshare.co.kr/','/resources/image/non_company_logo.png');
 --서울 송파구 올림픽로 300 (신천동, 롯데월드타워앤드롯데월드몰) 35층 디쉐어
-INSERT INTO COMPANY_INFO VALUES(33,COMPANYNOSEQ.NEXTVAL,'원익그룹','이현덕,이재경','반도체/디스플레이/광학','206억원','6490억원','2016-01-01','1306','5,742','http://www.ips.co.kr','/resources/image/non_company_logo.png');
+INSERT INTO COMPANY_INFO VALUES(33,COMPANYNOSEQ.NEXTVAL,'원익그룹','이현덕,이재경','IT/웹/통신','206억원','6490억원','2016-01-01','1306','5,742','http://www.ips.co.kr','/resources/image/non_company_logo.png');
 --경기 평택시 진위면 진위산단로 75 (청호리) (주)원익아이피에스
-INSERT INTO COMPANY_INFO VALUES(34,COMPANYNOSEQ.NEXTVAL,'지학사','권병일,권준구','출판/인쇄/사진','11억원','450억원','1965-08-26','200','3,813','http://www.jihak.co.kr','/resources/image/company_logo24.jpg'); 
+INSERT INTO COMPANY_INFO VALUES(34,COMPANYNOSEQ.NEXTVAL,'지학사','권병일,권준구','미디어/디자인','11억원','450억원','1965-08-26','200','3,813','http://www.jihak.co.kr','/resources/image/company_logo24.jpg'); 
 --서울 마포구 동교동 180-20
-INSERT INTO COMPANY_INFO VALUES(35,COMPANYNOSEQ.NEXTVAL,'유진기업','최종성','건축/설비/환경','385억6천만원','7809억8천만원','1984-06-13','669','5,247','https://www.eugenegroup.co.kr/','/resources/image/company_logo25.jpg');
+INSERT INTO COMPANY_INFO VALUES(35,COMPANYNOSEQ.NEXTVAL,'유진기업','최종성','건설업','385억6천만원','7809억8천만원','1984-06-13','669','5,247','https://www.eugenegroup.co.kr/','/resources/image/company_logo25.jpg');
 --서울 영등포구 국제금융로 24 (여의도동, 유진빌딩) 유진빌딩
 
 ---일단여기까지..---
@@ -398,6 +398,9 @@ SELECT * FROM COMPANY_INFO WHERE MEMBER_NO_SEQ = 19;
 SELECT * FROM COMPANY_INFO ORDER BY COMPANY_NO_SEQ;
 DELETE FROM COMPANY_INFO WHERE COMPANY_NO_SEQ = 37;
 
+
+SELECT * FROM COMPANY_INFO
+	WHERE COMPANY_CATE = '제조/화학'
 ------------------------------------------------------------------------------------------
 
 				--MYSQL --

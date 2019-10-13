@@ -43,5 +43,19 @@ public class CompanyInfoDaoImpl implements CompanyInfoDao {
 		
 		return list;
 	}
-
+	
+	@Override
+	public List<CompanyInfoDto> category_1_list() {
+		List<CompanyInfoDto> list = new ArrayList<CompanyInfoDto>();
+		
+		try {
+			list = sqlSession.selectList(namespace+"category_1_list");
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("companylist error");
+		}
+		
+		return list;
+	}
+	
 }

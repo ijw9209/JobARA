@@ -24,4 +24,10 @@ public class CompanyInfoBizImpl implements CompanyInfoBiz {
 		return dao.companylist();
 	}
 
+	@Override
+	public List<CompanyInfoDto> category_1_list() {
+		// TODO Auto-generated method stub
+		return dao.category_1_list();
+	}
+
 }

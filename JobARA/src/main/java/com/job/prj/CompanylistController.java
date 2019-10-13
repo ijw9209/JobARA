@@ -17,6 +17,7 @@ public class CompanylistController {
 	public String companylist(Model model) {
 		
 		model.addAttribute("list", companyinfobiz.companylist());
+		model.addAttribute("cate_1_list", companyinfobiz.category_1_list());
 		return "companylist";
 	}
 }

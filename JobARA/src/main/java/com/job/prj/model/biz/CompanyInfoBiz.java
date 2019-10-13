@@ -12,4 +12,7 @@ public interface CompanyInfoBiz {
 	public int Companyinfoinsert(CompanyInfoDto dto);
 	//회사 리스트
 	public List<CompanyInfoDto> companylist();
+	
+	public List<CompanyInfoDto> category_1_list();
+	
 }

@@ -10,4 +10,5 @@ public interface CompanyInfoDao {
 	
 	public int Companyinfoinsert(CompanyInfoDto dto);
 	public List<CompanyInfoDto> companylist();
+	public List<CompanyInfoDto> category_1_list();	
 }
