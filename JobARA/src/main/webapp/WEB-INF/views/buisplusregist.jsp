@@ -47,7 +47,16 @@
 								 </tr>
 								 <tr>
 									<th>업종/카테고리</th>
-									<td><input type="text" name="company_cate" id="com_cate"  class="form-control">
+									<td><input type="radio" name="company_cate" value="제조/화학">제조/화학
+										<input type="radio" name="company_cate" id="com_cate" value="서비스업">서비스업
+										<input type="radio" name="company_cate" id="com_cate" value="의료/제약/복지">의료/제약/복지
+										<input type="radio" name="company_cate" id="com_cate" value="유통/무역/운송">유통/무역/운송<br/>
+										<input type="radio" name="company_cate" id="com_cate" value="교육업">교육업
+										<input type="radio" name="company_cate" id="com_cate" value="건설업">건설업
+										<input type="radio" name="company_cate" id="com_cate" value="IT/웹/통신">IT/웹/통신
+										<input type="radio" name="company_cate" id="com_cate" value="미디어/디자인">미디어/디자인<br/>
+										<input type="radio" name="company_cate" id="com_cate" value="은행/금융업">은행/금융업
+										<input type="radio" name="company_cate" id="com_cate" value="기관/협회">기관/협회
 									<span id="com_cate_span"></span></td>
 								</tr>
 								<tr>
@@ -110,12 +119,17 @@
 			fr.com_name.focus();
 			return false;
 		}
-		if(fr.com_cate.value == ""){
-			$("#com_cate_span").css('color','red');
-			$("#com_cate_span").html('업종을 선택해주세요');
-			fr.com_cate.focus();
+		if($("#input:radio[name=company_cate]").is('checked') == false){
+			var cate = $(':input[name=company_cate]:radio:checked').val();
+
+			if(cate){
+				//$("#snsLogin").submit();
+				return true;
+			}else{
+			alert("업종을 체크해 주세요!");
 			return false;
-		}
+			}
+		} 
 		if(fr.com_capital.value == ""){
 			$("#com_capital_span").css('color','red');
 			$("#com_capital_span").html('회사 자본금을 입력해주세요');

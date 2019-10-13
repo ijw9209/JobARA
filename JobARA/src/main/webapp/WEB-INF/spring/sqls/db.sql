@@ -40,7 +40,7 @@ DELETE FROM USER_MEMBER WHERE MEMBER_NO_SEQ = 36;
 
 SELECT * FROM USER_MEMBER ORDER BY MEMBER_NO_SEQ;
 SELECT * FROM USER_MEMBER WHERE MEMBER_ID = 'user123'
-DELETE FROM USER_MEMBER WHERE MEMBER_NO_SEQ = 43;
+DELETE FROM USER_MEMBER WHERE MEMBER_NO_SEQ = 53;
 SELECT * FROM USER_MEMBER WHERE MEMBER_NO_SEQ = 35;
 
 ----------------기업회원 테이블 일단 사용 X---------------------------------
@@ -376,27 +376,27 @@ INSERT INTO COMPANY_INFO VALUES(35,COMPANYNOSEQ.NEXTVAL,'유진기업','최종�
 --서울 영등포구 국제금융로 24 (여의도동, 유진빌딩) 유진빌딩
 
 ---일단여기까지..---
-INSERT INTO COMPANY_INFO VALUES(36,COMPANYNOSEQ.NEXTVAL,'삼원에스앤디','오철,김태열','도배/실내장식/목공사업','26억원','1423억원','1982-04-25','184',null,'http://www.samwonsd.co.kr','/resources/image/company_logo26.jpg');
+INSERT INTO COMPANY_INFO VALUES(38,COMPANYNOSEQ.NEXTVAL,'삼원에스앤디','오철,김태열','건설업','26억원','1423억원','1982-04-25','184',null,'http://www.samwonsd.co.kr','/resources/image/company_logo26.jpg');
 --서울 서초구 서초동 1631-6번지
-INSERT INTO COMPANY_INFO VALUES(37,COMPANYNOSEQ.NEXTVAL,'엠씨넥스','민동욱','비디오/영상기기','86억1천만원','6276억4천만원','2004-12-22','438',null,'http://www.mcnex.com','/resources/image/company_logo27.jpg');
+INSERT INTO COMPANY_INFO VALUES(39,COMPANYNOSEQ.NEXTVAL,'엠씨넥스','민동욱','미디어/디자인','86억1천만원','6276억4천만원','2004-12-22','438',null,'http://www.mcnex.com','/resources/image/company_logo27.jpg');
 --서울 금천구 가산동 60-18 한신 IT 타워 2차 11층
-INSERT INTO COMPANY_INFO VALUES(38,COMPANYNOSEQ.NEXTVAL,'넷케이티아이','김성용','통신/방송장비/부품/도매업','10억원','817억8천만원','2006-05-04','164',null,'http://www.netkti.co.kr','/resources/image/non_company_logo.png');
+INSERT INTO COMPANY_INFO VALUES(40,COMPANYNOSEQ.NEXTVAL,'넷케이티아이','김성용','미디어/디자인','10억원','817억8천만원','2006-05-04','164',null,'http://www.netkti.co.kr','/resources/image/non_company_logo.png');
 --경기 성남시 분당구 운중로 135 (운중동, 더원스퀘어)7-10층
-INSERT INTO COMPANY_INFO VALUES(39,COMPANYNOSEQ.NEXTVAL,'귀뚜라미','이영수','기계설비','166억8천만원','1452억1천만원','1963-09-30','230',null,'http://www.bac.co.kr','/resources/image/non_company_logo.png');
+INSERT INTO COMPANY_INFO VALUES(41,COMPANYNOSEQ.NEXTVAL,'귀뚜라미','이영수','제조/화학','166억8천만원','1452억1천만원','1963-09-30','230',null,'http://www.bac.co.kr','/resources/image/non_company_logo.png');
 --서울 강서구 화곡6동 1094번지
-INSERT INTO COMPANY_INFO VALUES(40,COMPANYNOSEQ.NEXTVAL,'비에이치아이','우종인,조원래','증류기/열교환기/제조업','130억원','2060억8천만원','1998-06-12','397','5,750','http://www.bhi.co.kr','/resources/image/company_logo28.png');
+INSERT INTO COMPANY_INFO VALUES(42,COMPANYNOSEQ.NEXTVAL,'비에이치아이','우종인,조원래','제조/화학','130억원','2060억8천만원','1998-06-12','397','5,750','http://www.bhi.co.kr','/resources/image/company_logo28.png');
 --서울 강남구 대치2동 942-1
-INSERT INTO COMPANY_INFO VALUES(41,COMPANYNOSEQ.NEXTVAL,'FHIKOREA','신상용','상품/종합/도매업','1억원','72억3천만원','2007-06-27','10',null,'http://www.fhikorea.com','/resources/image/non_company_logo.png');
+INSERT INTO COMPANY_INFO VALUES(43,COMPANYNOSEQ.NEXTVAL,'FHIKOREA','신상용','유통/무역/운송','1억원','72억3천만원','2007-06-27','10',null,'http://www.fhikorea.com','/resources/image/non_company_logo.png');
 --서울 강남구 논현동 166-6 미래빌딩2층
-INSERT INTO COMPANY_INFO VALUES(42,COMPANYNOSEQ.NEXTVAL,'동원개발','장복만','아파트/건설업','454억원','6078억9천만원','1978-03-31','201',null,'http://www.dongwonapt.co.kr','/resources/image/company_logo29.jpg');
+INSERT INTO COMPANY_INFO VALUES(44,COMPANYNOSEQ.NEXTVAL,'동원개발','장복만','건설업','454억원','6078억9천만원','1978-03-31','201',null,'http://www.dongwonapt.co.kr','/resources/image/company_logo29.jpg');
 --부산 수영구 수영로 754 (민락동, 센텀비스타동원) 9층
-INSERT INTO COMPANY_INFO VALUES(43,COMPANYNOSEQ.NEXTVAL,'신화푸드','김지연','음식료/외식/프렌차이즈','2억원','1700억원','1998-07-30','1600',null,'http://shinhwaifood.co.kr','/resources/image/company_logo30.jpg');
+INSERT INTO COMPANY_INFO VALUES(45,COMPANYNOSEQ.NEXTVAL,'신화푸드','김지연','서비스업','2억원','1700억원','1998-07-30','1600',null,'http://shinhwaifood.co.kr','/resources/image/company_logo30.jpg');
 --경기 성남시 분당구 서현동 195-2번지 푸드빌3층
-INSERT INTO COMPANY_INFO VALUES(44,COMPANYNOSEQ.NEXTVAL,'오피스디포코리아','송지헌','백화점/유통/도소매','77억1천만원','1030억원','1998-01-01','400',null,'http://www.officedepot.co.kr','/resources/image/company_logo31.jpg');
+INSERT INTO COMPANY_INFO VALUES(46,COMPANYNOSEQ.NEXTVAL,'오피스디포코리아','송지헌','유통/무역/운송','77억1천만원','1030억원','1998-01-01','400',null,'http://www.officedepot.co.kr','/resources/image/company_logo31.jpg');
 --서울 강남구 언주로 711 (논현동, 건설회관) 10층 오피스디포코리아
-SELECT * FROM COMPANY_INFO WHERE MEMBER_NO_SEQ = 19;
+SELECT * FROM COMPANY_INFO WHERE MEMBER_NO_SEQ = 42;
 SELECT * FROM COMPANY_INFO ORDER BY COMPANY_NO_SEQ;
-DELETE FROM COMPANY_INFO WHERE COMPANY_NO_SEQ = 37;
+DELETE FROM COMPANY_INFO WHERE COMPANY_NO_SEQ = 49;
 
 
 SELECT * FROM COMPANY_INFO
