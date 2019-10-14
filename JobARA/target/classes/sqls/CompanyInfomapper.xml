@@ -14,4 +14,45 @@
 	SELECT * FROM COMPANY_INFO
 	WHERE COMPANY_CATE = '제조/화학'
 	</select>
+	<select id="category_2_list" resultType="CompanyInfoDto">
+	SELECT * FROM COMPANY_INFO
+	WHERE COMPANY_CATE = '서비스업'
+	</select>
+	<select id="category_3_list" resultType="CompanyInfoDto">
+	SELECT * FROM COMPANY_INFO
+	WHERE COMPANY_CATE = '의료/제약/복지'
+	</select>
+	<select id="category_4_list" resultType="CompanyInfoDto">
+	SELECT * FROM COMPANY_INFO
+	WHERE COMPANY_CATE = '유통/무역/운송'
+	</select>
+	<select id="category_5_list" resultType="CompanyInfoDto">
+	SELECT * FROM COMPANY_INFO
+	WHERE COMPANY_CATE = '교육업'
+	</select>
+	<select id="category_6_list" resultType="CompanyInfoDto">
+	SELECT * FROM COMPANY_INFO
+	WHERE COMPANY_CATE = '건설업'
+	</select>
+	<select id="category_7_list" resultType="CompanyInfoDto">
+	SELECT * FROM COMPANY_INFO
+	WHERE COMPANY_CATE = 'IT/웹/통신'
+	</select>
+	<select id="category_8_list" resultType="CompanyInfoDto">
+	SELECT * FROM COMPANY_INFO
+	WHERE COMPANY_CATE = '미디어/디자인'
+	</select>
+	<select id="category_9_list" resultType="CompanyInfoDto">
+	SELECT * FROM COMPANY_INFO
+	WHERE COMPANY_CATE = '은행/금융업'
+	</select>
+	<select id="category_10_list" resultType="CompanyInfoDto">
+	SELECT * FROM COMPANY_INFO
+	WHERE COMPANY_CATE = '기관/협회'
+	</select>
+	
+	<select id="company_detail" resultType="CompanyInfoDto" parameterType="int">
+	SELECT * FROM COMPANY_INFO
+	WHERE COMPANY_NO_SEQ = #{company_no_seq}
+	</select>
 </mapper>

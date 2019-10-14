@@ -18,7 +18,22 @@ public class CompanylistController {
 		
 		model.addAttribute("list", companyinfobiz.companylist());
 		model.addAttribute("cate_1_list", companyinfobiz.category_1_list());
+		model.addAttribute("cate_2_list", companyinfobiz.category_2_list());
+		model.addAttribute("cate_3_list", companyinfobiz.category_3_list());
+		model.addAttribute("cate_4_list", companyinfobiz.category_4_list());
+		model.addAttribute("cate_5_list", companyinfobiz.category_5_list());
+		model.addAttribute("cate_6_list", companyinfobiz.category_6_list());
+		model.addAttribute("cate_7_list", companyinfobiz.category_7_list());
+		model.addAttribute("cate_8_list", companyinfobiz.category_8_list());
+		model.addAttribute("cate_9_list", companyinfobiz.category_9_list());
+		model.addAttribute("cate_10_list", companyinfobiz.category_10_list());
 		return "companylist";
+	}
+	@RequestMapping(value = "/company_detail")
+	public String company_detail(Model model,int company_no_seq) {
+		model.addAttribute("dto",companyinfobiz.company_detail(company_no_seq));
+		
+		return "company_detail";
 	}
 }
 

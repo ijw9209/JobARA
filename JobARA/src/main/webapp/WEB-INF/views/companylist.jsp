@@ -102,7 +102,7 @@ ul.tabs li.active {
 					</c:when>
 				<c:otherwise>
 					<c:forEach items="${list}" var="dto">
-						<li><img src="${dto.company_logo_url}"/><a href="#">${dto.company_title}</a></li>
+						<li><img src="${dto.company_logo_url}"/><a href="company_detail?company_no_seq=${dto.company_no_seq}">${dto.company_title}</a></li>
 					</c:forEach>
 				</c:otherwise>
 				</c:choose>
@@ -127,22 +127,76 @@ ul.tabs li.active {
 		    	<div id="tab1" class="tab_content">
 			        <ul>
 			            <c:forEach items="${cate_1_list}" var="dto">
-							<li><img src="${dto.company_logo_url}"/><a href="#">${dto.company_title}</a></li>
+							<li><img src="${dto.company_logo_url}"/><a href="company_detail?title=${dto.company_title}">${dto.company_title}</a></li>
 						</c:forEach>
 			        </ul>
 		        </div>
 		        <!-- #tab1 -->
-		        <div id="tab2" class="tab_content">2</div>
+		        <div id="tab2" class="tab_content">
+					<ul>
+						<c:forEach items="${cate_2_list}" var="dto">
+							<li><img src="${dto.company_logo_url}"/><a href="#">${dto.company_title}</a></li>
+						</c:forEach>
+					</ul>
+				</div>
 		        <!-- #tab2 -->
-		        <div id="tab3" class="tab_content">3</div>
+		        <div id="tab3" class="tab_content">
+					<ul>
+						<c:forEach items="${cate_3_list}" var="dto">
+							<li><img src="${dto.company_logo_url}"/><a href="#">${dto.company_title}</a></li>
+						</c:forEach>
+					</ul>
+				</div>
 		        <!-- #tab3 -->
-		        <div id="tab4" class="tab_content">4</div>
-		        <div id="tab5" class="tab_content">5</div>
-		        <div id="tab6" class="tab_content">6</div>
-		        <div id="tab7" class="tab_content">7</div>
-		        <div id="tab8" class="tab_content">8</div>
-		        <div id="tab9" class="tab_content">9</div>
-		        <div id="tab10" class="tab_content">10</div>
+		        <div id="tab4" class="tab_content">
+					<ul>
+						<c:forEach items="${cate_4_list}" var="dto">
+							<li><img src="${dto.company_logo_url}"/><a href="#">${dto.company_title}</a></li>
+						</c:forEach>
+					</ul>
+				</div>
+		        <div id="tab5" class="tab_content">
+		        	<ul>
+						<c:forEach items="${cate_5_list}" var="dto">
+							<li><img src="${dto.company_logo_url}"/><a href="#">${dto.company_title}</a></li>
+						</c:forEach>
+					</ul>
+				</div>
+		        <div id="tab6" class="tab_content">
+					<ul>
+						<c:forEach items="${cate_6_list}" var="dto">
+							<li><img src="${dto.company_logo_url}"/><a href="#">${dto.company_title}</a></li>
+						</c:forEach>
+					</ul>
+				</div>
+		        <div id="tab7" class="tab_content">
+					<ul>
+						<c:forEach items="${cate_7_list}" var="dto">
+							<li><img src="${dto.company_logo_url}"/><a href="#">${dto.company_title}</a></li>
+						</c:forEach>
+					</ul>
+				</div>
+		        <div id="tab8" class="tab_content">
+					<ul>
+						<c:forEach items="${cate_8_list}" var="dto">
+							<li><img src="${dto.company_logo_url}"/><a href="#">${dto.company_title}</a></li>
+						</c:forEach>
+					</ul>
+				</div>
+		        <div id="tab9" class="tab_content">
+		        	<ul>
+						<c:forEach items="${cate_9_list}" var="dto">
+							<li><img src="${dto.company_logo_url}"/><a href="#">${dto.company_title}</a></li>
+						</c:forEach>
+					</ul>
+		        </div>
+		        <div id="tab10" class="tab_content">
+					<ul>
+						<c:forEach items="${cate_10_list}" var="dto">
+							<li><img src="${dto.company_logo_url}"/><a href="#">${dto.company_title}</a></li>
+						</c:forEach>
+					</ul>
+				</div>
 		    </div>
 		    <!-- .tab_container -->
 		</div>
