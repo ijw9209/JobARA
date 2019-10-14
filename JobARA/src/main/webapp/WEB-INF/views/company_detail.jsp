@@ -71,6 +71,7 @@
 	}
 	
 	.basic_info_item{
+		width:100%;
 	}
 	.basic_info_ul{
 		width: 100%;
@@ -80,6 +81,12 @@
 	float: left;
     width: 25%;
     box-sizing: border-box;
+    }
+    .basic_info_indestry{
+    	width:80%;
+    	float:left;
+    	padding-left:15px;
+    	font-size:17px;
     }
 </style>
 </head>
@@ -104,9 +111,11 @@
 			<ul class="basic_info_ul">
 				<li>
 				<div class="basic_info_item">
-					<img alt="" src="/resources/image/company_detail_indestry.png">
-					<strong class="info_item_subject">판매유통</strong>
+					<img alt="" src="/resources/image/company_detail_indestry.png" style="width:20%;float:left;">
+					<div class="basic_info_indestry">
+					<span class="info_item_subject"><strong>${dto.company_cate}</strong></span><br/>
 					<span style="width: 100%; box-sizing: border-box; font-size: 13px; color: #a4a6ad;">산업</span>
+					</div>
 				</div>
 				
 				</li>

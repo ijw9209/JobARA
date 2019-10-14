@@ -29,9 +29,8 @@
 	
 	ul.tabs {
     padding: 0;
-    float: left;
+    float: left; 
     list-style: none;
-    height: 32px;
     border-bottom: 1px solid #eee;
     border-left: 1px solid #eee;
     width: 100%;
@@ -42,9 +41,9 @@ ul.tabs li {
     float: left;
     text-align:center;
     cursor: pointer;
-    width:10%;
-    height: 31px;
-    line-height: 31px;
+  	width: 20%;
+    height: 40px;
+    line-height: 38px; 
     border: 1px solid #eee;
     border-left: none;
     font-weight: bold;
@@ -58,7 +57,9 @@ ul.tabs li.active {
 }
 .tab_container {
     width:100%;
-        border-left: 1px solid #ebebeb;
+    border-left: 1px solid #ebebeb;
+    margin-top: 38px;
+    border-top: 1px solid #ebebeb; 
 }
 .tab_content {
     display: none;
