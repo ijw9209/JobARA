@@ -75,11 +75,13 @@
 	}
 	.basic_info_ul{
 		width: 100%;
-		height: 100px;
+		height: 90px;
+		padding-left: 100px;
+    	padding-top: 10px;
 	}
 	.basic_info_ul li{
 	float: left;
-    width: 25%;
+    width: 33.3%;
     box-sizing: border-box;
     }
     .basic_info_indestry{
@@ -87,6 +89,9 @@
     	float:left;
     	padding-left:15px;
     	font-size:17px;
+    }
+    .basic_info_more{
+    	border-top: 1px solid #e5e6e9;
     }
 </style>
 </head>
@@ -111,7 +116,7 @@
 			<ul class="basic_info_ul">
 				<li>
 				<div class="basic_info_item">
-					<img alt="" src="/resources/image/company_detail_indestry.png" style="width:20%;float:left;">
+					<img alt="" src="/resources/image/company_detail_indestry.png" style="width:17%;float:left;">
 					<div class="basic_info_indestry">
 					<span class="info_item_subject"><strong>${dto.company_cate}</strong></span><br/>
 					<span style="width: 100%; box-sizing: border-box; font-size: 13px; color: #a4a6ad;">산업</span>
@@ -121,18 +126,25 @@
 				</li>
 				<li>
 				<div class="basic_info_item">
-					<img alt="" src="/resources/image/company_detail_building.png">
+					<img alt="" src="/resources/image/company_detail_employees.png" style="width:17%;float:left;">
+					<div class="basic_info_indestry">
+					<span class="info_item_subject"><strong>${dto.company_all_people}</strong></span><br/>
+					<span style="width: 100%; box-sizing: border-box; font-size: 13px; color: #a4a6ad;">사원수</span>
+					</div>
 				</div>
 				</li>
 				<li>
 				<div class="basic_info_item">
-					<img alt="" src="/resources/image/company_detail_employees.png">
+					<img alt="" src="/resources/image/company_detail_establish.png" style="width:17%;float:left;">
+					<div class="basic_info_indestry">
+					<span class="info_item_subject"><strong>${dto.company_regdate}</strong></span><br/>
+					<span style="width: 100%; box-sizing: border-box; font-size: 13px; color: #a4a6ad;">설립일</span>
+					</div>
 				</div>
 				</li>
+			</ul>
+			<ul class="basic_info_more">
 				<li>
-				<div class="basic_info_item">
-					<img alt="" src="/resources/image/company_detail_establish.png">
-				</div>
 				</li>
 			</ul>
 		</div>
