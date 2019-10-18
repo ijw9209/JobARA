@@ -32,7 +32,8 @@ public class CompanylistController {
 	@RequestMapping(value = "/company_detail")
 	public String company_detail(Model model,int company_no_seq) {
 		model.addAttribute("dto",companyinfobiz.company_detail(company_no_seq));
-		
+		String addr = companyinfobiz.company_addr(company_no_seq);
+		model.addAttribute("addr",addr.substring(6));
 		return "company_detail";
 	}
 }

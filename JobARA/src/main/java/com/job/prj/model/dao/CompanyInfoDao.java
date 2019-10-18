@@ -24,4 +24,7 @@ public interface CompanyInfoDao {
 	
 	//회사상세
 	public CompanyInfoDto company_detail(int company_no_seq);
+	
+	//회사주소 조인
+	public String company_addr(int company_no_seq);
 }

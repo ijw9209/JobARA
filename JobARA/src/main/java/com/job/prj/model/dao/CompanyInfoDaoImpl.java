@@ -197,5 +197,19 @@ public class CompanyInfoDaoImpl implements CompanyInfoDao {
 		
 		return dto;
 	}
+
+	@Override
+	public String company_addr(int company_no_seq) {
+		String addr = "";
+		
+		try {
+			addr = sqlSession.selectOne(namespace + "company_addr", company_no_seq);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		return addr;
+	}
 	
 }

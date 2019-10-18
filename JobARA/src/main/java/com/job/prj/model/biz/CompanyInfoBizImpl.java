@@ -85,4 +85,9 @@ public class CompanyInfoBizImpl implements CompanyInfoBiz {
 		return dao.company_detail(company_no_seq);
 	}
 
+	@Override
+	public String company_addr(int company_no_seq) {
+		return dao.company_addr(company_no_seq);
+	}
+
 }

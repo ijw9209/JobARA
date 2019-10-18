@@ -11,7 +11,7 @@ public class CompanyInfoDto {
 	private String company_take;
 	private String company_regdate;
 	private String company_all_people;
-	private String company_salary;
+	private String company_salray;
 	private String company_url;
 	private String company_logo_url;
 	
@@ -94,10 +94,13 @@ public class CompanyInfoDto {
 	public void setCompany_all_people(String company_all_people) {
 		this.company_all_people = company_all_people;
 	}
-	public String getCompany_salary() {
-		return company_salary;
+
+	public String getCompany_salray() {
+		return company_salray;
 	}
-	public void setCompany_salary(String company_salary) {
-		this.company_salary = company_salary;
+
+	public void setCompany_salray(String company_salray) {
+		this.company_salray = company_salray;
 	}
+	
 }
