@@ -128,7 +128,7 @@ ul.tabs li.active {
 		    	<div id="tab1" class="tab_content">
 			        <ul>
 			            <c:forEach items="${cate_1_list}" var="dto">
-							<li><img src="${dto.company_logo_url}"/><a href="company_detail?title=${dto.company_title}">${dto.company_title}</a></li>
+							<li><img src="${dto.company_logo_url}"/><a href="company_detail?company_no_seq=${dto.company_no_seq}">${dto.company_title}</a></li>
 						</c:forEach>
 			        </ul>
 		        </div>
@@ -136,7 +136,7 @@ ul.tabs li.active {
 		        <div id="tab2" class="tab_content">
 					<ul>
 						<c:forEach items="${cate_2_list}" var="dto">
-							<li><img src="${dto.company_logo_url}"/><a href="#">${dto.company_title}</a></li>
+							<li><img src="${dto.company_logo_url}"/><a href="company_detail?company_no_seq=${dto.company_no_seq}">${dto.company_title}</a></li>
 						</c:forEach>
 					</ul>
 				</div>
@@ -144,7 +144,7 @@ ul.tabs li.active {
 		        <div id="tab3" class="tab_content">
 					<ul>
 						<c:forEach items="${cate_3_list}" var="dto">
-							<li><img src="${dto.company_logo_url}"/><a href="#">${dto.company_title}</a></li>
+							<li><img src="${dto.company_logo_url}"/><a href="company_detail?company_no_seq=${dto.company_no_seq}">${dto.company_title}</a></li>
 						</c:forEach>
 					</ul>
 				</div>
@@ -152,49 +152,49 @@ ul.tabs li.active {
 		        <div id="tab4" class="tab_content">
 					<ul>
 						<c:forEach items="${cate_4_list}" var="dto">
-							<li><img src="${dto.company_logo_url}"/><a href="#">${dto.company_title}</a></li>
+							<li><img src="${dto.company_logo_url}"/><a href="company_detail?company_no_seq=${dto.company_no_seq}">${dto.company_title}</a></li>
 						</c:forEach>
 					</ul>
 				</div>
 		        <div id="tab5" class="tab_content">
 		        	<ul>
 						<c:forEach items="${cate_5_list}" var="dto">
-							<li><img src="${dto.company_logo_url}"/><a href="#">${dto.company_title}</a></li>
+							<li><img src="${dto.company_logo_url}"/><a href="company_detail?company_no_seq=${dto.company_no_seq}">${dto.company_title}</a></li>
 						</c:forEach>
 					</ul>
 				</div>
 		        <div id="tab6" class="tab_content">
 					<ul>
 						<c:forEach items="${cate_6_list}" var="dto">
-							<li><img src="${dto.company_logo_url}"/><a href="#">${dto.company_title}</a></li>
+							<li><img src="${dto.company_logo_url}"/><a href="company_detail?company_no_seq=${dto.company_no_seq}">${dto.company_title}</a></li>
 						</c:forEach>
 					</ul>
 				</div>
 		        <div id="tab7" class="tab_content">
 					<ul>
 						<c:forEach items="${cate_7_list}" var="dto">
-							<li><img src="${dto.company_logo_url}"/><a href="#">${dto.company_title}</a></li>
+							<li><img src="${dto.company_logo_url}"/><a href="company_detail?company_no_seq=${dto.company_no_seq}">${dto.company_title}</a></li>
 						</c:forEach>
 					</ul>
 				</div>
 		        <div id="tab8" class="tab_content">
 					<ul>
 						<c:forEach items="${cate_8_list}" var="dto">
-							<li><img src="${dto.company_logo_url}"/><a href="#">${dto.company_title}</a></li>
+							<li><img src="${dto.company_logo_url}"/><a href="company_detail?company_no_seq=${dto.company_no_seq}">${dto.company_title}</a></li>
 						</c:forEach>
 					</ul>
 				</div>
 		        <div id="tab9" class="tab_content">
 		        	<ul>
 						<c:forEach items="${cate_9_list}" var="dto">
-							<li><img src="${dto.company_logo_url}"/><a href="#">${dto.company_title}</a></li>
+							<li><img src="${dto.company_logo_url}"/><a href="company_detail?company_no_seq=${dto.company_no_seq}">${dto.company_title}</a></li>
 						</c:forEach>
 					</ul>
 		        </div>
 		        <div id="tab10" class="tab_content">
 					<ul>
 						<c:forEach items="${cate_10_list}" var="dto">
-							<li><img src="${dto.company_logo_url}"/><a href="#">${dto.company_title}</a></li>
+							<li><img src="${dto.company_logo_url}"/><a href="company_detail?company_no_seq=${dto.company_no_seq}">${dto.company_title}</a></li>
 						</c:forEach>
 					</ul>
 				</div>

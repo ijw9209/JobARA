@@ -17,6 +17,7 @@
 <link rel="stylesheet"
 	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <title>추가정보입력</title>
 </head>
 <body>
@@ -45,7 +46,13 @@
 								</tr>
 								<tr>
 									<td><b>주소</b></td>
-									<td><input type="text" name="member_addr" id="job_addr" class="form-control"></td>
+									<td><input type="text" name="member_addr" id="originaddr1" readonly="readonly" class="form-control" placeholder="주소찾기 버튼을 클릭하여주세요."/><br/>
+									<input type="text" name="member_addr" id="originaddr2" readonly="readonly" class="form-control"/><br/>
+									<input type="button" id="originfindaddr" class="form-control" value="주소 찾기" /></td>
+								</tr>
+								<tr>
+									<th>상세주소</th>
+									<td><input type="text" name="member_addr" id="addrDetail" class="form-control" placeholder="상세주소를 입력해주세요"></td>
 								</tr>
 								<tr>
 									<td><b>전화번호</b></td>
@@ -79,9 +86,14 @@
 			fr.job_birth.focus();
 			return false;
 		}
-		if (fr.job_addr.value == "") {
-			alert("주소를 입력해주세요");
-			fr.job_addr.focus();
+		if(fr.originaddr1.value == ""){
+			alert("주소찾기 버튼을 클릭하여주세요.");
+			fr.originaddr1.focus();
+			return false;
+		}
+		if(fr.addrDetail.value == ""){
+			alert('상세주소를 입력해주세요');
+			fr.addrDetail.focus();
 			return false;
 		}
 		if (fr.job_tel.value == "") {
@@ -113,7 +125,31 @@
 			yearRange: '1950:2013',
 		});
 	}); 
-	
+	$(function(){
+	      $("#originfindaddr").click(function(){
+	         new daum.Postcode({
+	             oncomplete: function(data) {
+	             var fullRoadAddr = data.roadAddress;
+	             var extraRoadAddr = '';
+	             
+	             if(data.bname !== '' && data.apartment === 'Y'){
+	                extraRoadAddr += data.bname;
+	             }
+	             if(data.buildingName !== '' && data.apartment === 'Y'){
+	                extraRoadAddr += (extraRoadAddr !== '' ? ', ' +data.buildingName : data.build)
+	             }
+	             if(extraRoadAddr !== ''){
+	                extraRoadAddr = ' (' + extraRoadAddr + ')';
+	             }
+	             if(fullRoadAddr !== ''){
+	                fullRoadAddr += extraRoadAddr;
+	             }
+	            document.getElementById("originaddr1").value = data.zonecode; // 우편번호
+	            document.getElementById("originaddr2").value = fullRoadAddr;
+	             }
+	         }).open();
+	      })
+	   });
 	
 </script>
 </html>

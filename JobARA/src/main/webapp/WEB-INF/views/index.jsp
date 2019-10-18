@@ -151,7 +151,7 @@ color: #fff;
 								<li class="menu_list"><a class="menu_a" style="color: #fff;" href="companylist">기업정보</a></li>
 								<li class="menu_list"><a class="menu_a" style="color: #fff;" href="calendar.do">취업박람회</a></li>
 								<li class="menu_list"><a class="menu_a" style="color: #fff;">고객센터</a></li>
-								<li class="menu_list"><a class="menu_a" style="color: #fff;">마이페이지</a></li>
+								<li class="menu_list"><a class="menu_a" style="color: #fff;" href="user/userpage">마이페이지</a></li>
 		   					</ul></div>
 			</div>
 			<div id="boxgallery" class="boxgallery" data-effect="effect-1">

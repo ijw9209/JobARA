@@ -218,7 +218,7 @@ svg {
 				<div class="basic_info_item">
 					<img alt="" src="/resources/image/company_detail_employees.png" style="width:17%;float:left;">
 					<div class="basic_info_indestry">
-					<span class="info_item_subject"><strong>${dto.company_all_people}</strong></span><br/>
+					<span class="info_item_subject"><c:if test="${empty dto.company_all_people}"><strong>-</strong></c:if><strong>${dto.company_all_people}</strong></span><br/>
 					<span style="width: 100%; box-sizing: border-box; font-size: 13px; color: #a4a6ad;">사원수</span>
 					</div>
 				</div>

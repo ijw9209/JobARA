@@ -1,10 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<%@ include file="/WEB-INF/include/header.jspf"  %>
+<meta charset="UTF-8">
+<meta name="_csrf" th:content="${_csrf.token}"/>
+<meta name="_csrf_header" th:content="${_csrf.headerName}"/>
+<%@ include file="/WEB-INF/include/header.jspf"%>
+<%@ include file="/WEB-INF/include/header.jsp"%>
 <title>User Page</title>
 </head>
 <body>
