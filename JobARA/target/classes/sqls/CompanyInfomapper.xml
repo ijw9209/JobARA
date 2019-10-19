@@ -7,7 +7,7 @@
 	</insert>
 
 	<select id="companylist" resultType="CompanyInfoDto">
-	SELECT * FROM COMPANY_INFO
+	SELECT * FROM (SELECT * FROM COMPANY_INFO) WHERE ROWNUM <![CDATA[ < ]]>20
 	</select>
 	
 	<select id="category_1_list" resultType="CompanyInfoDto">

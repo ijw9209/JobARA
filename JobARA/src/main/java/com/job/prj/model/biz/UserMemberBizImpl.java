@@ -72,6 +72,11 @@ public class UserMemberBizImpl implements UserMemberBiz,UserDetailsService {
 		// TODO Auto-generated method stub
 		return dao.noSelectOne(id);
 	}
+
+	@Override
+	public UserMemberDto selectOne(String id) {
+		return dao.selectOne(id);
+	}
 	
 
 }

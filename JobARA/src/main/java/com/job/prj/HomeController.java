@@ -56,7 +56,6 @@ public class HomeController {
 				 }
 
 		  }
-		  System.out.println("account >> " + account);
 		  return "index";
 	  }
 	  @RequestMapping(value = "/maria.do", method = RequestMethod.GET) 
@@ -76,11 +75,7 @@ public class HomeController {
 	  return "user";
 
 	  }
-	  @RequestMapping("/user/userpage")
-	  public String userPage() {
-		  return "userpage";
-	  }
-	  
+	
 	  @RequestMapping("/buis/buispage")
 	  public String buisPage() {
 		  return "buispage";

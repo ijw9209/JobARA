@@ -30,6 +30,7 @@ public class BuisMemberController {
 		UserMemberBiz.buis_regist(dto);
 		int no = UserMemberBiz.noSelectOne(dto.getMember_id());
 		model.addAttribute("member_no_seq", no);
+		
 		return "buisplusregist";
 	}
 	
