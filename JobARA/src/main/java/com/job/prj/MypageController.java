@@ -27,7 +27,7 @@ public class MypageController {
 	 model.addAttribute("dto", dto);
 	 
 	 model.addAttribute("countresume", UserResumebiz.countresume(dto.getMember_no_seq()));
-		  
+	 model.addAttribute("resumedetail",UserResumebiz.selectList(dto.getMember_no_seq()));	
 	 return "userpage";
 	 }
 }

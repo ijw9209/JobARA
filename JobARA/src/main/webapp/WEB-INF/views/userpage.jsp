@@ -14,7 +14,7 @@
 .wrap{
 	width: 100%;
     background-color: #f8f8f8;
-    height: 1000px;
+    height: 1200px;
     position: relative;
     top: -50px;
 }
@@ -100,7 +100,82 @@ padding-top: 130px;
     font-size: 19px;
     color: #444;
     font-weight: 800;
-    
+}
+
+.aside_menu{
+	padding-left: 25px;
+    padding-top: 15px;
+    font-weight: 800;
+    font-size: 17px;
+}
+
+.aside_menu_resume{
+	padding-top: 10px;
+    padding-left: 35px;
+	font-size: 17px;
+}
+
+.aside_wrap_two{
+	width: 220px;
+    background-color: #fff;
+    height: 280px;
+    border: 1px solid #ebebeb;
+    float: left;
+    margin-top: 35px;
+}
+
+.center_wrap_two{
+	width: 75%; 
+    background-color: #fff;
+    height: 650px;
+    border: 1px solid #ebebeb;
+    margin-left: 250px;
+    margin-top: 35px;
+}
+
+.title_wrap{
+padding: 35px;
+
+}
+.title_wrap h3{
+font-weight: 600;
+}
+
+table{
+	width: 95%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+    word-wrap: break-word;
+    word-break: keep-all;
+
+}
+.resume_list table tr th{
+	padding: 22px 0;
+    border-top: 1px solid #666;
+    border-bottom: none;
+    background-color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.th_title, .td_content{
+color: #575757;
+}
+.resume_list table tr td{
+    padding: 22px 0;
+    border-bottom: 1px solid #e6e6e6;
+    font-size: 18px;
+}
+.td_content{
+    text-align: center;
+}
+
+.resume_list{
+    padding-left: 30px;
+}
+.padding-left-90px{
+	padding-left: 90px;
 }
 </style>
 </head>
@@ -136,9 +211,71 @@ padding-top: 130px;
      			</ul>
      		</div>
      		</section>
-     		<aside class="aside_wrap">
-     			
+     		<aside class="aside_wrap_two">
+     			<ul>
+     				<li class="aside_menu">이력서관리</li>
+     				<li class="aside_menu_resume"><a>ㄴ이력서등록</a></li>
+     				<li class="aside_menu_resume"><a>ㄴ이력서수정</a></li>
+     				<li class="aside_menu_resume"><a>ㄴ이력서삭제</a></li>
+     				<li class="aside_menu">개인정보관리</li>
+     				<li class="aside_menu_resume"><a>ㄴ개인정보수정</a></li>
+     				<li class="aside_menu_resume"><a>ㄴ회원탈퇴</a></li>
+     			</ul>
      		</aside>
+     		<div class="center_wrap_two">
+     			<div class="title_wrap">
+     				<h3>이력서 리스트</h3>
+     			</div>
+     			<div class="resume_list">
+     			<table summary="이력서제목 이력서작성일 이력서수정 이력서삭제">
+				<colgroup>
+					<col width="30">
+					<col width="200">
+					<col width="100">
+					<col width="80">
+					<col width="80">
+				</colgroup>
+				<thead>
+					<tr>
+						<th>
+							<div class="th_title">번호</div>
+						</th>
+						<th>
+							<div class="th_title padding-left-90px">이력서제목</div>
+						</th>
+						<th>
+							<div class="th_title">이력서작성일</div>
+						</th>
+						<th>
+							<div class="th_title">이력서수정</div>
+						</th>
+						<th>
+							<div class="th_title">이력서삭제</div>
+						</th>
+					</tr>
+				</thead>
+			<c:choose>
+		<c:when test="${empty resumedetail}">
+			<tr>
+				<td colspan="3">----------------내용이없습니다-------</td>
+			</tr>
+		</c:when>
+		<c:otherwise>
+			<c:forEach items="${resumedetail}" var="dto" varStatus="stat">
+					<tr>
+						<td>${stat.count }</td>
+						<td><div class="td_content">${dto.resume_title}</div></td>
+						<td><div class="td_content">${dto.reg}</div></td>					
+						<td><div class="td_content">수정</div></td>
+						<td><div class="td_content">삭제</div></td>
+					</tr>
+			</c:forEach>
+			</c:otherwise>
+		</c:choose>			
+		</tbody>	
+			</table>
+			</div>
+     		</div>
      	</div>
      </div>
 </body>
