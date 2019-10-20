@@ -8,6 +8,8 @@
 </head>
 <body>
 
+<%@ include file="/WEB-INF/include/header_Buis.jsp"%>
+
 <h1>buis page</h1>
 
 </body>

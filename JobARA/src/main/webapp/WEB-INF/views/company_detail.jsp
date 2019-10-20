@@ -6,8 +6,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width"/>
 <%@ include file="/WEB-INF/include/header.jspf"%>
 <%@ include file="/WEB-INF/include/header.jsp"%>
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <title>Insert title here</title>
 <style type="text/css">
 	
@@ -195,6 +198,9 @@ svg {
 			</div>
 			<div class="company_title">
 				<h1>${dto.company_title }</h1>
+				<a id="kakao-link-btn" href="javascript:;" style="float: right; position: relative; bottom: 32px;">
+				<img src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"/>
+				</a>
 			</div>
 			</div>
 		</div>
@@ -272,6 +278,8 @@ svg {
 	<%@ include file="/WEB-INF/include/footer.jsp"%>
 	</div>
 	<input type="hidden" id="salary" value="${dto.company_salray }"/>
+	<input type="hidden" id="title" value="${dto.company_title }"/>
+	<input type="hidden" id="addr" value="${addr}"/>
 </body>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script>
@@ -336,6 +344,43 @@ svg {
     var tooltip = d3.select("body").append("div")
         .attr("class", "toolTip")
         .style("display", "none");
- 
+    
+    
+	var company_title = $("#title").val();
+	var company_salary = $("#salary").val();
+	var company_addr = $("#addr").val();
+  //<![CDATA[
+    // // 사용할 앱의 JavaScript 키를 설정해 주세요.
+    Kakao.init('10ebbec45f0bab4b9e878300976afda2');
+    // // 카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다. 
+    Kakao.Link.createDefaultButton({
+      container: '#kakao-link-btn',
+      objectType: 'location',
+      address: company_addr,
+      content: {
+        title: company_title,
+        description: '평균연봉 : ' + company_salary + "만원",
+        imageUrl: 'https://cdn.indiepost.co.kr/uploads/images/2018/11/23/3UIUdo-700x400.png',
+        link: {
+          mobileWebUrl: 'https://developers.kakao.com',
+          webUrl: 'https://developers.kakao.com'
+        }
+      },
+      social: {
+        likeCount: 286,
+        commentCount: 45,
+        sharedCount: 845
+      },
+      buttons: [
+        {
+          title: '웹으로 보기',
+          link: {
+            mobileWebUrl: 'https://developers.kakao.com',
+            webUrl: 'https://developers.kakao.com'
+          }
+        }
+      ]
+    });
+  //]]>
 </script>
 </html>

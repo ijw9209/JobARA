@@ -80,9 +80,9 @@
 			<div class="container">
 				<div class="width-100 display-block">
 				<ul>
-					<li><b>지역별</b></li>
-					<li>공채</li>
-					<li>추천</li>
+					<li><b>이력서관리</b></li>
+					<li>채용공고</li>
+					<li>이력서보기</li>
 					<li>기업∙연봉</li>
 					<li>뉴스∙자료</li>
 					<li>인재검색</li>

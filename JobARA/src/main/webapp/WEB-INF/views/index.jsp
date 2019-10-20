@@ -140,7 +140,6 @@ color: #fff;
 </head>
 <body>
           
-          
 		<c:if test="${empty role or role eq 'ROLE_USER'}">
    		<div class="container">
 			<!-- Top Navigation -->
@@ -179,7 +178,7 @@ color: #fff;
 			</header>
 		</div>
    		
-	<%@ include file="/WEB-INF/include/footer.jsp"%>
+	
    		</c:if>
    		
    		<c:if test="${not empty role and role eq 'ROLE_BUIS'}">
@@ -192,7 +191,7 @@ color: #fff;
 								<li class="menu_list"><a class="menu_a" style="color: #fff;">지원자관리</a></li>
 								<li class="menu_list"><a class="menu_a" style="color: #fff;">인재검색</a></li>
 								<li class="menu_list"><a class="menu_a" style="color: #fff;">고객센터</a></li>
-								<li class="menu_list"><a class="menu_a" style="color: #fff;">마이페이지</a></li>
+								<li class="menu_list"><a class="menu_a" style="color: #fff;" href="buis/buispage">마이페이지</a></li>
 		   					</ul></div>
 			</div>
 			<div id="boxgallery" class="boxgallery" data-effect="effect-1">
@@ -219,11 +218,10 @@ color: #fff;
 				</nav>
 			</header>
 		</div>
-   		<%@ include file="/WEB-INF/include/footer.jsp"%>
-   		</c:if>
+   		</c:if>  
 </body>
 <script src="/resources/js/classie.js"></script>
-<script src="/resources/js/boxesFx.js"></script>
+<script src="/resources/js/boxesFx.js"></script> 
 <script type="text/javascript">
 new BoxesFx( document.getElementById( 'boxgallery' ) );
 
