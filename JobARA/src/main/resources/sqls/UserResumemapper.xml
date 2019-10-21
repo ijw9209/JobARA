@@ -9,4 +9,92 @@
 	WHERE U.RESUME_NO_SEQ = D.RESUME_NO_SEQ
 	AND U.MEMBER_NO_SEQ = #{member_no_seq} 
   </select>
+  
+  <resultMap type="UserResumeDto" id="userMap">
+		<id column="RESUME_NO_SEQ" property="resume_no_seq" />
+		<id column="MEMBER_NO_SEQ" property="member_no_seq" />
+		<result column="RESUME_DATE" property="resume_date" />
+		<association javaType="UserResumeDetailDto"
+			property="userresumedetaildto">
+			<id column="RESUME_NO_SEQ" property="resume_no_seq" />
+			<id column="MEMBER_NO_SEQ" property="member_no_seq" />
+			<result column="RESUME_TITLE" property="resume_title" />
+			<result column="RESUME_PHOTO" property="resume_photo" />
+			<result column="RESUME_MILITARY_CHK"
+				property="resume_military_chk" />
+			<result column="RESUME_MILITARY_GROUP"
+				property="resume_military_group" />
+			<result column="RESUME_MILITARY_LASTCLASS"
+				property="resume_military_lastclass" />
+			<result column="RESUME_MILITARY_STARTDAY"
+				property="resume_military_startday" />
+			<result column="RESUME_MILITARY_ENDDAY"
+				property="resume_military_endday" />
+			<result column="RESUME_FINAL_EDU" property="resume_final_edu" />
+			<result column="RESUME_SCHOOLNAME"
+				property="resume_schoolname" />
+			<result column="RESUME_GRADUATED_YEAR"
+				property="resume_graduated_year" />
+			<result column="RESUME_GRADUATED_STATE"
+				property="resume_graduated_state" />
+			<result column="RESUME_CRTI_ONE_NAME"
+				property="resume_crti_one_name" />
+			<result column="RESUME_CRTI_ONE_ISSUE"
+				property="resume_crti_one_issue" />
+			<result column="RESUME_CRTI_ONE_DAY"
+				property="resume_crti_one_day" />
+			<result column="RESUME_CRTI_TWO_NAME"
+				property="resume_crti_two_name" />
+			<result column="RESUME_CRTI_TWO_ISSUE"
+				property="resume_crti_two_issue" />
+			<result column="RESUME_CRTI_TWO_DAY"
+				property="resume_crti_two_day" />
+			<result column="RESUME_CRTI_THREE_NAME"
+				property="resume_crti_three_name" />
+			<result column="RESUME_CRTI_THREE_ISSUE"
+				property="resume_crti_three_issue" />
+			<result column="RESUME_CRTI_THREE_DAY"
+				property="resume_crti_three_day" />
+			<result column="RESUME_SELF_ONE_TITLE"
+				property="resume_self_one_title" />
+			<result column="RESUME_SELF_ONE_CONTENT"
+				property="resume_self_one_content" />
+			<result column="RESUME_SELF_TWO_TITLE"
+				property="resume_self_two_title" />
+			<result column="RESUME_SELF_TWO_CONTENT"
+				property="resume_self_two_content" />
+
+		</association>
+		
+	</resultMap>
+	
+	<select id="UserResumelist" resultMap="userMap">
+
+		SELECT E.RESUME_DATE,D.*
+		FROM USER_RESUME E,USER_RESUME_DETAIL D
+		WHERE E.RESUME_NO_SEQ=D.RESUME_NO_SEQ
+		AND E.MEMBER_NO_SEQ=#{member_no_seq}
+		ORDER BY E.RESUME_NO_SEQ ASC
+
+	</select>
+
+	<insert id="insertResume" parameterType="UserResumeDto">
+		insert into
+		user_resume(resume_no_seq,member_no_seq,resume_date)
+		values
+		(resumeseq.nextval,#{member_no_seq},sysdate)
+		
+	</insert>
+	
+	<update id="updateResume" parameterType="UserResumeDto">
+		update user_resume set 
+		resume_date=SYSDATE
+		where resume_no_seq=#{resume_no_seq}
+		AND MEMBER_NO_SEQ=#{member_no_seq}
+	</update>
+	
+	<delete id="deleteResume" parameterType="UserResumeDto">
+	
+	DELETE FROM USER_RESUME WHERE RESUME_NO_SEQ=#{resume_no_seq} AND MEMBER_NO_SEQ=#{member_no_seq}
+	</delete>
 </mapper>

@@ -26,6 +26,7 @@
 	<resources mapping="/image/**" location="/resources/image/" /> 
 	<resources mapping="/js/**" location="/resources/js/" /> 
 	<resources mapping="/resources/**" location="/resources/" />
+	<resources location="/user/" mapping="/user/**"></resources>
 	
 	
 </beans:beans>

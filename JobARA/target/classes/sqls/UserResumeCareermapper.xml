@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="UserResumeCareer">
+	
+	
+
+
+	<insert id="insertResumeCareer" parameterType="UserResumeCareerDto">
+		insert into user_resume_career values(careerseq.nextval,resumeseq.nextval-2,#{member_no_seq},#{career_ent},#{career_dept},
+		#{career_startday},#{career_endday},#{career_in_office},#{career_position},#{career_duty},#{career_salary})
+	
+	</insert>
+	
+	<update id="updateResumeCareer" parameterType="UserResumeCareerDto">
+	update user_resume_career set career_ent=#{career_ent},career_dept=#{career_dept},
+	career_startday=#{career_startday},career_endday=#{career_endday},
+	career_in_office=#{career_in_office},career_position=#{career_position},
+	career_duty=#{career_duty},career_salary=#{career_salary}
+	where resume_no_seq=#{resume_no_seq} and member_no_seq=#{member_no_seq}
+		
+	</update>
+	<delete id="deleteResumeCareer" parameterType="UserResumeDto">
+	delete from user_resume_career where resume_no_seq=#{resume_no_seq} and member_no_seq=#{member_no_seq}
+	
+	
+	</delete>
   
 </mapper>

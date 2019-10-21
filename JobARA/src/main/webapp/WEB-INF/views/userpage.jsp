@@ -13,7 +13,7 @@
 <style type="text/css">
 .wrap{
 	width: 100%;
-    background-color: #f8f8f8;
+    background-color: #f3f3f4;
     height: 1200px;
     position: relative;
     top: -50px;
@@ -187,12 +187,12 @@ color: #575757;
      		<section class="myContent">
      		<aside class="aside_wrap">
      			<div class="profile_info">
-     				<div class="profile_photo"></div>
+     				<div class="profile_photo"><img src="/resources/image/M_Photo_View.png"/></div>
      				<div class="profile_name">
      				<strong>${dto.member_name}</strong>님
      				</div>
      				<div class="resume_view">
-						<a href="#">내이력서</a>     				
+						<a href="form.do?member_no_seq=${seq}">이력서 관리</a>
      				</div>
      			</div>
      		</aside>	

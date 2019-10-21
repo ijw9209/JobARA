@@ -37,4 +37,11 @@
 	<select id="noselectOne" parameterType="String" resultType="int">
 	SELECT MEMBER_NO_SEQ FROM USER_MEMBER WHERE MEMBER_ID = #{member_id}
 	</select>
+	
+	<update id="resumemember_update">
+		update user_member set 
+		member_name=#{member_name},member_birth=#{member_birth},member_addr=#{member_addr},
+		member_tel=#{member_tel},member_email=#{member_email},member_gender=#{member_gender}
+		where member_no_seq=#{member_no_seq}
+	</update>
 </mapper>

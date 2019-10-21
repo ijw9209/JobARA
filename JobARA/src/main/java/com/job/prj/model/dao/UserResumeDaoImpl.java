@@ -44,5 +44,33 @@ public class UserResumeDaoImpl implements UserResumeDao {
 		}
 		return list;
 	}
+	
+	@Override
+	public List<UserResumeDto> resumeList(int member_no_seq) {
+		
+		List<UserResumeDto> list=new ArrayList<UserResumeDto>();
+		
+		try {
+			list= sqlSession.selectList(namespace+"UserResumelist",member_no_seq);
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("RESUMELIST ERROR");
+		}
+		
+		
+		return list;
+	}
+
+	@Override
+	public int resumeInsert(UserResumeDto resumedto) {
+		
+		int res = 0;
+		try {
+			res = sqlSession.insert(namespace+"insertResume", resumedto);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return res;
+	}
 
 }

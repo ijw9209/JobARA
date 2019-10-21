@@ -1,5 +1,162 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="UserResumeDetail">
+<resultMap type="UserResumeDto" id="userMap">
+		<id column="RESUME_NO_SEQ" property="resume_no_seq" />
+		<id column="MEMBER_NO_SEQ" property="member_no_seq" />
+		<result column="RESUME_DATE" property="resume_date" />
+	
+		<!-- <association javaType="UserMemberDto" property="memberdto">
+			<id column="MEMBER_NO_SEQ" property="member_no_seq"/>
+			<id column="MEMBER_ID" property="member_id"/>
+			<result column="MEMBER_PW" property="member_pw"/>
+			<result column="MEMBER_NAME" property="member_name"/>
+			<result column="MEMBER_BIRTH" property="member_birth"/>
+			<result column="MEMBER_ADDR" property="member_addr"/>
+			<result column="MEMBER_TEL" property="member_tel"/>
+			<result column="MEMBER_EMAIL" property="member_email"/>
+			<result column="MEMBER_ADDR" property=""/>
+			<result column="MEMBER_ENABLED" property="member_email_addr"/>
+			<result column="MEMBER_GENDER" property="member_enabled"/>
+			<result column="MEMBER_POINT" property="member_gender"/>
+			<result column="MEMBER_REGDATE" property="member_point"/>
+			<result column="MEMBER_ROLE" property="member_regdate"/>
+			<result column="MEMBER_BUIS_NUM" property=""/>
+		
+		
+		</association> -->
+		<association javaType="UserResumeDetailDto"
+			property="userresumedetaildto">
+			<id column="RESUME_NO_SEQ" property="resume_no_seq" />
+			<id column="MEMBER_NO_SEQ" property="member_no_seq" />
+			<result column="RESUME_PHOTO" property="resume_photo" />
+			<result column="RESUME_TITLE" property="resume_title" />
+			<result column="RESUME_MILITARY_CHK"
+				property="resume_military_chk" />
+			<result column="RESUME_MILITARY_GROUP"
+				property="resume_military_group" />
+			<result column="RESUME_MILITARY_LASTCLASS"
+				property="resume_military_lastclass" />
+			<result column="RESUME_MILITARY_STARTDAY"
+				property="resume_military_startday" />
+			<result column="RESUME_MILITARY_ENDDAY"
+				property="resume_military_endday" />
+			<result column="RESUME_FINAL_EDU" property="resume_final_edu" />
+			<result column="RESUME_SCHOOLNAME"
+				property="resume_schoolname" />
+			<result column="RESUME_GRADUATED_YEAR"
+				property="resume_graduated_year" />
+			<result column="RESUME_GRADUATED_STATE"
+				property="resume_graduated_state" />
+			<result column="RESUME_CRTI_ONE_NAME"
+				property="resume_crti_one_name" />
+			<result column="RESUME_CRTI_ONE_ISSUE"
+				property="resume_crti_one_issue" />
+			<result column="RESUME_CRTI_ONE_DAY"
+				property="resume_crti_one_day" />
+			<result column="RESUME_CRTI_TWO_NAME"
+				property="resume_crti_two_name" />
+			<result column="RESUME_CRTI_TWO_ISSUE"
+				property="resume_crti_two_issue" />
+			<result column="RESUME_CRTI_TWO_DAY"
+				property="resume_crti_two_day" />
+			<result column="RESUME_CRTI_THREE_NAME"
+				property="resume_crti_three_name" />
+			<result column="RESUME_CRTI_THREE_ISSUE"
+				property="resume_crti_three_issue" />
+			<result column="RESUME_CRTI_THREE_DAY"
+				property="resume_crti_three_day" />
+			<result column="RESUME_SELF_ONE_TITLE"
+				property="resume_self_one_title" />
+			<result column="RESUME_SELF_ONE_CONTENT"
+				property="resume_self_one_content" />
+			<result column="RESUME_SELF_TWO_TITLE"
+				property="resume_self_two_title" />
+			<result column="RESUME_SELF_TWO_CONTENT"
+				property="resume_self_two_content" />
+
+		</association>
+		<association javaType="UserResumeCareerDto" property="careerdto">
+		
+			<id column="CAREER_NO_SEQ" property="career_no_seq"/>
+			<id column="RESUME_NO_SEQ" property="resume_no_seq"/>
+			<id column="MEMBER_NO_SEQ" property="member_no_seq"/>
+			<result column="CAREER_ENT" property="career_ent"/>
+			<result column="CAREER_DEPT" property="career_dept"/>
+			<result column="CAREER_STARTDAY" property="career_startday"/>
+			<result column="CAREER_ENDDAY" property="career_endday"/>
+			<result column="CAREER_IN_OFFICE" property="career_in_office"/>
+			<result column="CAREER_POSITION" property="career_position"/>
+			<result column="CAREER_DUTY" property="career_duty"/>
+			<result column="CAREER_SALARY" property="career_salary"/>
+		</association>
+		
+		
+
+	</resultMap>
+
+
+	<select id="selectOneResume" parameterType="UserResumeDetailDto" resultMap="userMap">
+	
+		
+	SELECT A.RESUME_DATE,B.*,C.*
+		FROM USER_RESUME A,USER_RESUME_DETAIL B,USER_RESUME_CAREER C
+		WHERE A.RESUME_NO_SEQ=B.RESUME_NO_SEQ
+		AND B.RESUME_NO_SEQ=C.RESUME_NO_SEQ
+		AND A.RESUME_NO_SEQ=#{resume_no_seq}
+		AND A.MEMBER_NO_SEQ=#{member_no_seq}
+	
+	</select>
+	
+	<insert id="insertResumeDetail" parameterType="UserResumeDetailDto">
+		insert into user_resume_detail(resume_no_seq,member_no_seq,resume_title,resume_photo,resume_military_chk,resume_military_group,
+		resume_military_lastclass,resume_military_startday,resume_military_endday,resume_final_edu,resume_schoolname,
+		resume_graduated_year,resume_graduated_state,resume_crti_one_name,resume_crti_one_issue,resume_crti_one_day,
+		resume_crti_two_name,resume_crti_two_issue,resume_crti_two_day,resume_crti_three_name,resume_crti_three_issue,
+		resume_crti_three_day,resume_self_one_title,resume_self_one_content,resume_self_two_title,resume_self_two_content) 
+		values (resumeseq.nextval-1,#{member_no_seq},#{resume_title},#{resume_photo},#{resume_military_chk},#{resume_military_group},
+		#{resume_military_lastclass},#{resume_military_startday},
+		#{resume_military_endday},#{resume_final_edu},#{resume_schoolname},
+		#{resume_graduated_year},#{resume_graduated_state},#{resume_crti_one_name},
+		#{resume_crti_one_issue},#{resume_crti_one_day},#{resume_crti_two_name},
+		#{resume_crti_two_issue},#{resume_crti_two_day},#{resume_crti_three_name},
+		#{resume_crti_three_issue},#{resume_crti_three_day},#{resume_self_one_title},
+		#{resume_self_one_content},#{resume_self_two_title},#{resume_self_two_content})
+	
+	</insert>
+	
+		
+	<update id="updateResumeDetail" parameterType="UserResumeDetailDto">
+	
+		UPDATE USER_RESUME_DETAIL SET 
+		RESUME_TITLE=#{resume_title},RESUME_PHOTO=#{resume_photo},RESUME_MILITARY_CHK=#{resume_military_chk},
+		RESUME_MILITARY_GROUP=#{resume_military_group},RESUME_MILITARY_LASTCLASS=#{resume_military_lastclass},
+		RESUME_MILITARY_STARTDAY=#{resume_military_startday},RESUME_MILITARY_ENDDAY=#{resume_military_endday},
+		RESUME_FINAL_EDU=#{resume_final_edu},RESUME_SCHOOLNAME=#{resume_schoolname},
+		RESUME_GRADUATED_YEAR=#{resume_graduated_year},RESUME_GRADUATED_STATE=#{resume_graduated_state},
+		RESUME_CRTI_ONE_NAME=#{resume_crti_one_name},RESUME_CRTI_ONE_ISSUE=#{resume_crti_one_issue},
+		RESUME_CRTI_ONE_DAY=#{resume_crti_one_day},RESUME_CRTI_TWO_NAME=#{resume_crti_two_name},
+		RESUME_CRTI_TWO_ISSUE=#{resume_crti_two_issue},RESUME_CRTI_TWO_DAY=#{resume_crti_two_day},
+		RESUME_CRTI_THREE_NAME=#{resume_crti_three_name},RESUME_CRTI_THREE_ISSUE=#{resume_crti_three_issue},
+		RESUME_CRTI_THREE_DAY=#{resume_crti_three_day},RESUME_SELF_ONE_TITLE=#{resume_self_one_title},
+		RESUME_SELF_ONE_CONTENT=#{resume_self_one_content},RESUME_SELF_TWO_TITLE=#{resume_self_two_title},
+		RESUME_SELF_TWO_CONTENT=#{resume_self_two_content}
+		WHERE RESUME_NO_SEQ=#{resume_no_seq} AND MEMBER_NO_SEQ=#{member_no_seq}
+	
+	</update>
+	
+	<delete id="deleteResumeDetail" parameterType="UserResumeDto" >
+	
+	DELETE FROM USER_RESUME_DETAIL WHERE RESUME_NO_SEQ=#{resume_no_seq} AND MEMBER_NO_SEQ=#{member_no_seq}
+	
+	</delete>
+	
+	
+	
+
+
+
+
+
   
 </mapper>
