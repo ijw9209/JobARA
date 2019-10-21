@@ -453,6 +453,7 @@ body {
 <body>
 
 	<div id="calendar"></div>
-
+	
 </body>
+<%@ include file="/WEB-INF/include/footer.jsp"%>
 </html>

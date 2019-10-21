@@ -139,7 +139,12 @@ color: #fff;
 </style>
 </head>
 <body>
-          
+		<!-- 관리자 페이지 보내기 -->
+        <c:if test="${not empty role and role eq 'ROLE_ADMIN'}">
+        <script type="text/javascript">
+        	location.href="admin/adminpage";
+        </script>
+        </c:if>
 		<c:if test="${empty role or role eq 'ROLE_USER'}">
    		<div class="container">
 			<!-- Top Navigation -->

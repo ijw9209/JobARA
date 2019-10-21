@@ -51,7 +51,7 @@ public class HomeController {
 			  Iterator<? extends GrantedAuthority> iter = authorities.iterator(); 
 			  while (iter.hasNext()) { 
 				  GrantedAuthority auth = iter.next(); 
-				  System.out.println(auth.getAuthority()); 
+				  System.out.println(auth.getAuthority());
 				  model.addAttribute("role",auth.getAuthority());
 				 }
 
@@ -79,6 +79,12 @@ public class HomeController {
 	  @RequestMapping("/buis/buispage")
 	  public String buisPage() {
 		  return "buispage";
+	  }
+	  
+	  @RequestMapping("/admin/adminpage")
+	  public String adminPage() {
+		  return "adminpage";
+		  
 	  }
 	 
 }

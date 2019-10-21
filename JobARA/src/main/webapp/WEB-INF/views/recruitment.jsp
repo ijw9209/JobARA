@@ -9,10 +9,6 @@
 <%@ include file="/WEB-INF/include/header.jsp"%>
 <style type="text/css">
 
-	div {
-		display: inline;
-		 }
-	
 
 </style>
 <title>Insert title here</title>

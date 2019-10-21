@@ -29,10 +29,16 @@ public class UserResumeDetailDto {
 	private String resume_self_two_title;
 	private String resume_self_two_content;
 	private String reg;
-	
+	private int rownum;
+
 	public UserResumeDetailDto() {
 	}
-
+	public int getRownum() {
+		return rownum;
+	}
+	public void setRownum(int rownum) {
+		this.rownum = rownum;
+	}
 	public int getResume_no_seq() {
 		return resume_no_seq;
 	}

@@ -46,6 +46,7 @@
 		float:left;
 		width:15%;
 		text-align:left;
+		cursor: pointer;
 	}
 	.footer-info {
 		font-size:14px;
@@ -58,6 +59,9 @@
 	}
 	a{
 		color: black;
+	}
+	.menu_list{
+		cursor: pointer;
 	}
 </style>
 <body>
@@ -80,20 +84,19 @@
 			<div class="container">
 				<div class="width-100 display-block">
 				<ul>
-					<li><b>지역별</b></li>
-					<li>공채</li>
-					<li>추천</li>
-					<li>기업∙연봉</li>
-					<li>뉴스∙자료</li>
-					<li><a onclick="chattpop();">사용자간 대화</a></li>
-					<li class="float-right">공고등록</li>
+					<li><b class="menu_list"><a href="/recruitment.do">채용공고</a></b></li>
+					<li><b class="menu_list"><a href="/companylist">기업</a></b></li>
+					<li><b class="menu_list"><a href="/calendar.do">채용박람회</a></b></li>
+					<li><b class="menu_list" style="margin-left: 20px;">기업∙연봉</b></li>
+					<li style="width: 10%; margin-left: 15px;"><b class="menu_list"><a onclick="chattpop();">사용자간 대화</a></b></li>
+					<li class="float-right"><b><a href="/user/userpage/">마이페이지</a></b></li>
 				
 					<sec:authorize access="isAnonymous()">
-   						<li class="float-right"><a href="login.do">로그인</a></li>
+   						<li class="float-right"><b><a href="login.do">로그인</a></b></li>
 					</sec:authorize>
 					<sec:authorize access="isAuthenticated()">
    					<form action="logout" method="post" id="logout">
-						<li class="float-right" id="logout"><a id="a_tag" onclick="logoutsubmit()">로그아웃</a></li>
+						<li class="float-right" id="logout"><a id="a_tag" style="font-weight: 600;" onclick="logoutsubmit()">로그아웃</a></li>
 						<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 					</form>
 					</sec:authorize>
