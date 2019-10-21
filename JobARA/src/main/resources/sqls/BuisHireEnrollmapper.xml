@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="BuisHireEnroll">
+
+	<insert id="announcementinsert" parameterType="BuisHireEnrollDto">
+   INSERT INTO 
+   		BUIS_HIRE_ENROLL(HIRE_NO_SEQ, MEMBER_NO_SEQ, HIRE_RECRUIT_NAME, HIRE_COMPANY_TITLE, HIRE_CAREER, 
+		HIRE_TASK, HIRE_DEPART, HIRE_POSITION, HIRE_PREFER, HIRE_PREFER_CONTENT, HIRE_EDU,
+		HIRE_GENDER, HIRE_SALARY, HIRE_AGE, HIRE_SECTOR, HIRE_ADDR, HIRE_LATITUDE, HIRE_LONGITUDE,
+		HIRE_WORKDAY, HIRE_WORKTIME, HIRE_STARTDAY, HIRE_ENDDAY, HIRE_MODE, 
+		HIRE_MANAGER_NAME, HIRE_MANAGER_TEL, HIRE_MANAGER_EMAIL, HIRE_ENT_TEL) 
+	SELECT HIRESEQ.NEXTVAL,#{member_no_seq},#{hire_recruit_name}, COMPANY_TITLE, #{hire_career},#{hire_task},#{hire_depart},
+		#{hire_position},null,#{hire_prefer_content},#{hire_edu},#{hire_gender},#{hire_salary},#{hire_age},
+		#{hire_sector},#{hire_addr},null,null,#{hire_workday},#{hire_worktime},SYSDATE,#{hire_endday},
+		#{hire_mode},#{hire_manager_name},#{hire_manager_tel},#{hire_manager_email},#{hire_ent_tel}
+	FROM COMPANY_INFO WHERE MEMBER_NO_SEQ = #{member_no_seq} 
+	</insert>
+	
+	<select id="seleclist" resultType="BuisHireEnrollDto">
+		SELECT * FROM BUIS_HIRE_ENROLL ORDER BY HIRE_NO_SEQ DESC
+	</select>
+	
+	<select id="selectOne" resultType="BuisHireEnrollDto">
+		SELECT * FROM BUIS_HIRE_ENROLL WHERE HIRE_NO_SEQ = #{hire_no_seq}
+	</select>
+	
+	<select id="company" resultType="CompanyInfoDto">
+		SELECT * FROM COMPANY_INFO WHERE MEMBER_NO_SEQ = ${member_no_seq}
+	</select>
   
 </mapper>
