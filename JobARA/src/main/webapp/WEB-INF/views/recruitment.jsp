@@ -7,6 +7,14 @@
 <meta charset="UTF-8">
 <%@ include file="/WEB-INF/include/header.jspf"%>
 <%@ include file="/WEB-INF/include/header.jsp"%>
+<style type="text/css">
+
+	div {
+		display: inline;
+		 }
+	
+
+</style>
 <title>Insert title here</title>
 </head>
 <body>

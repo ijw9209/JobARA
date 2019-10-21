@@ -85,7 +85,7 @@
 					<li>추천</li>
 					<li>기업∙연봉</li>
 					<li>뉴스∙자료</li>
-					<li>인재검색</li>
+					<li><a onclick="chattpop();">사용자간 대화</a></li>
 					<li class="float-right">공고등록</li>
 				
 					<sec:authorize access="isAnonymous()">
@@ -107,6 +107,14 @@
 <script type="text/javascript">
 	function logoutsubmit(){
 		$("#logout").submit();
+	}
+	
+	function chattpop() {
+		const url = 'chat.do';
+		const name = 'chatt';
+		var option = 'width = 850 , height = 550, top = 100, left = 200, location = no';
+		window.open(url, name, option);
+		
 	}
 </script>
 </html>

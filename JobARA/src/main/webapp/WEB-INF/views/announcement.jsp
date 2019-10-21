@@ -10,6 +10,16 @@
 	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<style type="text/css">
+
+	.wrap{
+		   margin-left: 500px;
+	}
+	.duty {	
+		
+	}
+
+</style>
 <title>Insert title here</title>
 
 <script type="text/javascript">
@@ -56,20 +66,20 @@
 
 </head>
 <body>
-
+	<div class="container wrap">
 	<form action="announcementres.do" method="post">
 	<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
-			<div>
+			<div class="width-100 padding-50px-lrb">
 				<h2>공고 제목</h2>
 				<label>
-				<input type="text" name="hire_recruit_name">
+				<input type="text" name="hire_recruit_name" class="form-control" style="width: 700px">
 				</label>
 			</div>
-			<div>		
+			<div class="duty">		
 				<b>직종/직무</b>
 				<label>
-					<input type="text" id="duty" name="hire_sector" placeholder="직종을 입력해 주세요.">
-					<input type="button" value="전체 카테고리" onclick="dutypop(); ">
+					<input type="text" id="duty" name="hire_sector" placeholder="직종을 입력해 주세요." class="form-control">
+					<input type="button" value="전체 카테고리" onclick="dutypop(); " class="form-control">
 				</label>
 			</div>	
 			<div>
@@ -84,13 +94,13 @@
 			<div>
 				<b>근무부서</b>
 				<label>
-					<input type="text" name="hire_depart">
+					<input type="text" name="hire_depart" class="form-control">
 				</label>
 			</div>
 			<div>
 				<b>담당업무</b>
 				<label>
-					<input type="text" name="hire_task">
+					<input type="text" name="hire_task" class="form-control">
 				</label>
 			</div>
 			<div>
@@ -136,7 +146,7 @@
 				</label></br>
 				<label>
 					<span>기타 학력사항</span>
-					<input type="text" name="hire_edu">
+					<input type="text" name="hire_edu" class="form-control">
 				</label>
 			</div>
 			<div>
@@ -170,14 +180,14 @@
 				<h3>근무조건</h3>
 				<label>
 					<b>급여</b>
-						<input type="text" placeholder="급여을 입력하세요" name="hire_salary">
+						<input type="text" placeholder="급여을 입력하세요" name="hire_salary" class="form-control">
 				</label>
 				<label>
 						<input type="radio" value="회사내규에 따라 다름" name="hire_salary">회사내규에 따라 다름
 				</label>
 				<label>
 					<b>기타급여/수당</b>
-					<input type="text" name="hire_salary">
+					<input type="text" name="hire_salary" class="form-control">
 				</label>
 				<div>
 				<label>
@@ -217,11 +227,11 @@
 			</div>
 			<div>
 				<h3>근무지 주소</h3>
-					<label>
-						<input type="text" name="hire_addr" id="originaddr1" readonly="readonly" placeholder="주소찾기 버튼을 클릭하여주세요."/><br/>
-						<input type="text" name="hire_addr" id="originaddr2" readonly="readonly" /><br/>
-						<input type="button" id="originfindaddr" value="주소 찾기" /><br/>
-						<input type="text" name="hire_addr" id="addrDetail" placeholder="상세주소를 입력해주세요">
+					<label style="width: 500">
+						<input type="text" name="hire_addr" id="originaddr1" readonly="readonly" placeholder="주소찾기 버튼을 클릭하여주세요." class="form-control"/><br/>
+						<input type="text" name="hire_addr" id="originaddr2" readonly="readonly" class="form-control"/><br/>
+						<input type="button" id="originfindaddr" value="주소 찾기" class="form-control"/><br/>
+						<input type="text" name="hire_addr" id="addrDetail" placeholder="상세주소를 입력해주세요" class="form-control">
 					</label>
 			</div>
 			<div>
@@ -236,31 +246,24 @@
 					<b>담당자</b>
 					<label>
 						<b>이름</b>
-						<input type="text" name="hire_manager_name">
+						<input type="text" name="hire_manager_name" class="form-control">
 					</label>
 				</div>
 				<div>
-					<b>연락처</b>
+					<b style="position: relative;">연락처</b>
 					<label>
 						<b>담당자 휴대폰</b>
-						<input type="text" name="hire_manager_tel"><br/>
-					</label>
-				</div>
-				<div>
-					<label>	
+						<input type="text" name="hire_manager_tel" class="form-control"><br/>
 						<b>담당자 e메일</b>
-						<input type="text" name="hire_manager_email"><br/>
+						<input type="text" name="hire_manager_email" class="form-control"><br/>
+						<b>회사 전화번호</b>
+						<input type="text" name="hire_ent_tel" class="form-control">
 					</label>
 				</div>
-				<div></div>
-					<label>
-						<b>회사 전화번호</b>
-						<input type="text" name="hire_ent_tel">
-					</label>
-				</div>	
 				<input type="submit" value="공고 등록">
 			</div>
 	</form>
+	</div>
 
 </body>
 </html>
