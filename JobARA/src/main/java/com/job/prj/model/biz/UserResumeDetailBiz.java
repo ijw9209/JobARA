@@ -13,5 +13,7 @@ public interface UserResumeDetailBiz {
 	public int insertDetail(UserMemberDto memberdto,UserResumeDto resumedto,UserResumeDetailDto resumedetaildto,UserResumeCareerDto resumecareerdto);
 	public int updateDetail(UserMemberDto memberdto,UserResumeDetailDto resumedetaildto,UserResumeDto resumedto,UserResumeCareerDto resumecareerdto);
 	public int deleteResumeDetail(UserResumeDto dto);
+	//유저 이력서 상세 이미지꺼내요기
+	public UserResumeDetailDto selectOne(int member_no_seq);
 	
 }

@@ -37,4 +37,10 @@ public class UserResumeDetailBizImpl implements UserResumeDetailBiz{
 		return dao.deleteResumeDetail(dto);
 	}
 
+	@Override
+	public UserResumeDetailDto selectOne(int member_no_seq) {
+		// TODO Auto-generated method stub
+		return dao.selectOne(member_no_seq);
+	}
+
 }
