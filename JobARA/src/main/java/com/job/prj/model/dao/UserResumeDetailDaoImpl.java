@@ -53,4 +53,17 @@ public class UserResumeDetailDaoImpl implements UserResumeDetailDao {
 		return resumecareerres+resumedetailres+resumeres;
 	}
 
+	@Override
+	public UserResumeDetailDto selectOne(int member_no_seq) {
+		UserResumeDetailDto dto = new UserResumeDetailDto();
+		
+		try {
+			dto = sqlSession.selectOne(namespace + "selectOne", member_no_seq);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return dto;
+	}
+
 }

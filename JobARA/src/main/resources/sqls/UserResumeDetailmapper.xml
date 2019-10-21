@@ -151,11 +151,10 @@
 	
 	</delete>
 	
+	<select id="selectOne" parameterType="int" resultType="UserResumeDetailDto">
+	SELECT * FROM USER_RESUME_DETAIL WHERE MEMBER_NO_SEQ = #{member_no_seq} AND RESUME_NO_SEQ = 1
+	</select>
 	
-	
-
-
-
 
 
   

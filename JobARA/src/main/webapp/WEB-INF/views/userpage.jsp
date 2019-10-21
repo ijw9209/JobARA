@@ -34,10 +34,17 @@
 padding-top: 130px;
 }
 .profile_photo{
-    width: 150px;
+    width: 125px;
     height: 130px;
-    margin-left: 35px;
+    margin-left: 43px;
     margin-top: 30px;
+    border: 1px solid #ebebeb;
+    border-radius: 60px;
+}
+.profile_photo img{
+	width: 125px;
+    height: 130px;
+    margin-left: 0px;
     border: 1px solid #ebebeb;
     border-radius: 60px;
 }
@@ -187,12 +194,12 @@ color: #575757;
      		<section class="myContent">
      		<aside class="aside_wrap">
      			<div class="profile_info">
-     				<div class="profile_photo"><img src="/resources/image/M_Photo_View.png"/></div>
+     				<div class="profile_photo"><img src="${UserResumedetaildto.resume_photo}"/></div>
      				<div class="profile_name">
      				<strong>${dto.member_name}</strong>님
      				</div>
      				<div class="resume_view">
-						<a href="form.do?member_no_seq=${seq}">이력서 관리</a>
+						<a href="ResumeInsert.do?member_no_seq=${seq}">이력서 등록</a>
      				</div>
      			</div>
      		</aside>	
@@ -214,9 +221,8 @@ color: #575757;
      		<aside class="aside_wrap_two">
      			<ul>
      				<li class="aside_menu">이력서관리</li>
-     				<li class="aside_menu_resume"><a>ㄴ이력서등록</a></li>
+     				<li class="aside_menu_resume"><a href="ResumeInsert.do?member_no_seq=${seq}">ㄴ이력서등록</a></li>
      				<li class="aside_menu_resume"><a>ㄴ이력서수정</a></li>
-     				<li class="aside_menu_resume"><a>ㄴ이력서삭제</a></li>
      				<li class="aside_menu">개인정보관리</li>
      				<li class="aside_menu_resume"><a>ㄴ개인정보수정</a></li>
      				<li class="aside_menu_resume"><a>ㄴ회원탈퇴</a></li>
@@ -264,10 +270,10 @@ color: #575757;
 			<c:forEach items="${resumedetail}" var="dto" varStatus="stat">
 					<tr>
 						<td>${stat.count }</td>
-						<td><div class="td_content">${dto.resume_title}</div></td>
+						<td><div class="td_content"><a href="selectOneResume.do?resume_no_seq=${dto.resume_no_seq}&member_no_seq=${seq}">${dto.resume_title}</a></div></td>
 						<td><div class="td_content">${dto.reg}</div></td>					
-						<td><div class="td_content">수정</div></td>
-						<td><div class="td_content">삭제</div></td>
+						<td><div class="td_content"><a href="updateResumeres.do?resume_no_seq=${dto.resume_no_seq }&member_no_seq=${seq}">수정</a></div></td>
+						<td><div class="td_content"><a href="deleteResumeDetail.do?resume_no_seq=${dto.resume_no_seq}&member_no_seq=${seq}">삭제</a></div></td>
 					</tr>
 			</c:forEach>
 			</c:otherwise>
@@ -278,5 +284,7 @@ color: #575757;
      		</div>
      	</div>
      </div>
+     
 </body>
+<%@ include file="/WEB-INF/include/footer.jsp"%>
 </html>

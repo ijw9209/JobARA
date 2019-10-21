@@ -57,7 +57,7 @@ public class ResumeController {
 			model.addAttribute("list", resumebiz.resumeList(member_no_seq));
 
 			model.addAttribute("seq", memberdto.getMember_no_seq());
-			return "resumeList";
+			return "redirect:/user/userpage";
 
 		} else {
 
@@ -127,7 +127,8 @@ public class ResumeController {
 			model.addAttribute("seq", dto.getMember_no_seq());
 			System.out.println("INSERT SUCCESS");
 			
-			return "redirect:form.do?member_no_seq="+dto.getMember_no_seq();
+			return "redirect:/user/userpage";
+			//return "redirect:form.do?member_no_seq="+dto.getMember_no_seq();
 		} else {
 			System.out.println("INSERT ERROR");
 			model.addAttribute("seq", dto.getMember_no_seq());
