@@ -128,9 +128,32 @@ public class UserMemberDaoImpl implements UserMemberDao {
 			e.printStackTrace();
 		}
 		
-		
-		
-		
 		return no;
+	}
+
+	@Override
+	public int updateMember(UserMemberDto dto) {
+		int res = 0;
+		try {
+			res = sqlSession.update(namespace + "updateMember", dto);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return res;
+	}
+
+	@Override
+	public int exitMember(int member_no_seq) {
+		int res = 0;
+		
+		try {
+			res = sqlSession.update(namespace +"exitmember", member_no_seq);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		return res;
 	}
 }

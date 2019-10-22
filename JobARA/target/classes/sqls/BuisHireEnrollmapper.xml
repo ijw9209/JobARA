@@ -27,5 +27,9 @@
 	<select id="company" resultType="CompanyInfoDto">
 		SELECT * FROM COMPANY_INFO WHERE MEMBER_NO_SEQ = ${member_no_seq}
 	</select>
+	
+	<select id="cnt_hire_enroll" parameterType="int" resultType="int">
+		SELECT COUNT(*) FROM BUIS_HIRE_ENROLL WHERE MEMBER_NO_SEQ = #{member_no_seq}
+	</select>
   
 </mapper>

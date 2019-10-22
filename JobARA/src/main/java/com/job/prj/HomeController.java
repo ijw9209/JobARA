@@ -76,10 +76,6 @@ public class HomeController {
 
 	  }
 	
-	  @RequestMapping("/buis/buispage")
-	  public String buisPage() {
-		  return "buispage";
-	  }
 	  
 	  @RequestMapping("/admin/adminpage")
 	  public String adminPage() {

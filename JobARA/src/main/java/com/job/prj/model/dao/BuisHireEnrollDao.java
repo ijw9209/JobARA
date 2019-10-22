@@ -13,5 +13,7 @@ public interface BuisHireEnrollDao {
 	public List<BuisHireEnrollDto> selectList();
 	public BuisHireEnrollDto selectOne(int hire_no_seq);
 	public CompanyInfoDto company(int member_no_seq);
+	//채용공고 갯수 카운트
+	public int count_buis_hire_enroll(int member_no_seq);
 
 }

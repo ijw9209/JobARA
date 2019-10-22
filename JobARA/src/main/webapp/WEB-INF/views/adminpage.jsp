@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>    
@@ -8,6 +8,7 @@
 <meta charset="UTF-8">
 <meta name="_csrf" th:content="${_csrf.token}"/>
 <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
+<%@ include file="/WEB-INF/include/header.jspf"%>
 <title>Insert title here</title>
 </head>
 <style>
@@ -35,17 +36,112 @@
     font-size: 12px;
     min-width: 30px;
 }
+/* 사이드바 */
+.side_menu_nav{
+	float: left;
+    width: 15%;
+    height: 780px;
+    position: absolute;
+    top: 0px;
+}
+.sidenav {
+			height:100%;
+			width: 0;
+			position: fixed;
+			z-index:1;
+			top: 0;
+			left: 0;
+			background-color: #3275ae;
+			overflow-x: hidden;
+			transition:0.5s ease-in-out;
+			padding-top: 60px;
+			
+		}
+		.sidenav a {
+			padding: 8px 8px 8px 32px;
+			text-decoration: none;
+			font-size: 25px;
+			color: #fff;
+			display: block;
+			transition: 0.2s ease-in-out;
+		}
+		.sidenav a:hover, .offcanvas a:focus {
+			color: #000;
+		}
+		.closebtn {
+			position: absolute;
+			top: 0;
+			right: 25px;
+			font-size: 36px !important;
+			margin-left: 50px;
+		}
+		
+		
+		/* 미디어쿼리 적용 */
+		@media screen and (max-height:450px) {
+			.sidenav {
+				padding-top:15px;
+			}
+			.sidenav a {
+				font-size: 18px;
+			}
+		}
+
+.adminpage_wrap{
+	margin-top: 100px;
+	
+
+}
+
+
+.admin_title{
+	text-align: center;
+	height: 160px;
+}
+.chart_title{
+	height: 70px;
+
+}
+.chart_wrap{
+	height: 80px;
+}
+.chart_wrap_content{
+
+}
 </style>
 <body>
-<h1>ADMINPAGE~~</h1>
-
-<sec:authorize access="isAuthenticated()">
+	<!-- side menu -->
+	<nav class="side_menu_nav">
+	<div id="mysidenav" class="sidenav" style="width: 250px;">
+		<div style="width : 250px;">
+		<a href="#" class="closebtn" onclick='closeNav()'>x</a>
+		<a href="#">유저관리</a>
+		<a href="#">공고관리</a>
+		<a href="#">이력서관리</a>
+		<a href="#">고객센터</a>		
+			<sec:authorize access="isAuthenticated()">
    				<form action="/logout" method="post" name="fr">
-					<a class="logout_a" style="cursor: pointer; color: #000;" onclick="logout();">로그아웃</a>
+					<a class="logout_a" style="cursor: pointer; color: #fff;" onclick="logout();">관리자 로그아웃</a>
 				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 				</form>
-</sec:authorize>
-<svg width="700" height="320"></svg>
+			</sec:authorize>
+		</div>
+	</div>
+	</nav>
+	
+	<div class="container adminpage_wrap">
+		<div class="admin_title">
+		<h1>관리자 페이지</h1>
+		</div>
+		<div class="chart_wrap">
+			<div class="chart_title">
+				<h2>일반/기업회원 가입자 수</h2>
+			</div>
+			<div class="chart_wrap_content">
+			<svg width="900" height="500" id="chart"></svg>
+			</div>
+		</div>
+	</div>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 
 
@@ -62,11 +158,11 @@ window.onload = function() {
 	}
 
  
-    var series = ["2017", "2018"];
+    var series = ["일반회원","기업회원"];
  
-    var dataset = [ 
-        {'1':17, '2':27, '3':37, '4':27, '5':17, '6':7,  '7':9, '8':19, '9':29, '10':19, '11':9, '12':0},
-        {'1': 9, '2':19, '3':29, '4':39, '5':29, '6':19, '7':9, '8':7, '9':17, '10':27, '11':17, '12':7}];
+    var dataset = [
+    	{'1월': 6, '2월':1, '3월':15, '4월':11, '5월':20, '6월':14, '7월':30, '8월':21, '9월':11, '10월':20, '11월':14, '12월':9},
+        {'1월': 9, '2월':19, '3월':29, '4월':39, '5월':29, '6월':19, '7월':9, '8월':7, '9월':17, '10월':27, '11월':17, '12월':7}];
  
     var keys = d3.keys(dataset[0]);
     var data = [];
@@ -156,5 +252,19 @@ window.onload = function() {
           .attr("dy", "0.32em")
           .text(function(d) { return d; });
 
+      /*
+      function closeNav() {
+    		document.getElementById('mysidenav').style.width = '0';
+    	}
+
+    	$(document).ready(function(){
+    	 	$(".side_menu_nav").mouseenter(function(){
+    			$("#mysidenav").width('250px');
+    		});
+    		$(".side_menu_nav").mouseleave(function(){
+    			$("#mysidenav").width('0px');
+    		}); 
+    		
+    	});	 */
 </script>
 </html>

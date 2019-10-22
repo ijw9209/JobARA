@@ -19,5 +19,9 @@ public interface UserMemberBiz extends UserDetailsService {
 	public int noSelectOne(String id);
 	//유저 정보 가져오기 마이페이지용
 	public UserMemberDto selectOne(String id);
+	//개인정보수정
+	public int updateMember(UserMemberDto dto);
+	//회원탈퇴
+	public int exitMember(int member_no_seq);
 	
 }

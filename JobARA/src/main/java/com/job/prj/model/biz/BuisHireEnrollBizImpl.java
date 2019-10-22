@@ -36,5 +36,10 @@ public class BuisHireEnrollBizImpl implements BuisHireEnrollBiz {
 		return dao.company(member_no_seq);
 	}
 
+	@Override
+	public int count_buis_hire_enroll(int member_no_seq) {
+		return dao.count_buis_hire_enroll(member_no_seq);
+	}
+
 
 }

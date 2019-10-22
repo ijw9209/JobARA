@@ -23,5 +23,9 @@ public interface UserMemberDao {
 	public String idsearch(String member_name,String member_email);
 	//회원번호 검색용(기업회원)
 	public int noSelectOne(String id);
+	//개인정보 수정
+	public int updateMember(UserMemberDto dto);
 	
+	//회원탈퇴
+	public int exitMember(int member_no_seq);
 }

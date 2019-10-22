@@ -199,18 +199,18 @@ color: #575757;
 		<section class="myContent">
 			<aside class="aside_wrap">
 				<div class="profile_info">
-					<div class="profile_photo"><img alt="사진" src=""/></div>
+					<div class="profile_photo"><img alt="사진" src="${companyInfo.company_logo_url}"/></div>
 					<div class="profile_name">
-     				<strong>기업</strong>님
+     				<strong>${dto.member_name}</strong>님
      				</div>
      				<div class="resume_view">
-						<a href="">채용공고등록</a>
+						<a href="/announcement.do">채용공고등록</a>
      				</div>
 				</div>
 			</aside>
 			<div class="center_wrap">
      			<ul class="center_context">
-     				<li>1</li>
+     				<li>${hire_enroll_count}</li>
      				<li>4</li>
      				<li>1</li>
      				<li>4</li>
@@ -226,10 +226,10 @@ color: #575757;
 		<aside class="aside_wrap_two">
      			<ul>
      				<li class="aside_menu">채용공고관리</li>
-     				<li class="aside_menu_resume"><a href="">ㄴ공고등록</a></li>
+     				<li class="aside_menu_resume"><a href="/announcement.do">ㄴ공고등록</a></li>
      				<li class="aside_menu_resume"><a>ㄴ공고수정</a></li>
      				<li class="aside_menu">개인정보관리</li>
-     				<li class="aside_menu_resume"><a>ㄴ개인정보수정</a></li>
+     				<li class="aside_menu_resume"><a href="/updatemember">ㄴ개인정보수정</a></li>
      				<li class="aside_menu_resume"><a>ㄴ회원탈퇴</a></li>
      			</ul>
      	</aside>
@@ -265,6 +265,26 @@ color: #575757;
 						</th>
 					</tr>
 				</thead>
+				<tbody>
+				<c:choose>
+				<c:when test="${empty hire_enroll_list}">
+					<tr>
+						<td colspan="3">----------------내용이없습니다-------</td>
+					</tr>
+				</c:when>
+				<c:otherwise>
+				<c:forEach items="${hire_enroll_list}" var="dto" varStatus="stat">
+					<tr>
+						<td>${stat.count }</td>
+						<td><div class="td_content"><a href="">${dto.hire_company_title}</a></div></td>
+						<td><div class="td_content">${dto.hire_endday}</div></td>					
+						<td><div class="td_content"><a href="">수정</a></div></td>
+						<td><div class="td_content"><a href="">삭제</a></div></td>
+					</tr>
+				</c:forEach>
+				</c:otherwise>
+				</c:choose>
+				</tbody>
 				</table>
      			</div>
      	</div>		
@@ -272,4 +292,5 @@ color: #575757;
 </div>
 
 </body>
+<%@ include file="/WEB-INF/include/footer.jsp"%>
 </html>

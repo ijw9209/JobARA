@@ -77,6 +77,17 @@ public class UserMemberBizImpl implements UserMemberBiz,UserDetailsService {
 	public UserMemberDto selectOne(String id) {
 		return dao.selectOne(id);
 	}
+
+	@Override
+	public int updateMember(UserMemberDto dto) {
+		return dao.updateMember(dto);
+	}
+
+	@Override
+	public int exitMember(int member_no_seq) {
+		// TODO Auto-generated method stub
+		return dao.exitMember(member_no_seq);
+	}
 	
 
 }

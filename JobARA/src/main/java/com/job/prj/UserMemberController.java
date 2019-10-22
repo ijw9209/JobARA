@@ -1,5 +1,6 @@
 package com.job.prj;
 
+import java.security.Principal;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -162,5 +164,37 @@ public class UserMemberController {
 		  return "idfail";  
 		  }
 	  }
+	  
+	  //개인정보 수정 폼가기 
+	  @RequestMapping(value = "/updatemember")
+	  public String updateMemberForm(Authentication authentication , Principal principal,Model model) {
+		  UserMemberDto dto = UserMemberBiz.selectOne(principal.getName());
+		  dto = (UserMemberDto) authentication.getPrincipal();
+		  model.addAttribute("dto", dto);
+		  model.addAttribute("seq", dto.getMember_no_seq());
+		  
+		  return "updateMember";
+	  }
+	  
+	  //개인정보 수정
+	  @RequestMapping(value = "/update" ,method = RequestMethod.POST)
+	  public String updateMember(UserMemberDto dto) {
+		  UserMemberBiz.updateMember(dto);
+		  
+		  return "redirect:/user/userpage";
+	  }
+	  
+	  //회원 탈퇴
+	  @RequestMapping(value = "/deletemember")
+	  public String exitMember(Authentication authentication , Principal principal) {
+		  UserMemberDto dto = UserMemberBiz.selectOne(principal.getName());
+		  dto = (UserMemberDto) authentication.getPrincipal();
+		  
+		  UserMemberBiz.exitMember(dto.getMember_no_seq());
+		  
+		  return "redirect:/logout?id="+dto.getMember_id()+"&password="+dto.getMember_pw();
+		  
+	  }
+	  
 	  
 }

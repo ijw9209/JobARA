@@ -64,4 +64,17 @@ public class BuisHireEnrollDaoImpl implements BuisHireEnrollDao {
 		return sqlSession.selectOne(namespace + "company",member_no_seq);
 	}
 
+	@Override
+	public int count_buis_hire_enroll(int member_no_seq) {
+		int cnt = 0;
+		
+		try {
+			cnt = sqlSession.selectOne(namespace + "cnt_hire_enroll", member_no_seq);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} 
+		
+		return cnt;
+	}
+
 }

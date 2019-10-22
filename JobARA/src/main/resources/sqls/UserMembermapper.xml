@@ -44,4 +44,17 @@
 		member_tel=#{member_tel},member_email=#{member_email},member_gender=#{member_gender}
 		where member_no_seq=#{member_no_seq}
 	</update>
+	
+	<update id="updateMember" parameterType="UserMemberDto">
+		update user_member set
+		member_name = #{member_name} , member_birth=#{member_birth},member_addr=#{member_addr},
+		member_tel=#{member_tel},member_email=#{member_email}
+		where member_no_seq=#{member_no_seq}
+	</update>
+	
+	<update id="exitmember" parameterType="int">
+		update user_member set MEMBER_ENABLED = 'N' where member_no_seq = #{member_no_seq}
+	</update>
+	
+	
 </mapper>

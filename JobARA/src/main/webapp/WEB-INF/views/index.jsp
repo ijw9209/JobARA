@@ -173,7 +173,7 @@ color: #fff;
 				<sec:authorize access="isAuthenticated()">
    				<form action="logout" method="post" name="fr">
 					<a class="logout_a" style="cursor: pointer; color: #fff;" onclick="logout();">로그아웃</a>
-				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 				</form>
 				</sec:authorize>
 				<div class="scroll">
