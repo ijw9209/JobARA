@@ -438,6 +438,17 @@
 	});
 	
 	})
+	function hopeinterview(){
+		var radio = $("input[name=hope_afterinterview]:checked").val();
+
+		if(typeof radio == "undefined"){
+
+		  alert("희망 연봉을 입력하세요.");
+			return false;
+		}	
+		
+	}
+
 </script>
 
 <style type="text/css">
@@ -489,7 +500,7 @@
 	</div>
 	<div id="content">
 		<form action="/user/ResumeDetailInsertRes.do?member_no_seq=${seq }"
-			method="post">
+			method="post" onsubmit="return hopeinterview();">
 			<input type="hidden" name="${_csrf.parameterName}"
 				value="${_csrf.token}" /> <input type="hidden" name="member_no_seq"
 				value="${seq }"> <input type="hidden" name="member_no_seq"
@@ -832,7 +843,7 @@
 </table>
 </fieldset>
 </div>
-			<a><input type="submit" value="이력서 작성하기"></a>
+			<a><input type="submit" value="이력서 작성하기" ></a>
 
 		</form>
 	</div>
