@@ -226,7 +226,7 @@
 	<tr>
 		<th>고용형태</th>
 		<td><select name="hope_employform">
-			<option value="${hopeOne.hope_employform }">${hopeOne.hope_employform }</option>
+			<option value="${selectOneResume.hopedto.hope_employform }">${hopeOne.hope_employform }</option>
 			<option value="정규직">정규직</option>
 			<option value="계약직">계약직</option>
 			<option value="병역특례">병역특례</option>
@@ -238,7 +238,7 @@
 		
 	<td><input type="radio" name="hope_afterinterview" value="Y">면접 후 결정 </td>
 	<td> <input type="radio" name="hope_afterinterview" value="N">희망 연봉</td>
-	<td><input type="text" placeholder="희망연봉" name="hope_salary" value="${hopeOne.hope_salary }"></td>
+	<td><input type="text" placeholder="희망연봉" name="hope_salary" value="${selectOneResume.hopedto.hope_salary }"></td>
 	</tr>
 	<tr>
 		<th>희망 근무지1</th>
@@ -287,23 +287,23 @@
 	</tr>
 	<tr>
 		<th>직무 산업 키워드</th>
-		<td><input type="text" name="hope_duty_keyword_one" value="${hopeOne.hope_duty_keyword_one }"></td>
+		<td><input type="text" name="hope_duty_keyword_one" value="${selectOneResume.hopedto.hope_duty_keyword_one }"></td>
 	</tr>
 	<tr>
 		<th>직무 산업 키워드</th>
-		<td><input type="text" name="hope_duty_keyword_two" value="${hopeOne.hope_duty_keyword_two }"></td>
+		<td><input type="text" name="hope_duty_keyword_two" value="${selectOneResume.hopedto.hope_duty_keyword_two }"></td>
 	</tr>
 	<tr>
 		<th>직무 산업 키워드</th>
-		<td><input type="text" name="hope_duty_keyword_three" value="${hopeOne.hope_duty_keyword_three }"></td>
+		<td><input type="text" name="hope_duty_keyword_three" value="${selectOneResume.hopedto.hope_duty_keyword_three }"></td>
 	</tr>
 	<tr>
 		<th>직무 산업 키워드</th>
-		<td><input type="text" name="hope_duty_keyword_four" value="${hopeOne.hope_duty_keyword_four }"></td>
+		<td><input type="text" name="hope_duty_keyword_four" value="${selectOneResume.hopedto.hope_duty_keyword_four }"></td>
 	</tr>
 	<tr>
 		<th>직무 산업 키워드</th>
-		<td><input type="text" name="hope_duty_keyword_five" value="${hopeOne.hope_duty_keyword_five}"></td>
+		<td><input type="text" name="hope_duty_keyword_five" value="${selectOneResume.hopedto.hope_duty_keyword_five}"></td>
 	</tr>
 
 
