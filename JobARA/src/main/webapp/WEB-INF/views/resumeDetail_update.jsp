@@ -43,11 +43,22 @@
 			}
 		});
 	});
+	
+	function check(){
+		var radio = $("input[name=hope_afterinterview]:checked").val();
+
+		if(typeof radio == "undefined"){
+
+		  alert("희망 연봉을 입력하세요.");
+			return false;
+		}	
+		
+	}
 </script>
 </head>
 <body>
 	<h3>이력서</h3>
-	<form action="updateDetailres.do?resume_no_seq=${selectOneResume.userresumedetaildto.resume_no_seq }&member_no_seq=${seq}" method="post">
+	<form action="updateDetailres.do?resume_no_seq=${selectOneResume.userresumedetaildto.resume_no_seq }&member_no_seq=${seq}" method="post" onsubmit="return check();">
 		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 
 
