@@ -87,6 +87,12 @@
 			}
 		}
 
+.wrap{
+    height: 800px;
+    background-color: #f3f4f4;
+}
+
+
 .adminpage_wrap{
 	margin-top: 100px;
 	
@@ -129,6 +135,7 @@
 	</div>
 	</nav>
 	
+	<div class="wrap">
 	<div class="container adminpage_wrap">
 		<div class="admin_title">
 		<h1>관리자 페이지</h1>
@@ -141,6 +148,7 @@
 			<svg width="900" height="500" id="chart"></svg>
 			</div>
 		</div>
+	</div>
 	</div>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 
