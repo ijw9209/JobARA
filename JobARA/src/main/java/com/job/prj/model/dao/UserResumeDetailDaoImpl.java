@@ -9,6 +9,7 @@ import com.job.prj.dto.UserMemberDto;
 import com.job.prj.dto.UserResumeCareerDto;
 import com.job.prj.dto.UserResumeDetailDto;
 import com.job.prj.dto.UserResumeDto;
+import com.job.prj.dto.UserResumeHopeDto;
 
 @Repository
 public class UserResumeDetailDaoImpl implements UserResumeDetailDao {
@@ -26,31 +27,35 @@ public class UserResumeDetailDaoImpl implements UserResumeDetailDao {
 	}
 
 	@Override
-	public int insert(UserMemberDto memberdto,UserResumeDto resumedto,UserResumeDetailDto resumedetaildto,UserResumeCareerDto resumecareerdto) {
+	public int insert(UserMemberDto memberdto,UserResumeDto resumedto,UserResumeDetailDto resumedetaildto,UserResumeCareerDto resumecareerdto,UserResumeHopeDto hopedto) {
 		
 		int resumemember=sqlSession.update("UserMember.resumemember_update", memberdto);
 		int resumeres=sqlSession.insert("UserResume.insertResume", resumedto);
 		int resumedetailres = sqlSession.insert(namespace + "insertResumeDetail", resumedetaildto);
 		int resumecareerres=sqlSession.insert("UserResumeCareer.insertResumeCareer", resumecareerdto);
-		return resumemember+resumeres+resumedetailres+resumecareerres;
+		int hoperes=sqlSession.insert("UserResumeHope.insertResumeHope", hopedto);
+		return resumemember+resumeres+resumedetailres+resumecareerres+hoperes;
 	}
 
 	@Override
-	public int updateDetail(UserMemberDto memberdto,UserResumeDetailDto resumedetaildto,UserResumeDto resumedto,UserResumeCareerDto resumecareerdto) {
+	public int updateDetail(UserMemberDto memberdto,UserResumeDetailDto resumedetaildto,UserResumeDto resumedto,UserResumeCareerDto resumecareerdto,UserResumeHopeDto hopedto) {
 		
 		int resumemember=sqlSession.update("UserMember.resumemember_update", memberdto);
 		int resumedetailres = sqlSession.update(namespace + "updateResumeDetail", resumedetaildto);
 		int resumeres=sqlSession.update("UserResume.updateResume",resumedto );
 		int resumecareerres=sqlSession.update("UserResumeCareer.updateResumeCareer", resumecareerdto);
-		return resumemember+resumedetailres+resumeres+resumecareerres;
+		int hoperes=sqlSession.update("UserResumeHope.updateResumeHope", hopedto);
+		return resumemember+resumedetailres+resumeres+resumecareerres+hoperes;
 	}
 
 	@Override
 	public int deleteResumeDetail(UserResumeDto dto) {
+		
+		int hoperes=sqlSession.delete("UserResumeHope.deleteResumeHope",dto);
 		int resumecareerres=sqlSession.delete("UserResumeCareer.deleteResumeCareer",dto);
 		int resumedetailres = sqlSession.delete(namespace + "deleteResumeDetail", dto);
 		int resumeres=sqlSession.delete("UserResume.deleteResume", dto);
-		return resumecareerres+resumedetailres+resumeres;
+		return hoperes+resumecareerres+resumedetailres+resumeres;
 	}
 
 	@Override

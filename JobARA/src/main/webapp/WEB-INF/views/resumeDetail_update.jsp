@@ -217,6 +217,98 @@
 			<label><textarea name="resume_self_two_content" rows="20"
 					cols="100">${selectOneResume.userresumedetaildto.resume_self_two_content }</textarea></label><br>
 		</fieldset>
+		
+		<fieldset>
+		
+		<legend>희망근무조건</legend>
+		
+		<table>
+	<tr>
+		<th>고용형태</th>
+		<td><select name="hope_employform">
+			<option value="${hopeOne.hope_employform }">${hopeOne.hope_employform }</option>
+			<option value="정규직">정규직</option>
+			<option value="계약직">계약직</option>
+			<option value="병역특례">병역특례</option>
+			<option value="프리랜서">프리랜서</option>
+			<option value="헤드헌팅">헤드헌팅</option>
+			<option  value="파견대행">파견대행</option>
+			<option value="인턴직">인턴직</option>
+		</select></td>
+		
+	<td><input type="radio" name="hope_afterinterview" value="Y">면접 후 결정 </td>
+	<td> <input type="radio" name="hope_afterinterview" value="N">희망 연봉</td>
+	<td><input type="text" placeholder="희망연봉" name="hope_salary" value="${hopeOne.hope_salary }"></td>
+	</tr>
+	<tr>
+		<th>희망 근무지1</th>
+		<td>
+			<input type="hidden" name="hope_addr_one" value=""> 
+							<select class="cd_list">
+								<option value="">시</option>
+							</select> 
+							<select class="addr_list">
+								<option value="">군/구</option>
+							</select>
+		
+		</td>
+	
+	
+	</tr>
+		<tr>
+		<th>희망 근무지2</th>
+		<td>
+			<input type="hidden" name="hope_addr_two" value=""> 
+							<select class="cd_list">
+								<option value="">시</option>
+							</select> 
+							<select class="addr_list">
+								<option value="">군/구</option>
+							</select>
+		
+		</td>
+	
+	
+	</tr>
+		<tr>
+		<th>희망 근무지3</th>
+		<td>
+			<input type="hidden" name="hope_addr_three" value=""> 
+							<select class="cd_list">
+								<option value="">시</option>
+							</select> 
+							<select class="addr_list">
+								<option value="">군/구</option>
+							</select>
+		
+		</td>
+	
+	
+	</tr>
+	<tr>
+		<th>직무 산업 키워드</th>
+		<td><input type="text" name="hope_duty_keyword_one" value="${hopeOne.hope_duty_keyword_one }"></td>
+	</tr>
+	<tr>
+		<th>직무 산업 키워드</th>
+		<td><input type="text" name="hope_duty_keyword_two" value="${hopeOne.hope_duty_keyword_two }"></td>
+	</tr>
+	<tr>
+		<th>직무 산업 키워드</th>
+		<td><input type="text" name="hope_duty_keyword_three" value="${hopeOne.hope_duty_keyword_three }"></td>
+	</tr>
+	<tr>
+		<th>직무 산업 키워드</th>
+		<td><input type="text" name="hope_duty_keyword_four" value="${hopeOne.hope_duty_keyword_four }"></td>
+	</tr>
+	<tr>
+		<th>직무 산업 키워드</th>
+		<td><input type="text" name="hope_duty_keyword_five" value="${hopeOne.hope_duty_keyword_five}"></td>
+	</tr>
+
+
+</table>
+</fieldset>
 
 		<input type="submit" value="수정완료">
 	</form>

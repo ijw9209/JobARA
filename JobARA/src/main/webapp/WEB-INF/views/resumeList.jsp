@@ -17,7 +17,6 @@
 <body>
 	<h1>이력서 관리</h1>
 	
-	<a href="hopeResume.do">희망 근무 조건</a>
 	<table border="1">
 
 		<c:choose>

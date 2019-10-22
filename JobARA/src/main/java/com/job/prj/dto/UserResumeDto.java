@@ -8,6 +8,7 @@ public class UserResumeDto{
 	private Date resume_date;
 	private UserResumeDetailDto userresumedetaildto;
 	private UserResumeCareerDto careerdto;
+	private UserResumeHopeDto hopedto;
 	
 	public UserResumeDto() {
 
@@ -54,16 +55,14 @@ public class UserResumeDto{
 	public void setCareerdto(UserResumeCareerDto careerdto) {
 		this.careerdto = careerdto;
 	}
-
-	public UserResumeDto(int resume_no_seq, int member_no_seq, Date resume_date,
-			UserResumeDetailDto userresumedetaildto, UserResumeCareerDto careerdto) {
-		super();
-		this.resume_no_seq = resume_no_seq;
-		this.member_no_seq = member_no_seq;
-		this.resume_date = resume_date;
-		this.userresumedetaildto = userresumedetaildto;
-		this.careerdto = careerdto;
+	public UserResumeHopeDto getHopedto() {
+		return hopedto;
 	}
+
+	public void setHopedto(UserResumeHopeDto hopedto) {
+		this.hopedto = hopedto;
+	}
+
 	
 	
 	

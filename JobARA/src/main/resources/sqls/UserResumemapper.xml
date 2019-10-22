@@ -79,17 +79,17 @@
 	</select>
 
 	<insert id="insertResume" parameterType="UserResumeDto">
-		insert into
-		user_resume(resume_no_seq,member_no_seq,resume_date)
-		values
-		(resumeseq.nextval,#{member_no_seq},sysdate)
+		INSERT INTO
+		USER_RESUME(RESUME_NO_SEQ,MEMBER_NO_SEQ,RESUME_DATE)
+		VALUES
+		(RESUMESEQ.NEXTVAL,#{member_no_seq},SYSDATE)
 		
 	</insert>
 	
 	<update id="updateResume" parameterType="UserResumeDto">
-		update user_resume set 
-		resume_date=SYSDATE
-		where resume_no_seq=#{resume_no_seq}
+		UPDATE USER_RESUME SET
+		RESUME_DATE=SYSDATE
+		WHERE RESUME_NO_SEQ=#{resume_no_seq}
 		AND MEMBER_NO_SEQ=#{member_no_seq}
 	</update>
 	

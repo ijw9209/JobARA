@@ -23,6 +23,7 @@ import com.job.prj.dto.UserMemberDto;
 import com.job.prj.dto.UserResumeCareerDto;
 import com.job.prj.dto.UserResumeDetailDto;
 import com.job.prj.dto.UserResumeDto;
+import com.job.prj.dto.UserResumeHopeDto;
 import com.job.prj.model.biz.UserMemberBiz;
 import com.job.prj.model.biz.UserResumeBiz;
 import com.job.prj.model.biz.UserResumeDetailBiz;
@@ -42,11 +43,7 @@ public class ResumeController {
 	
 	
 	
-	@RequestMapping(value = "/user/hopeResume.do") 
-	public String hopeResume() {
-		
-		return "resumeHope_Insert";
-	}
+
 
 	@RequestMapping(value = "/user/deleteResumeDetail.do")
 	public String deleteResume(Authentication authentication,UserResumeDetailDto dto,int member_no_seq,UserResumeDto resumedto, Model model) {
@@ -81,9 +78,9 @@ public class ResumeController {
 
 	@RequestMapping(value = "/user/updateDetailres.do", method = RequestMethod.POST)
 	public String updateDetailRes(Authentication authentication,UserMemberDto memberdto,UserResumeDetailDto dto,UserResumeDto resumedto, UserResumeDetailDto resumedetaildto,UserResumeCareerDto resumecareerdto,
-			Model model , @RequestParam String resume_photo) {
+			Model model,UserResumeHopeDto hopedto) {
 		System.out.println(dto.getResume_photo() + dto.getResume_crti_one_name());
-		int res = resumedetailbiz.updateDetail(memberdto,resumedetaildto, resumedto,resumecareerdto);
+		int res = resumedetailbiz.updateDetail(memberdto,resumedetaildto, resumedto,resumecareerdto,hopedto);
 		if (res > 0) {
 
 			model.addAttribute("selectOneResume", resumedetailbiz.ResumeOne(resumedetaildto));
@@ -115,9 +112,9 @@ public class ResumeController {
 	}
 
 	@RequestMapping(value = "/user/ResumeDetailInsertRes.do", method = {RequestMethod.GET, RequestMethod.POST})
-	public String ResumeDetailInsertRes(Authentication authentication,UserMemberDto memberdto,UserResumeDto resumedto, UserResumeDetailDto resumedetaildto,UserResumeCareerDto resumecareerdto, Model model) {
+	public String ResumeDetailInsertRes(Authentication authentication,UserMemberDto memberdto,UserResumeDto resumedto, UserResumeDetailDto resumedetaildto,UserResumeCareerDto resumecareerdto,UserResumeHopeDto hopedto, Model model) {
 		System.out.println("lkfgnslglskdglkjfdslkjfdslkjfsdkljfsd");
-		int res = resumedetailbiz.insertDetail(memberdto,resumedto, resumedetaildto,resumecareerdto);
+		int res = resumedetailbiz.insertDetail(memberdto,resumedto, resumedetaildto,resumecareerdto,hopedto);
 		UserMemberDto dto = (UserMemberDto) authentication.getPrincipal();
 		int member_no_seq= dto.getMember_no_seq();
 

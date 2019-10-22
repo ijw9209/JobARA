@@ -6,25 +6,7 @@
 		<id column="MEMBER_NO_SEQ" property="member_no_seq" />
 		<result column="RESUME_DATE" property="resume_date" />
 	
-		<!-- <association javaType="UserMemberDto" property="memberdto">
-			<id column="MEMBER_NO_SEQ" property="member_no_seq"/>
-			<id column="MEMBER_ID" property="member_id"/>
-			<result column="MEMBER_PW" property="member_pw"/>
-			<result column="MEMBER_NAME" property="member_name"/>
-			<result column="MEMBER_BIRTH" property="member_birth"/>
-			<result column="MEMBER_ADDR" property="member_addr"/>
-			<result column="MEMBER_TEL" property="member_tel"/>
-			<result column="MEMBER_EMAIL" property="member_email"/>
-			<result column="MEMBER_ADDR" property=""/>
-			<result column="MEMBER_ENABLED" property="member_email_addr"/>
-			<result column="MEMBER_GENDER" property="member_enabled"/>
-			<result column="MEMBER_POINT" property="member_gender"/>
-			<result column="MEMBER_REGDATE" property="member_point"/>
-			<result column="MEMBER_ROLE" property="member_regdate"/>
-			<result column="MEMBER_BUIS_NUM" property=""/>
-		
-		
-		</association> -->
+
 		<association javaType="UserResumeDetailDto"
 			property="userresumedetaildto">
 			<id column="RESUME_NO_SEQ" property="resume_no_seq" />
@@ -91,6 +73,24 @@
 			<result column="CAREER_SALARY" property="career_salary"/>
 		</association>
 		
+		<association javaType="UserResumeHopeDto"
+			property="hopedto">
+
+			<id column="RESUME_NO_SEQ" property="resume_no_seq" />
+			<id column="MEMBER_NO_SEQ" property="member_no_seq" />
+			<result column="HOPE_EMPLOYFORM" property="hope_employform" />
+			<result column="HOPE_SALARY" property="hope_salary" />
+			<result column="HOPE_AFTERINTERVIEW" property="hope_afterinterview" />
+			<result column="HOPE_ADDR_ONE" property="hope_addr_one" />
+			<result column="HOPE_ADDR_TWO" property="hope_addr_two" />
+			<result column="HOPE_ADDR_THREE" property="hope_addr_three" />
+			<result column="HOPE_DUTY_KEYWORD_ONE" property="hope_duty_keyword_one" />
+			<result column="HOPE_DUTY_KEYWORD_TWO"	property="hope_duty_keyword_two" />
+			<result column="HOPE_DUTY_KEYWORD_THREE" property="hope_duty_keyword_three" />
+			<result column="HOPE_DUTY_KEYWORD_FOUR"	property="hope_duty_keyword_four" />
+			<result column="HOPE_DUTY_KEYWORD_FIVE"	property="hope_duty_keyword_five" />
+		</association>
+		
 		
 
 	</resultMap>
@@ -99,10 +99,16 @@
 	<select id="selectOneResume" parameterType="UserResumeDetailDto" resultMap="userMap">
 	
 		
-	SELECT A.RESUME_DATE,B.*,C.*
-		FROM USER_RESUME A,USER_RESUME_DETAIL B,USER_RESUME_CAREER C
-		WHERE A.RESUME_NO_SEQ=B.RESUME_NO_SEQ
-		AND B.RESUME_NO_SEQ=C.RESUME_NO_SEQ
+	SELECT A.RESUME_DATE,B.*,C.*,D.*
+		FROM USER_RESUME
+		A,USER_RESUME_DETAIL
+		B,USER_RESUME_CAREER C,USER_RESUME_HOPE D
+		WHERE
+		A.RESUME_NO_SEQ=B.RESUME_NO_SEQ
+		AND
+		B.RESUME_NO_SEQ=C.RESUME_NO_SEQ
+		AND
+		C.RESUME_NO_SEQ=D.RESUME_NO_SEQ
 		AND A.RESUME_NO_SEQ=#{resume_no_seq}
 		AND A.MEMBER_NO_SEQ=#{member_no_seq}
 	

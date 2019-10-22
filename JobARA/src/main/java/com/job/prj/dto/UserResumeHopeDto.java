@@ -15,6 +15,12 @@ public class UserResumeHopeDto {
 	private String hope_duty_keyword_three;
 	private String hope_duty_keyword_four;
 	private String hope_duty_keyword_five;
+	
+	public UserResumeHopeDto() {
+		
+		
+	}
+	
 	public int getResume_no_seq() {
 		return resume_no_seq;
 	}

@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="UserResumeHope">
+    <insert id="insertResumeHope" parameterType="UserResumeHopeDto">
+    INSERT INTO USER_RESUME_HOPE VALUES
+  	(RESUMESEQ.NEXTVAL-3,#{member_no_seq},#{hope_employform},
+  		#{hope_salary},#{hope_afterinterview},#{hope_addr_one},#{hope_addr_two},
+  		#{hope_addr_three},#{hope_duty_keyword_one},#{hope_duty_keyword_two},#{hope_duty_keyword_three},
+  		#{hope_duty_keyword_four},#{hope_duty_keyword_five})
   
+  </insert>
+  
+  <update id="updateResumeHope" parameterType="UserResumeHopeDto">
+  UPDATE USER_RESUME_HOPE SET
+  HOPE_EMPLOYFORM=#{hope_employform},HOPE_SALARY=#{hope_salary},
+  HOPE_AFTERINTERVIEW=#{hope_afterinterview},HOPE_ADDR_ONE=#{hope_addr_one},
+  HOPE_ADDR_TWO=#{hope_addr_two},HOPE_ADDR_THREE=#{hope_addr_three},HOPE_DUTY_KEYWORD_ONE=#{hope_duty_keyword_one},
+  HOPE_DUTY_KEYWORD_TWO=#{hope_duty_keyword_two},HOPE_DUTY_KEYWORD_THREE=#{hope_duty_keyword_three},
+  HOPE_DUTY_KEYWORD_FOUR=#{hope_duty_keyword_four},HOPE_DUTY_KEYWORD_FIVE=#{hope_duty_keyword_five}
+  WHERE RESUME_NO_SEQ=#{resume_no_seq} AND MEMBER_NO_SEQ=#{member_no_seq}
+  
+  
+  
+  </update>
+  <delete id="deleteResumeHope" parameterType="UserResumeDto">
+  
+  	DELETE FROM USER_RESUME_HOPE WHERE RESUME_NO_SEQ=#{resume_no_seq} AND MEMBER_NO_SEQ=#{member_no_seq} 
+  </delete>
 </mapper>
