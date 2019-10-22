@@ -7,6 +7,7 @@ import com.job.prj.dto.UserMemberDto;
 import com.job.prj.dto.UserResumeCareerDto;
 import com.job.prj.dto.UserResumeDetailDto;
 import com.job.prj.dto.UserResumeDto;
+import com.job.prj.dto.UserResumeHopeDto;
 import com.job.prj.model.dao.UserResumeDetailDao;
 
 @Service
@@ -23,13 +24,13 @@ public class UserResumeDetailBizImpl implements UserResumeDetailBiz{
 	}
 
 	@Override
-	public int insertDetail(UserMemberDto memberdto,UserResumeDto resumedto,UserResumeDetailDto resumedetaildto,UserResumeCareerDto resumecareerdto) {
-		return dao.insert(memberdto,resumedto, resumedetaildto,resumecareerdto);
+	public int insertDetail(UserMemberDto memberdto,UserResumeDto resumedto,UserResumeDetailDto resumedetaildto,UserResumeCareerDto resumecareerdto,UserResumeHopeDto hopedto) {
+		return dao.insert(memberdto,resumedto, resumedetaildto,resumecareerdto,hopedto);
 	}
 
 	@Override
-	public int updateDetail(UserMemberDto memberdto, UserResumeDetailDto resumedetaildto,UserResumeDto resumedto,UserResumeCareerDto resumecareerdto) {
-		return dao.updateDetail(memberdto,resumedetaildto, resumedto,resumecareerdto);
+	public int updateDetail(UserMemberDto memberdto, UserResumeDetailDto resumedetaildto,UserResumeDto resumedto,UserResumeCareerDto resumecareerdto,UserResumeHopeDto hopedto) {
+		return dao.updateDetail(memberdto,resumedetaildto, resumedto,resumecareerdto,hopedto);
 	} 
 
 	@Override
