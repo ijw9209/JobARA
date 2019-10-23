@@ -6,7 +6,12 @@
 <head>
 <meta charset="UTF-8">
 <%@ include file="/WEB-INF/include/header.jspf"%>
+<c:if test="${empty role or role eq 'ROLE_USER'}">
 <%@ include file="/WEB-INF/include/header.jsp"%>
+</c:if>
+<c:if test="${not empty role and role eq 'ROLE_BUIS'}">
+<%@ include file="/WEB-INF/include/header_Buis.jsp"%>
+</c:if>
 <style>
 	.company-list {
 		border-top: 1px solid #ebebeb;

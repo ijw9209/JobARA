@@ -6,16 +6,24 @@
 <head>
 <meta charset="UTF-8">
 <%@ include file="/WEB-INF/include/header.jspf"%>
+<c:if test="${empty role or role eq 'ROLE_USER'}">
 <%@ include file="/WEB-INF/include/header.jsp"%>
+</c:if>
+<c:if test="${not empty role and role eq 'ROLE_BUIS'}">
+<%@ include file="/WEB-INF/include/header_Buis.jsp"%>
+</c:if>
 <style type="text/css">
+.wrap{
+height: 500px;
 
+}
 
 </style>
 <title>Insert title here</title>
 </head>
 <body>
 	<!-- 기업명	제목	지원자격	근무조건	마감일·등록일 -->
-	<div class="container">
+	<div class="container wrap">
 		<table class="width-100 regist-table">
 			<tr>
 				 <th>기업명</th>
@@ -52,4 +60,5 @@
 
 
 </body>
+<%@ include file="/WEB-INF/include/footer.jsp"%>
 </html>

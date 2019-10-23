@@ -1,5 +1,10 @@
 package com.job.prj.model.dao;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -69,6 +74,37 @@ public class UserResumeDetailDaoImpl implements UserResumeDetailDao {
 		}
 		
 		return dto;
+	}
+
+	@Override
+	public List<UserResumeDetailDto> selectList() {
+		List<UserResumeDetailDto> list = new ArrayList<UserResumeDetailDto>();
+		
+		try {
+			list = sqlSession.selectList(namespace+"ResumeList");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+
+	@Override
+	public List<UserResumeDetailDto> resumePaging(int start, int end) {
+		
+		List<UserResumeDetailDto> list = new ArrayList<UserResumeDetailDto>();
+		
+		Map<Object,Object> map = new HashMap<Object, Object>();
+		map.put("start", start);
+		map.put("end", end);
+		try {
+			list = sqlSession.selectList(namespace + "resumepaging", map);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return list;
 	}
 
 }

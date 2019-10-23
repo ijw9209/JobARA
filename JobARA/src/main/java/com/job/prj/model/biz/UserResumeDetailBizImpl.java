@@ -1,5 +1,7 @@
 package com.job.prj.model.biz;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -42,6 +44,18 @@ public class UserResumeDetailBizImpl implements UserResumeDetailBiz{
 	public UserResumeDetailDto selectOne(int member_no_seq) {
 		// TODO Auto-generated method stub
 		return dao.selectOne(member_no_seq);
+	}
+
+	@Override
+	public List<UserResumeDetailDto> selectList() {
+		// TODO Auto-generated method stub
+		return dao.selectList();
+	}
+
+	@Override
+	public List<UserResumeDetailDto> resumePaging(int start, int end) {
+		// TODO Auto-generated method stub
+		return dao.resumePaging(start, end);
 	}
 
 }

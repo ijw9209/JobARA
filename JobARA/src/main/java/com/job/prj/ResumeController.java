@@ -5,6 +5,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -209,11 +210,52 @@ public class ResumeController {
 		 }
 		 
 		 String schoolname = list_schoolname;
-		 System.out.println(schoolname + "??");
 		return schoolname;
 	}
 	
 
-
+	@RequestMapping(value = "/buis/resumeview")
+	public String resumeviewform(Model model,@RequestParam int page) {
+		
+		
+		//int page = Integer.parseInt(page); //현재페이징번호
+		int allCount = resumedetailbiz.selectList().size(); //전체게시글개수
+		int listCount = 5; //한 화면에 뿌릴 데이터 개수
+		int totalPage = (allCount -1) / listCount + 1; // 전체 페이지 개수
+		int blockCount = 5;  // 이동을 위한 페이지 표시에 나타나는 숫자의 표시 갯수( 예 [1] [2] [3])
+		int absolutePage = 0; // 페이지를 넘겼을 때 시작되는 첫번째 게시물의 시작 번호
+		int endPage = 0;  // 페이지 마지막 번호
+		
+		if(page < 1) {
+			page = 1;
+			
+		}else if(page > totalPage) {
+			page = totalPage;
+		}
+		if(page%5 == 0) {
+			absolutePage = ((page/5) *5) -4;
+			endPage = (page / 5) * 5;
+			
+		}else {
+			absolutePage = ((page /5) *5)+1;
+			endPage = ((page/5) * 5) + 5;
+		}
+		
+		if(endPage > totalPage) {
+			endPage = totalPage;
+		}
+						
+		int start = (page - 1)*listCount +1;
+		int end = page * listCount;
+		List<UserResumeDetailDto> list = resumedetailbiz.resumePaging(start, end);
+		model.addAttribute("resume_list",list);
+		model.addAttribute("page", page);
+		model.addAttribute("blockCount", blockCount);
+		model.addAttribute("totalPage", totalPage);
+		model.addAttribute("absolutePage", absolutePage);
+		model.addAttribute("endPage", endPage);
+		
+		return "resumeView";
+	}
 
 }

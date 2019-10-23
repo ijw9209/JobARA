@@ -88,7 +88,7 @@
 		}
 
 .wrap{
-    height: 800px;
+    height: 1400px;
     background-color: #f3f4f4;
 }
 
@@ -113,6 +113,36 @@
 }
 .chart_wrap_content{
 
+}
+
+.chart_wrap_two{
+
+}
+
+.two_title{
+	position: relative;
+    top: 550px;
+    margin-left: 407px;
+
+}
+#legendTemplate1{
+    position: relative;
+    top: 570px;
+    right: 404px;
+}    
+#legend{
+    margin-top: 580px;
+    margin-left: 434px;
+}
+.three_title{
+	position: relative;
+    top: 507px;
+    margin-left: 895px;
+}
+#multilineTitle{
+	position: relative;
+    bottom: 356px;
+    margin-left: 90px;
 }
 </style>
 <body>
@@ -142,15 +172,29 @@
 		</div>
 		<div class="chart_wrap">
 			<div class="chart_title">
-				<h2>일반/기업회원 가입자 수</h2>
+				<h2>월별 일반/기업회원 가입자 수</h2>
 			</div>
 			<div class="chart_wrap_content">
 			<svg width="900" height="500" id="chart"></svg>
 			</div>
 		</div>
 	</div>
+		<div class="chart_wrap_two">
+			<div class="two_title">
+				<h2>유저별 방문 분포도</h2>
+			</div>
+			<div class="three_title">
+				<h2>지원자분포도</h2>
+			</div>
+		<div id="legendTemplate1"></div>
+		<div id="legend"></div>
+			
+		<div id="multilineTitle"></div>
+		</div>
 	</div>
 <script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="/resources/js/billboard.js"></script>
+
 <input type="hidden" id="cnt_1_usermember" value="${cnt_1_usermember}"/>
 <input type="hidden" id="cnt_2_usermember" value="${cnt_2_usermember}"/>
 <input type="hidden" id="cnt_3_usermember" value="${cnt_3_usermember}"/>
@@ -165,7 +209,7 @@
 <input type="hidden" id="cnt_12_usermember" value="${cnt_12_usermember}"/>
 
 </body>
-
+<link rel="stylesheet" href="/resources/css/billboard.css">
 <script type="text/javascript">
 window.onload = function() {
 	token = $('meta[name="_csrf"]').attr('th:content');
@@ -284,8 +328,39 @@ window.onload = function() {
           .attr("y", 9.5)
           .attr("dy", "0.32em")
           .text(function(d) { return d; });
-
-      /*
+	
+      var chart2 = bb.generate({
+    	  data: {
+    	    columns: [
+    		["일반회원", 100],
+    		["기업회원", 300],
+    		["비회원", 200] 
+    	    ],
+    	    type: "pie"
+    	  },
+    	  legend: {
+    	    contents: {
+    	      bindto: "#legend",
+    	      template: "<span style='font-size:15px;color:#fff;padding:10px;background-color:{=COLOR}'>{=TITLE}</span>"
+    	    }
+    	  },
+    	  bindto: "#legendTemplate1"
+    	});
+      var chart1 = bb.generate({
+    	  data: {
+    	    columns: [
+    		["고졸이상", 30],
+    		["초대졸이상", 45],
+    		["대졸이상", 25]
+    	    ],
+    	    type: "donut"
+    	  },
+    	  donut: {
+    	    title: "고졸이상\n초대졸이상\n대졸이상"
+    	  },
+    	  bindto: "#multilineTitle"
+    	});
+      
       function closeNav() {
     		document.getElementById('mysidenav').style.width = '0';
     	}
@@ -294,10 +369,10 @@ window.onload = function() {
     	 	$(".side_menu_nav").mouseenter(function(){
     			$("#mysidenav").width('250px');
     		});
-    		$(".side_menu_nav").mouseleave(function(){
+    		/* $(".side_menu_nav").mouseleave(function(){
     			$("#mysidenav").width('0px');
-    		}); 
+    		});  */
     		
-    	});	 */
+    	});	
 </script>
 </html>

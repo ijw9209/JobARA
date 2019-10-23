@@ -21,7 +21,7 @@
     }
 	.header-menu li {
 		float:left;
-		width:8%;
+		width:10%;
 		text-align:center;
 	}
 	.search-input {
@@ -59,6 +59,9 @@
 	a{
 		color: black;
 	}
+	.menu_list{
+		cursor: pointer;
+	}
 </style>
 <body>
 
@@ -80,20 +83,19 @@
 			<div class="container">
 				<div class="width-100 display-block">
 				<ul>
-					<li><b>이력서관리</b></li>
-					<li><a href="/recruitment.do">채용공고</a></li>
-					<li><a href="/companylist">기업</a></li>
-					<li><a href="/calendar.do">채용박람회</a></li>
-					<li><a href="/announcement.do">공고등록</a></li>
-					<li><a onclick="chattpop1();">사용자간 대화</a></li>
-					<li class="float-right"><a href="/buis/buispage/">마이페이지</a></li>
+					<li><b class="menu_list"><a href="/buis/resumeview?page=1">이력서보기</a></b></li>
+					<li style="padding-left: 13px;"><b class="menu_list"><a href="/recruitment.do">채용공고</a></b></li>
+					<li style="padding-left: 10px;"><b class="menu_list"><a href="/companylist">기업정보</a></b></li>
+					<li style="padding-right: 10px;"><b class="menu_list"><a href="/announcement.do">공고등록</a></b></li>
+					<li><b class="menu_list"><a onclick="chattpop1();">사용자간 대화</a></b></li>
+					<li class="float-right"><b><a href="/buis/buispage/">마이페이지</a></b></li>
 				
 					<sec:authorize access="isAnonymous()">
    						<li class="float-right"><a href="login.do">로그인</a></li>
 					</sec:authorize>
 					<sec:authorize access="isAuthenticated()">
    					<form action="/logout" method="post" id="logout">
-						<li class="float-right" id="logout"><a id="a_tag" onclick="logoutsubmit()">로그아웃</a></li>
+						<li class="float-right" id="logout"><a id="a_tag" style="font-weight: 600;" onclick="logoutsubmit()">로그아웃</a></li>
 						<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 					</form>
 					</sec:authorize>

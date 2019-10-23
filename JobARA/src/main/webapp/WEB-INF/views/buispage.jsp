@@ -230,7 +230,7 @@ color: #575757;
      				<li class="aside_menu_resume"><a>ㄴ공고수정</a></li>
      				<li class="aside_menu">개인정보관리</li>
      				<li class="aside_menu_resume"><a href="/updatemember">ㄴ개인정보수정</a></li>
-     				<li class="aside_menu_resume"><a>ㄴ회원탈퇴</a></li>
+     				<li class="aside_menu_resume"><a href="/deletemember">ㄴ회원탈퇴</a></li>
      			</ul>
      	</aside>
      	<div class="center_wrap_two">

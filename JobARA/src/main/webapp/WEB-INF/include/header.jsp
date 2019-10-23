@@ -21,7 +21,7 @@
     }
 	.header-menu li {
 		float:left;
-		width:8%;
+		width: 10%;
 		text-align:center;
 	}
 	.search-input {

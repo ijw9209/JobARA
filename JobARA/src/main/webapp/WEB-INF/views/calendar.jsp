@@ -8,7 +8,7 @@
 <%@ include file="/WEB-INF/include/header.jsp"%>
 <title>Insert title here</title>
 <style type="text/css">
-body {
+.cal {
 	margin: 40px 10px;
 	padding: 0;
 	font-family: "Lucida Grande", Helvetica, Arial, Verdana, sans-serif;
@@ -16,8 +16,13 @@ body {
 }
 
 #calendar {
-	max-width: 1600px;
-	margin: 0 auto;
+    height: 850px;
+    max-width: 1600px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+.title{
+text-align: center;
 }
 </style>
 <link href="/resources/js/fullcalendar/fullcalendar.css"
@@ -451,8 +456,10 @@ body {
 </script>
 </head>
 <body>
-
-	<div id="calendar"></div>
+	<div class="title">
+		<h1>채용박람회 일정</h1>
+	</div>
+	<div id="calendar" class="cal"></div>
 	
 </body>
 <%@ include file="/WEB-INF/include/footer.jsp"%>

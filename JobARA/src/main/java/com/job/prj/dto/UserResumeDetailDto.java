@@ -30,6 +30,9 @@ public class UserResumeDetailDto {
 	private String resume_self_two_content;
 	private String reg;
 	private int rownum;
+	private String resume_date;
+	private String member_name;
+	private int r;
 
 	public UserResumeDetailDto() {
 	}
@@ -254,8 +257,23 @@ public class UserResumeDetailDto {
 	public void setReg(String reg) {
 		this.reg = reg;
 	}
-	
-	
-	
+	public String getResume_date() {
+		return resume_date;
+	}
+	public void setResume_date(String resume_date) {
+		this.resume_date = resume_date;
+	}
+	public String getMember_name() {
+		return member_name;
+	}
+	public void setMember_name(String member_name) {
+		this.member_name = member_name;
+	}
+	public int getR() {
+		return r;
+	}
+	public void setR(int r) {
+		this.r = r;
+	}
 
 }

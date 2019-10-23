@@ -104,7 +104,6 @@ function kakaoLogin() {
 			Kakao.API.request({
 				url : '/v1/user/me',
 				success : function(res) {
-					alert(res.id);
 					var member_id = "KakaoSns" + res.id;
 					var member_pw = "KakaoSns" + res.id;
 					var member_email = res.kaccount_email;
@@ -119,8 +118,6 @@ function kakaoLogin() {
 									"${_csrf.token}");
 						},
 						success : function(data) {
-							alert(data.id);
-							console.log(data);
 							if (data.id != null && data.id != "") {
 								$("#id").val(data.id);
 								$("#pw").val(data.pw);
