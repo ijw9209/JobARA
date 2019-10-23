@@ -466,4 +466,6 @@ CREATE TABLE FAQ(
 	FAQ_ID VARCHAR(100) --아이디(ADMIN)
 	);
 	
+	INSERT INTO FAQ VALUES(1, '소셜로 가입한 계정을 잡아라 자체 계정으로 전환이 가능하가요?', '불가능합니다.', 'ADMIN');
+	
 

@@ -85,14 +85,14 @@
 					<li>이력서보기</li>
 					<li>기업∙연봉</li>
 					<li>뉴스∙자료</li>
-					<li>인재검색</li>
+					<li><a onclick="chattpop1();">사용자간 대화</a></li>
 					<li class="float-right">공고등록</li>
 				
 					<sec:authorize access="isAnonymous()">
    						<li class="float-right"><a href="login.do">로그인</a></li>
 					</sec:authorize>
 					<sec:authorize access="isAuthenticated()">
-   					<form action="logout" method="post" id="logout">
+   					<form action="/logout" method="post" id="logout">
 						<li class="float-right" id="logout"><a id="a_tag" onclick="logoutsubmit()">로그아웃</a></li>
 						<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 					</form>
@@ -107,6 +107,14 @@
 <script type="text/javascript">
 	function logoutsubmit(){
 		$("#logout").submit();
+	}
+	
+	function chattpop1() {
+		const url = '/chat.do';
+		const name = 'chatt';
+		var option = 'width = 850 , height = 550, top = 100, left = 200, location = no';
+		window.open(url, name, option);
+		
 	}
 </script>
 </html>

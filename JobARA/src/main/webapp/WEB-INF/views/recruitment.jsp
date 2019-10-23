@@ -15,8 +15,8 @@
 </head>
 <body>
 	<!-- 기업명	제목	지원자격	근무조건	마감일·등록일 -->
-	<div>
-		<table>
+	<div class="container">
+		<table class="width-100 regist-table">
 			<tr>
 				 <th>기업명</th>
 				 <th colspan="3">제목</th>
@@ -36,8 +36,8 @@
 						<td>${dto.hire_company_title }</td>
 						<td colspan="3"><a href="recruitdetil.do?hire_no_seq=${dto.hire_no_seq }&member_no_seq=${dto.member_no_seq}">${dto.hire_recruit_name }</a></td>
 						<td>
-							${dto.hire_career }<br>
-							${dto.hire_edu }
+							경력 : ${dto.hire_career }<br>
+							학력 : ${dto.hire_edu }
 						</td>
 						<td>${dto.hire_position }</td>
 						<td>~${dto.hire_endday }</td>

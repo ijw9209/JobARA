@@ -45,15 +45,15 @@
 		업종		대표자명
 		기업주소
 	-->
-	 <div>
-	 	<table>
+	 <div class="container">
+	 	<table class="width-100 regist-table">
 	 		<tr>
 	 			<th><h4>${hiredto.hire_company_title }</h4></th>
 	 		</tr>
 	 		<tr>
 	 			<th>${hiredto.hire_recruit_name }</th>
 	 			<td>
-	 				<input type="button" value="즉시지원" onclick="">
+	 				<input type="button" value="즉시지원" class="btn btn-primary" onclick="">
 	 			</td>
 	 		</tr>
 			<tr>
@@ -76,9 +76,9 @@
 			</tr>
 		</table>
 	 </div>
-	 <div>
+	 <div class="container">
 	 	<h3>모집부문 및 자격요건</h3>
-	 	<table>
+	 	<table class="width-100 regist-table">
 	 		<tr>
 	 			<th>모집분야</th>
 	 			<th>담당업무/자격 및 우대사항</th>
@@ -96,9 +96,9 @@
 	 		</tr>
 	 	</table>
 	 </div>
-	 <div>
+	 <div class="container">
 	 	<h3>지원자격</h3>
-	 	<table>
+	 	<table class="width-100 regist-table">
 	 	<tr>
 	 		<th>학력</th>
 	 		<td>${hiredto.hire_edu }</td>
@@ -113,7 +113,7 @@
 	 	</tr>
 	 	</table>
 	 	<h3>근무조건 및 근무환경</h3>
-	 	<table>
+	 	<table class="width-100 regist-table">
 	 	<tr>
 	 		<th>근무형태</th>
 	 		<td>${hiredto.hire_position }</td>
@@ -132,12 +132,12 @@
 	 	</tr>
 	 	</table>
 	 	<h3>접수기간 및 방법</h3>
-	 	<table>
+	 	<table class="width-100 regist-table">
 	 		<tr>
 	 			<th>접수기간</th>
 	 			<td>${hiredto.hire_startday } ~ ${hiredto.hire_endday }</td>
 	 			<td>
-	 				<input type="button" value="즉시지원" onclick="">
+	 				<input type="button" value="즉시지원" class="btn btn-primary" onclick="">
 	 			</td>
 	 		</tr>
 	 		<tr>
@@ -146,7 +146,7 @@
 	 		</tr>
 	 	</table>
 	 	<h3>담당자</h3>
-	 	<table>
+	 	<table class="width-100 regist-table">
 	 		<tr>
 	 			<th>담당자 이름</th>
 	 			<td>${hiredto.hire_manager_name }</td>
@@ -161,7 +161,7 @@
 	 		</tr>
 	 	</table>
 	 	<h3>기업 정보</h3>
-	 	<table>
+	 	<table class="width-100 regist-table">
 			<tr>
 				<td><h3>${comdto.company_title }</h3></td>
 			</tr>

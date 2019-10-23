@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="FAQ">
+<mapper namespace="faq">
+
+	<select id="selectlist" resultType="FAQDto">
+	SELECT FAQ_NO_SEQ, FAQ_TITLE, FAQ_CONTENT, FAQ_ID FROM FAQ
+	<where>
+		<if test="faq_content != null and notice_content !=''">
+			FAQ_CONTENT LIKE '%'||${faq_content}||'%' AND
+		</if>
+		<if test="faq_title != null and faq_title != ''">
+			FAQ_TITLE LIKE '%'||${faq_title}||'%' AND
+		</if>
+		<if test="faq_id != null and faq_id !=''">
+			FAQ_ID LIKE '%'||${faq_id}||'%' AND
+		</if>
+	</where>
+	ORDER BY FAQ_NO_SEQ DESC
+	</select>
+	
+	<select id="selectone" parameterType="int" resultType="FAQDto">
+	SELECT FAQ_NO_SEQ, FAQ_TITLE, FAQ_CONTENT, FAQ_ID FROM FAQ WHERE FAQ_NO_SEQ = #{faq_no_seq}
+	</select>
+	
+	<insert id="insert" parameterType="FAQDto">
+	INSERT INTO FAQ VALUES(#{faq_no_seq}, #{faq_title}, #{faq_content}, #{faq_id})
+	</insert>
+	
+	<update id="update" parameterType="FAQDto">
+	UPDATE FAQ SET FAQ_TITLE = #{faq_title}, FAQ_CONTENT = #{faq_content} WHERE FAQ_NO_SEQ = #{faq_no_seq}
+	</update>
+	
+	<delete id="delete" parameterType="int">
+	DELETE FROM FAQ WHERE FAQ_NO_SEQ = #{faq_no_seq}
+	</delete>
 
 </mapper>
