@@ -151,7 +151,18 @@
 	</div>
 	</div>
 <script src="https://d3js.org/d3.v4.min.js"></script>
-
+<input type="hidden" id="cnt_1_usermember" value="${cnt_1_usermember}"/>
+<input type="hidden" id="cnt_2_usermember" value="${cnt_2_usermember}"/>
+<input type="hidden" id="cnt_3_usermember" value="${cnt_3_usermember}"/>
+<input type="hidden" id="cnt_4_usermember" value="${cnt_4_usermember}"/>
+<input type="hidden" id="cnt_5_usermember" value="${cnt_5_usermember}"/>
+<input type="hidden" id="cnt_6_usermember" value="${cnt_6_usermember}"/>
+<input type="hidden" id="cnt_7_usermember" value="${cnt_7_usermember}"/>
+<input type="hidden" id="cnt_8_usermember" value="${cnt_8_usermember}"/>
+<input type="hidden" id="cnt_9_usermember" value="${cnt_9_usermember}"/>
+<input type="hidden" id="cnt_10_usermember" value="${cnt_10_usermember}"/>
+<input type="hidden" id="cnt_11_usermember" value="${cnt_11_usermember}"/>
+<input type="hidden" id="cnt_12_usermember" value="${cnt_12_usermember}"/>
 
 </body>
 
@@ -165,11 +176,25 @@ window.onload = function() {
 		document.fr.submit();
 	}
 
- 
+ 	var cnt_1_user = $("#cnt_1_usermember").val();
+ 	var cnt_2_user = $("#cnt_2_usermember").val();
+ 	var cnt_3_user = $("#cnt_3_usermember").val();
+ 	var cnt_4_user = $("#cnt_4_usermember").val();
+ 	var cnt_5_user = $("#cnt_5_usermember").val();
+ 	var cnt_6_user = $("#cnt_6_usermember").val();
+ 	var cnt_7_user = $("#cnt_7_usermember").val();
+ 	var cnt_8_user = $("#cnt_8_usermember").val();
+ 	var cnt_9_user = $("#cnt_9_usermember").val();
+ 	var cnt_10_user = $("#cnt_10_usermember").val();
+ 	var cnt_11_user = $("#cnt_11_usermember").val();
+ 	var cnt_12_user = $("#cnt_12_usermember").val();
+ 	
+ 	
+ 	console.log(cnt_1_user);
     var series = ["일반회원","기업회원"];
  
     var dataset = [
-    	{'1월': 6, '2월':1, '3월':15, '4월':11, '5월':20, '6월':14, '7월':30, '8월':21, '9월':11, '10월':20, '11월':14, '12월':9},
+    	{'1월': cnt_1_user, '2월':cnt_2_user, '3월':cnt_3_user, '4월':cnt_4_user, '5월':cnt_5_user, '6월':cnt_6_user, '7월':cnt_7_user, '8월':cnt_8_user, '9월':cnt_9_user, '10월':cnt_10_user, '11월':cnt_11_user, '12월':cnt_12_user},
         {'1월': 9, '2월':19, '3월':29, '4월':39, '5월':29, '6월':19, '7월':9, '8월':7, '9월':17, '10월':27, '11월':17, '12월':7}];
  
     var keys = d3.keys(dataset[0]);

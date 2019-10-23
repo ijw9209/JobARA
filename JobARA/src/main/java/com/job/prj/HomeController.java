@@ -77,10 +77,4 @@ public class HomeController {
 	  }
 	
 	  
-	  @RequestMapping("/admin/adminpage")
-	  public String adminPage() {
-		  return "adminpage";
-		  
-	  }
-	 
 }

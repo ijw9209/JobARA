@@ -88,6 +88,78 @@ public class UserMemberBizImpl implements UserMemberBiz,UserDetailsService {
 		// TODO Auto-generated method stub
 		return dao.exitMember(member_no_seq);
 	}
+
+	@Override
+	public int cnt_1_usermember() {
+		
+		return dao.cnt_1_usermember();
+	}
+
+	@Override
+	public int cnt_2_usermember() {
+		// TODO Auto-generated method stub
+		return dao.cnt_2_usermember();
+	}
+
+	@Override
+	public int cnt_3_usermember() {
+		// TODO Auto-generated method stub
+		return dao.cnt_3_usermember();
+	}
+
+	@Override
+	public int cnt_4_usermember() {
+		// TODO Auto-generated method stub
+		return dao.cnt_4_usermember();
+	}
+
+	@Override
+	public int cnt_5_usermember() {
+		// TODO Auto-generated method stub
+		return dao.cnt_5_usermember();
+	}
+
+	@Override
+	public int cnt_6_usermember() {
+		// TODO Auto-generated method stub
+		return dao.cnt_6_usermember();
+	}
+
+	@Override
+	public int cnt_7_usermember() {
+		// TODO Auto-generated method stub
+		return dao.cnt_7_usermember();
+	}
+
+	@Override
+	public int cnt_8_usermember() {
+		// TODO Auto-generated method stub
+		return dao.cnt_8_usermember();
+	}
+
+	@Override
+	public int cnt_9_usermember() {
+		// TODO Auto-generated method stub
+		return dao.cnt_9_usermember();
+	}
+
+	@Override
+	public int cnt_10_usermember() {
+		// TODO Auto-generated method stub
+		return dao.cnt_10_usermember();
+	}
+
+	@Override
+	public int cnt_11_usermember() {
+		// TODO Auto-generated method stub
+		return dao.cnt_11_usermember();
+	}
+
+	@Override
+	public int cnt_12_usermember() {
+		// TODO Auto-generated method stub
+		return dao.cnt_12_usermember();
+	}
 	
 
 }

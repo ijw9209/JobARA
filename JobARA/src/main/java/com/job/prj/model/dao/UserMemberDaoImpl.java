@@ -156,4 +156,171 @@ public class UserMemberDaoImpl implements UserMemberDao {
 		
 		return res;
 	}
+
+	@Override
+	public int cnt_1_usermember() {
+		int res = 0;
+		
+		try {
+			res = sqlSession.selectOne(namespace + "cnt_1_usermember");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return res;
+	}
+
+	@Override
+	public int cnt_2_usermember() {
+		int res = 0;
+		
+		try {
+			res = sqlSession.selectOne(namespace + "cnt_2_usermember");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		return res;
+	}
+
+	@Override
+	public int cnt_3_usermember() {
+		int res = 0;
+		
+		try {
+			res = sqlSession.selectOne(namespace + "cnt_3_usermember");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		return res;
+	}
+
+	@Override
+	public int cnt_4_usermember() {
+		int res = 0;
+		
+		try {
+			res = sqlSession.selectOne(namespace + "cnt_4_usermember");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		return res;
+	}
+
+	@Override
+	public int cnt_5_usermember() {
+		int res = 0;
+		
+		try {
+			res = sqlSession.selectOne(namespace + "cnt_5_usermember");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		return res;
+	}
+
+	@Override
+	public int cnt_6_usermember() {
+		int res = 0;
+		
+		try {
+			res = sqlSession.selectOne(namespace + "cnt_6_usermember");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		return res;
+	}
+
+	@Override
+	public int cnt_7_usermember() {
+		int res = 0;
+		
+		try {
+			res = sqlSession.selectOne(namespace + "cnt_7_usermember");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		return res;
+	}
+
+	@Override
+	public int cnt_8_usermember() {
+		int res = 0;
+		
+		try {
+			res = sqlSession.selectOne(namespace + "cnt_8_usermember");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		return res;
+	}
+
+	@Override
+	public int cnt_9_usermember() {
+		int res = 0;
+		
+		try {
+			res = sqlSession.selectOne(namespace + "cnt_9_usermember");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		return res;
+	}
+
+	@Override
+	public int cnt_10_usermember() {
+		int res = 0;
+		
+		try {
+			res = sqlSession.selectOne(namespace + "cnt_10_usermember");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		return res;
+	}
+
+	@Override
+	public int cnt_11_usermember() {
+		int res = 0;
+		
+		try {
+			res = sqlSession.selectOne(namespace + "cnt_11_usermember");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		return res;
+	}
+
+	@Override
+	public int cnt_12_usermember() {
+		int res = 0;
+		
+		try {
+			res = sqlSession.selectOne(namespace + "cnt_12_usermember");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		return res;
+	}
 }
