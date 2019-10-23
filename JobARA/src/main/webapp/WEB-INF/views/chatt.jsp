@@ -25,6 +25,7 @@
 <body>
     <div id="chat_box"></div>
     <input type="text" id="msg">
+    <input type="hidden" value="${id }" id="id">
     <button id="msg_process">전송</button>
  
     <script src="http://192.168.10.144:8999/socket.io/socket.io.js"></script>
@@ -32,6 +33,7 @@
     <script>
             $(document).ready(function(){
                 var socket = io("http://192.168.10.144:8999");
+                var id = $("#id").val();
                 
                 //msg에서 키를 누를떄
                 $("#msg").keydown(function(key){
@@ -52,7 +54,7 @@
                 //소켓 서버로 부터 send_msg를 통해 이벤트를 받을 경우 
                 socket.on('send_msg', function(msg) {
                     //div 태그를 만들어 텍스트를 msg로 지정을 한뒤 #chat_box에 추가를 시켜준다.
-                    $('<div></div>').text(" : " + msg).appendTo("#chat_box");
+                    $('<div></div>').text(id + " : " + msg).appendTo("#chat_box");
                 });
 
             });
