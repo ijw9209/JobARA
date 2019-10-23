@@ -17,6 +17,7 @@
 <body>
 	<div id="container">
 		<form action="customerupdateres.do" method="post" novalidate onsubmit="inquiryres()">
+			<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
 			<input type="hidden" name="customer_no_seq" value="${dto.customer_no_seq }"/>
 			<table border="1">
 				<thead>

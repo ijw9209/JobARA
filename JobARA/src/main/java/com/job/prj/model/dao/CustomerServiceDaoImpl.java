@@ -40,7 +40,13 @@ public class CustomerServiceDaoImpl implements CustomerServiceDao {
 	//문의사항 글쓰기
 	@Override
 	public int insert(CustomerServiceDto CustomerDto) {
-		int res = sqlSession.insert(namespace + "insert", CustomerDto);
+		int res = 0;
+		try {
+			res = sqlSession.insert(namespace + "insert", CustomerDto);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return res;
 	}
 

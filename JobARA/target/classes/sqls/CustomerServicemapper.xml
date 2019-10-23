@@ -29,7 +29,7 @@
   </insert>
   
   <update id="update" parameterType="CustomerServiceDto">
-  UPDATE CUSTOMER_SERVICE SET CUSTOMER_TITLE = #{customer_service}, CUSTOMER_CONTENT = #{customer_content}, CUSTOMER_EMAIL = #{customer_email} WHERE CUSTOMER_NO_SEQ = #{customer_no_seq}
+  UPDATE CUSTOMER_SERVICE SET CUSTOMER_TITLE = #{customer_title}, CUSTOMER_CONTENT = #{customer_content}, CUSTOMER_EMAIL = #{customer_email} WHERE CUSTOMER_NO_SEQ = #{customer_no_seq}
   </update>
   
   <delete id="delete" parameterType="int">

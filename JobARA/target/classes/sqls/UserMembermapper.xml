@@ -92,6 +92,4 @@
 	<select id="cnt_12_usermember" resultType="int">
 	SELECT COUNT(*) FROM USER_MEMBER WHERE MEMBER_REGDATE &lt;= '2019-12-31' AND MEMBER_REGDATE &gt;= '2019-12-01' AND MEMBER_ROLE = 'ROLE_USER'
 	</select>
-	
-	
 </mapper>

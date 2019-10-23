@@ -17,6 +17,7 @@
 <body>
 <div id="container">
 	<form action="customerinsertres.do" method="post">
+	<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
 		<table border="1">
 			<thead>
 				<tr>

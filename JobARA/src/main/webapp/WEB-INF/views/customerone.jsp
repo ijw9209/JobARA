@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <% request.setCharacterEncoding("UTF-8"); %>
 <% response.setContentType("text/html; charset=UTF-8"); %>
 <!DOCTYPE html>
@@ -14,6 +15,7 @@
 <body>
 <div id="container">
 	<form action="customerone.do" method="post">
+		<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
 		<input type="hidden" name="customer_no_seq" value="${dto.customer_no_seq }"/>
 		<table border="1">
 			<thead>
@@ -29,24 +31,18 @@
 					<th>내용</th>
 					<td>${dto.customer_content }</td>
 				</tr>
-				<c:if test="${!empty UserMemberDto }">
-					<c:if test="${ UserMemberDto.member_role eq 'ADMIN' }">
-						<tr>
-							<th>Email</th>
-							<td>${dto.customer_email }</td>
-						</tr>
-					</c:if>
-				</c:if>
+				<tr>
+					<th>이메일</th>
+					<td>${dto.customer_email}</td>
+				</tr>
 			</thead>
 			<tbody>
 				<tr>
 					<td colspan="4">
-						<c:if test="${!empty UserMemberDto }">
-							<c:if test="${ UserMemberDto.member_no_seq eq dto.member_no_seq }">
+						<sec:authorize access="isAuthenticated()">
 								<input type="button" value="수정하기" onclick="location.href='customerupdate.do?customer_no_seq=${dto.customer_no_seq}'"/>
 								<input type="button" value="삭제하기" onclick="location.href='customerdelete.do?customer_no_seq=${dto.customer_no_seq}'"/>
-							</c:if>
-						</c:if>
+						</sec:authorize>	
 						<input type="button" value="목록" onclick="location.href='customerservice.do'"/>
 					</td>
 				</tr>

@@ -14,7 +14,7 @@ import com.job.prj.dto.FAQDto;
 public class FAQDaoImpl implements FAQDao {
 
 	@Autowired
-	@Qualifier("sqlSessionTemplate2")
+	@Qualifier("sqlSessionTemplate")
 	private SqlSessionTemplate sqlSession;
 	
 	//FAQ 리스트

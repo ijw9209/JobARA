@@ -1,6 +1,7 @@
 package com.job.prj;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.job.prj.dto.CustomerServiceDto;
 import com.job.prj.dto.FAQDto;
+import com.job.prj.dto.UserMemberDto;
 import com.job.prj.model.biz.CustomerServiceBiz;
 import com.job.prj.model.biz.FAQBiz;
 
@@ -92,7 +94,7 @@ public class CustomerController {
 	
 	@RequestMapping(value = "/customerone.do", method = {RequestMethod.GET, RequestMethod.POST})
 	public String CustomerOne(@RequestParam int customer_no_seq, Model model) {
-		model.addAttribute("selectone", CustomerBiz.selectone(customer_no_seq));
+		model.addAttribute("dto", CustomerBiz.selectone(customer_no_seq));
 		return "customerone";
 	}
 	
@@ -103,6 +105,15 @@ public class CustomerController {
 	
 	@RequestMapping(value = "/customerinsertres.do", method = {RequestMethod.GET, RequestMethod.POST})
 	public String CustomerInsertRes(CustomerServiceDto CustomerDto, Model model) {
+		
+	    Object principal =
+				 SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+				 UserMemberDto usermember = (UserMemberDto) principal;
+		int member_no_seq = usermember.getMember_no_seq();
+		
+		
+		CustomerDto.setMember_no_seq(member_no_seq);		 
+		
 		int res = CustomerBiz.insert(CustomerDto);
 		if(res > 0) {
 			model.addAttribute("list", CustomerBiz.selectlist());
@@ -113,12 +124,18 @@ public class CustomerController {
 	}
 	
 	@RequestMapping(value = "/customerupdate.do", method = RequestMethod.GET)
-	public String CustomerUpdate() {
+	public String CustomerUpdate(Model model ,@RequestParam int customer_no_seq) {
+		model.addAttribute("dto", CustomerBiz.selectone(customer_no_seq));
+		
 		return "customerupdate";
 	}
 	
-	@RequestMapping(value = "/customerupdateres.do", method = RequestMethod.GET)
-	public String CustomerUpdateRes(CustomerServiceDto CustomerDto,int customer_no_seq , Model model) {
+	@RequestMapping(value = "/customerupdateres.do", method = RequestMethod.POST)
+	public String CustomerUpdateRes(CustomerServiceDto CustomerDto,@RequestParam int customer_no_seq , Model model) {
+		System.out.println(customer_no_seq);
+		
+		CustomerDto.setCustomer_no_seq(customer_no_seq);
+		
 		int res = CustomerBiz.update(CustomerDto);
 		if(res > 0) {
 			model.addAttribute("selectone", CustomerBiz.selectone(customer_no_seq));
@@ -129,7 +146,7 @@ public class CustomerController {
 	}
 	
 	@RequestMapping(value = "/customerdelete.do")
-	public String CustomerDelete(int customer_no_seq, Model model) {
+	public String CustomerDelete(@RequestParam int customer_no_seq, Model model) {
 		int res = CustomerBiz.delete(customer_no_seq);
 		if(res > 0) {
 			model.addAttribute("list", CustomerBiz.selectlist());
