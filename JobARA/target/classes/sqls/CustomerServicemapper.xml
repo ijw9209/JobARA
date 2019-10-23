@@ -1,5 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="CustomerService">
+<mapper namespace="customerservice">
+  
+  <select id="selectlist" resultType="CustomerServiceDto">
+  SELECT CUSTOMER_NO_SEQ, MEMBER_NO_SEQ, CUSTOMER_TITLE, CUSTOMER_CONTENT, CUSTOMER_REGDATE, CUSTOMER_EMAIL
+  FROM CUSTOMER_SERVICE
+  <where>
+  	<if test="customer_title != null">
+  		CUSTOMER_TITLE LIKE '%'||#{customer_title}||'%' AND
+  	</if>
+  	<if test="member_no_seq != null">
+  		MEMBER_NO_SEQ LIKE '%'||#{member_no_seq}||'%' AND
+  	</if>
+  	<if test="customer_content != null">
+  		CUSTOMER_CONTENT LIKE '%'||#{customer_content}||'%' AND
+  	</if>
+  </where>
+  ORDER BY CUSTOMER_NO_SEQ DESC
+  </select>
+  
+  <select id="selectone" resultType="CustomerServiceDto" parameterType="int">
+  SELECT CUSTOMER_NO_SEQ, MEMBER_NO_SEQ, CUSTOMER_TITLE, CUSTOMER_CONTENT, CUSTOMER_REGDATE, CUSTOMER_EMAIL
+  FROM CUSTOMER_SERVICE WHERE CUSTOMER_NO_SEQ = #{customer_no_seq}
+  </select>
+  
+  <insert id="insert" parameterType="CustomerServiceDto">
+  INSERT INTO CUSTOMER_SERVICE VALUES(CUSTOMERSEQ.NEXTVAL, #{member_no_seq}, #{customer_title}, #{customer_content}, SYSDATE, #{customer_email})
+  </insert>
+  
+  <update id="update" parameterType="CustomerServiceDto">
+  UPDATE CUSTOMER_SERVICE SET CUSTOMER_TITLE = #{customer_service}, CUSTOMER_CONTENT = #{customer_content}, CUSTOMER_EMAIL = #{customer_email} WHERE CUSTOMER_NO_SEQ = #{customer_no_seq}
+  </update>
+  
+  <delete id="delete" parameterType="int">
+  DELETE FROM CUSTOMER_SERVICE WHERE CUSTOMER_NO_SEQ = #{customer_no_seq}
+  </delete>
   
 </mapper>

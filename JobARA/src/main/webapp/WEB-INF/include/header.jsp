@@ -113,7 +113,7 @@
 	}
 	
 	function chattpop() {
-		const url = 'chat.do';
+		const url = '/chat.do';
 		const name = 'chatt';
 		var option = 'width = 850 , height = 550, top = 100, left = 200, location = no';
 		window.open(url, name, option);
