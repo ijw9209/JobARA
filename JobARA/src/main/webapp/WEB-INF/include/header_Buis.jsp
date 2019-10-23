@@ -81,12 +81,12 @@
 				<div class="width-100 display-block">
 				<ul>
 					<li><b>이력서관리</b></li>
-					<li>채용공고</li>
-					<li>이력서보기</li>
-					<li>기업∙연봉</li>
-					<li>뉴스∙자료</li>
+					<li><a href="/recruitment.do">채용공고</a></li>
+					<li><a href="/companylist">기업</a></li>
+					<li><a href="/calendar.do">채용박람회</a></li>
+					<li><a href="/announcement.do">공고등록</a></li>
 					<li><a onclick="chattpop1();">사용자간 대화</a></li>
-					<li class="float-right">공고등록</li>
+					<li class="float-right"><a href="/buis/buispage/">마이페이지</a></li>
 				
 					<sec:authorize access="isAnonymous()">
    						<li class="float-right"><a href="login.do">로그인</a></li>

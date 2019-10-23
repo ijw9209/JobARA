@@ -15,14 +15,15 @@
 <meta charset="UTF-8">
 <meta name="_csrf" th:content="${_csrf.token}" />
 <meta name="_csrf_header" th:content="${_csrf.headerName}" />
-
-
-<title>Insert title here</title>
+<%@ include file="/WEB-INF/include/header.jspf"%>
+<%@ include file="/WEB-INF/include/header.jsp"%>
 <link rel="stylesheet"
 	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<title>Insert title here</title>
 <script type="text/javascript" src="/resources/js/hopeMap.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script type="text/javascript">
 	function popUpImg() {
 		window.open("uploadform.do", "",
@@ -47,6 +48,8 @@
 			}
 		});
 	});
+
+
 	// 학력
 	$(function() {
 
@@ -411,33 +414,6 @@
 
 			})
 	
-	$(function(){
-		
-		var school=documemnt.getElementById("school")
-	$("#schoolbutton").click(function(){
-		
-		if(school.style.display='none'){
-			
-			school.style.display='block'
-		}else{
-			alert("내용을 삭제하겠습니까?")
-			school.style.display='none';
-			
-			var text=document.getElementsByClassName("input-text")
-			for(var i=0; i<el.length; i++){
-
-				el[i].value = '';
-
-			}
-
-
-
-		}
-		
-		
-	});
-	
-	})
 	function hopeinterview(){
 		var radio = $("input[name=hope_afterinterview]:checked").val();
 
@@ -448,6 +424,8 @@
 		}	
 		
 	}
+	
+
 
 </script>
 
@@ -459,6 +437,7 @@
 	margin-left: 500px;
 	width: 200px;
 	height: 400px;
+	padding-top: 200px;
 }
 
 #content {
@@ -468,15 +447,25 @@
 }
 
 #sidebanner_ul input {
-	border: 1px solid skyblue;
+	border: 3px solid gray;
 	background-color: rgba(0, 0, 0, 0);
-	color: skyblue;
+	color: black;
 	font-size: 20px;
 }
 
 #sidebanner_ul li {
 	padding-bottom: 20px;
 }
+
+#resume_title{
+width: 960px;
+height: 50px;
+font-size: 40px;
+
+
+}
+
+
 </style>
 </head>
 <body>
@@ -484,7 +473,7 @@
 	<div id="sidebanner">
 
 		<ul style="list-style: none;" id="sidebanner_ul">
-			<li><input type="button" id="schoolbutton" value="학력"></li>
+			<li><input type="button" id="schoolbutton" value="학력" ></li>
 
 			<li><input type="button" id="careerbutton" value="경력"></li>
 
@@ -508,14 +497,14 @@
 				value="${seq }"> 
 				<input type="hidden" name="member_no_seq"
 				value="${seq }"> 
-				<a><input type="text"
+				<a><input type="text" id="resume_title"
 				name="resume_title" placeholder="기업에게 나를 알려줍시다."></a>
 			<fieldset>
 				<legend>사진등록</legend>
 
 				<input type="hidden" id="resume_photo" name="resume_photo" value="">
-				<label><img id="kfile" alt="이력서 사진" onclick="popUpImg();"
-					class="imageUpload" width="103px" height="132px" /></label><br>
+				<label><img id="kfile" alt="사진추가" onclick="popUpImg();"
+					class="imageUpload" width="103px" height="132px"/></label><br>
 
 			</fieldset>
 
@@ -538,7 +527,7 @@
 					value="${memberresume.member_addr}"></label><br>
 			</fieldset>
 
-			<div id="school">
+			<div id="school" >
 				<table>
 					<tr>
 						<td><input type="button" value="초등학교 졸업" id="elementary">

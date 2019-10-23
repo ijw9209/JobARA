@@ -13,6 +13,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<%@ include file="/WEB-INF/include/header.jspf"%>
+<%@ include file="/WEB-INF/include/header.jsp"%>
 <title>Insert title here</title>
 <script type="text/javascript">
 	function del() {
@@ -21,98 +23,146 @@
 		}
 	}
 </script>
+
+<style type="text/css">
+	
+#detail{
+	padding-left: 300px;
+	height: 2500px;
+	
+	
+
+}
+#sidebanner {
+	position: fixed;
+	top: 50px;
+	left: 50%;
+	margin-left: 500px;
+	width: 200px;
+	height: 400px;
+		padding-top: 200px;
+}
+#sidebanner_ul input {
+	border: 3px solid gray;
+	background-color: rgba(0, 0, 0, 0);
+	color: black;
+	font-size: 20px;
+}
+
+#sidebanner_ul li {
+	padding-bottom: 20px;
+}
+
+
+
+</style>
 </head>
 <body>
-	<h3>이력서</h3>
-	<a>제목:${selectOneResume.userresumedetaildto.resume_title }</a>
+
+	<div id="sidebanner">
+	
+		<ul style="list-style: none;"id="sidebanner_ul">
+			<li><input type="button" value="수정하기"
+		onclick="location.href='updateResumeres.do?resume_no_seq=${selectOneResume.userresumedetaildto.resume_no_seq }&member_no_seq=${seq }'"></li>
+		<li><input type="button" value="삭제하기" onclick="del()"></li>
+		
+		</ul>
+	
+	
+	
+	</div>
+
+	<div id="detail">
+	<h1>이력서</h1>
+	<a><b>제목</b>:${selectOneResume.userresumedetaildto.resume_title }</a>
 	<fieldset>
 		<legend>인적사항</legend>
 		<label><img alt="이력서 사진"
 			src="${selectOneResume.userresumedetaildto.resume_photo}"
-			width="103px" height="132px" /></label><br> <label>이름:${memberresume.member_name }</label><br>
-		<label>생일:${memberresume.member_birth }</label><br> <label>성별:${memberresume.member_gender}
-		</label> <br> <label>이메일:${memberresume.member_email}</label><br> <label>전화번호:${memberresume.member_tel}</label><br>
-		<label>주소:${memberresume.member_addr}</label><br>
+			width="103px" height="132px" /></label><br> <label><b>이름</b>:${memberresume.member_name }</label><br>
+		<label><b>생일</b>:${memberresume.member_birth }</label><br> <label><b>성별</b>:${memberresume.member_gender}
+		</label> <br> <label><b>이메일:</b>${memberresume.member_email}</label><br> <label><b>전화번호:</b>${memberresume.member_tel}</label><br>
+		<label><b>주소:</b>${memberresume.member_addr}</label><br>
 	</fieldset>
 
 	<fieldset>
 
-		<legend>최종 학력</legend>
+		<legend><b>최종 학력</b></legend>
 		<label>${selectOneResume.userresumedetaildto.resume_final_edu }</label>
-		<br> <label>학교명 :
-			${selectOneResume.userresumedetaildto.resume_schoolname }</label><br> <label>졸업년도
-			:${selectOneResume.userresumedetaildto.resume_graduated_year }</label><br>
-		<label>상태 :
+		<br> <label><b>학교명 :</b>
+			${selectOneResume.userresumedetaildto.resume_schoolname }</label><br> <label><b>졸업년도
+			:</b>${selectOneResume.userresumedetaildto.resume_graduated_year }</label><br>
+		<label><b>상태 :</b>
 			${selectOneResume.userresumedetaildto.resume_graduated_state } </label><br>
 	</fieldset>
 
 
 	<fieldset>
 		<legend>경력</legend>
-		<label>회사이름:${selectOneResume.careerdto.career_ent}</label><br> <label>부서명:${selectOneResume.careerdto.career_dept}</label>
-		<br> <label>입사년월:${selectOneResume.careerdto.career_startday}~퇴사년월:${selectOneResume.careerdto.career_endday}</label><br>
-		<label>재직(Y)/퇴사(N):${selectOneResume.careerdto.career_in_office}</label><br>
-		<label>직급/직책:${selectOneResume.careerdto.career_position}</label><br>
-		<label>직무:${selectOneResume.careerdto.career_duty}</label> <br> <label>연봉:${selectOneResume.careerdto.career_salary}</label>
-		<br> <label> <a href="">추가</a></label><br>
+		<label><b>회사이름:</b>${selectOneResume.careerdto.career_ent}</label><br> 
+		<label><b>부서명:</b>${selectOneResume.careerdto.career_dept}</label><br> 
+		<label><b>입사년월:</b>${selectOneResume.careerdto.career_startday}</label><br>
+		<label><b>퇴사년월:</b>${selectOneResume.careerdto.career_endday}</label><br>
+		<label><b>재직(Y)/퇴사(N):</b>${selectOneResume.careerdto.career_in_office}</label><br>
+		<label><b>직급/직책:</b>${selectOneResume.careerdto.career_position}</label><br>
+		<label><b>직무:</b>${selectOneResume.careerdto.career_duty}</label><br> 
+		<label><b>연봉:</b>${selectOneResume.careerdto.career_salary}</label><br> 
 	</fieldset>
 	<fieldset>
 		<legend>자격증</legend>
-		<label>자격증 명 : ${selectOneResume.userresumedetaildto.resume_crti_one_name }</label>
-		<br> <label>발행처/ 기관: ${selectOneResume.userresumedetaildto.resume_crti_one_issue }</label>
-		<br> <label>취득일: ${selectOneResume.userresumedetaildto.resume_crti_one_day }</label><br>
+		<label><b>자격증 명 :</b> ${selectOneResume.userresumedetaildto.resume_crti_one_name }</label><br> 
+		<label><b>발행처/ 기관:</b> ${selectOneResume.userresumedetaildto.resume_crti_one_issue }</label><br> 
+		<label><b>취득일:</b> ${selectOneResume.userresumedetaildto.resume_crti_one_day }</label><br>
 
 	</fieldset>
 	<fieldset>
 		<legend>자격증</legend>
-		<label>자격증 명:${selectOneResume.userresumedetaildto.resume_crti_two_name }</label>
-		<br> <label>발행처/기관: ${selectOneResume.userresumedetaildto.resume_crti_two_issue }</label>
-		<br> <label>취득일: ${selectOneResume.userresumedetaildto.resume_crti_two_day }</label><br>
+		<label><b>자격증 명:</b>${selectOneResume.userresumedetaildto.resume_crti_two_name }</label><br> 
+		<label><b>발행처/기관:</b> ${selectOneResume.userresumedetaildto.resume_crti_two_issue }</label><br> 
+		<label><b>취득일:</b> ${selectOneResume.userresumedetaildto.resume_crti_two_day }</label><br>
 
 	</fieldset>
 	<fieldset>
 		<legend>자격증</legend>
-		<label>자격증 명:${selectOneResume.userresumedetaildto.resume_crti_three_name }</label>
-		<br> <label>발행처/기관: ${selectOneResume.userresumedetaildto.resume_crti_three_issue }</label>
-		<br> <label>취득일: ${selectOneResume.userresumedetaildto.resume_crti_three_day }</label><br>
+		<label><b>자격증 명:</b>${selectOneResume.userresumedetaildto.resume_crti_three_name }</label><br> 
+		<label><b>발행처/기관:</b> ${selectOneResume.userresumedetaildto.resume_crti_three_issue }</label><br> 
+		<label><b>취득일:</b> ${selectOneResume.userresumedetaildto.resume_crti_three_day }</label><br>
 
 	</fieldset>
 	<fieldset>
 
 		<legend>병역</legend>
-		<label>
-			병역 대상: ${selectOneResume.userresumedetaildto.resume_military_chk }</label><br>
-		<label>병역 기간: ${selectOneResume.userresumedetaildto.resume_military_startday }~
+		<label><b>병역 대상:</b> ${selectOneResume.userresumedetaildto.resume_military_chk }</label><br>
+		<label><b>병역 기간:</b> ${selectOneResume.userresumedetaildto.resume_military_startday }~
 			${selectOneResume.userresumedetaildto.resume_military_endday }</label><br>
-		<label>군별: ${selectOneResume.userresumedetaildto.resume_military_group }</label>
-		<label>
-			제대 계급: ${selectOneResume.userresumedetaildto.resume_military_lastclass }</label> <br>
+		<label><b>군별:</b> ${selectOneResume.userresumedetaildto.resume_military_group }</label><br>
+		<label><b>제대 계급:</b> ${selectOneResume.userresumedetaildto.resume_military_lastclass }</label> <br>
 
 	</fieldset>
 	<fieldset>
 		<legend>자기소개서</legend>
-		<label>제목: ${selectOneResume.userresumedetaildto.resume_self_one_title }</label><br>
-		<label>내용: ${selectOneResume.userresumedetaildto.resume_self_one_content }</label><br>
+		<label><b>제목:</b> ${selectOneResume.userresumedetaildto.resume_self_one_title }</label><br>
+		<label><b>내용:</b> ${selectOneResume.userresumedetaildto.resume_self_one_content }</label><br>
 	</fieldset>
 	<fieldset>
 		<legend>자기소개서</legend>
-		<label>제목: ${selectOneResume.userresumedetaildto.resume_self_two_title }</label><br> 
-		<label>내용: ${selectOneResume.userresumedetaildto.resume_self_two_content }</label><br>
+		<label><b>제목:</b> ${selectOneResume.userresumedetaildto.resume_self_two_title }</label><br> 
+		<label><b>내용:</b> ${selectOneResume.userresumedetaildto.resume_self_two_content }</label><br>
 	</fieldset>
 
 	<fieldset>
 		<legend>희망근무조건</legend>
-		<label>고용형태: ${selectOneResume.hopedto.hope_employform }</label><br> 
-		<label>희망연봉: ${selectOneResume.hopedto.hope_salary }</label><br>
+		<label><b>고용형태:</b> ${selectOneResume.hopedto.hope_employform }</label><br> 
+		<label><b>희망연봉:</b> ${selectOneResume.hopedto.hope_salary }</label><br>
 		<label>희망연봉: ${selectOneResume.hopedto.hope_afterinterview }</label><br>
-		<label>희망근무지1: ${selectOneResume.hopedto.hope_addr_one }</label><br> 
-		<label>희망근무지2: ${selectOneResume.hopedto.hope_addr_two }</label><br>
-		<label>희망근무지3: ${selectOneResume.hopedto.hope_addr_three }</label><br> 
-		<label>직무 산업 키워드1: ${selectOneResume.hopedto.hope_duty_keyword_one }</label><br>
-		<label>직무 산업 키워드2: ${selectOneResume.hopedto.hope_duty_keyword_two }</label><br>
-		<label>직무 산업 키워드3: ${selectOneResume.hopedto.hope_duty_keyword_three }</label><br>
-		<label>직무 산업 키워드4: ${selectOneResume.hopedto.hope_duty_keyword_four }</label><br>
-		<label>직무 산업 키워드5: ${selectOneResume.hopedto.hope_duty_keyword_five}</label><br>
+		<label><b>희망근무지1:</b> ${selectOneResume.hopedto.hope_addr_one }</label><br> 
+		<label><b>희망근무지2:</b> ${selectOneResume.hopedto.hope_addr_two }</label><br>
+		<label><b>희망근무지3:</b> ${selectOneResume.hopedto.hope_addr_three }</label><br> 
+		<label><b>직무 산업 키워드1:</b> ${selectOneResume.hopedto.hope_duty_keyword_one }</label><br>
+		<label><b>직무 산업 키워드2:</b> ${selectOneResume.hopedto.hope_duty_keyword_two }</label><br>
+		<label><b>직무 산업 키워드3:</b> ${selectOneResume.hopedto.hope_duty_keyword_three }</label><br>
+		<label><b>직무 산업 키워드4:</b> ${selectOneResume.hopedto.hope_duty_keyword_four }</label><br>
+		<label><b>직무 산업 키워드5:</b> ${selectOneResume.hopedto.hope_duty_keyword_five}</label><br>
 
 
 
@@ -120,8 +170,8 @@
 	</fieldset>
 
 
-	<input type="button" value="수정하기"
-		onclick="location.href='updateResumeres.do?resume_no_seq=${selectOneResume.userresumedetaildto.resume_no_seq }&member_no_seq=${seq }'">
-	<input type="button" value="삭제하기" onclick="del()">
+	
+	
+	</div>
 </body>
 </html>

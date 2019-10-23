@@ -195,8 +195,8 @@ color: #fff;
 				<div class="header_menu"><ul class="header_menu_ul">
 								<li class="menu_list"><a class="menu_a" style="color: #fff; padding-left: 10px;" href="announcement.do">공고등록</a></li>
 								<li class="menu_list"><a class="menu_a" style="color: #fff;">지원자관리</a></li>
-								<li class="menu_list"><a class="menu_a" style="color: #fff;">인재검색</a></li>
-								<li class="menu_list"><a class="menu_a" style="color: #fff;" >고객센터</a></li>
+								<li class="menu_list"><a class="menu_a" style="color: #fff;">인재보기</a></li>
+								<li class="menu_list"><a class="menu_a" style="color: #fff;" href="customerservice.do">고객센터</a></li>
 								<li class="menu_list"><a class="menu_a" style="color: #fff;" href="buis/buispage">마이페이지</a></li>
 		   					</ul></div>
 			</div>

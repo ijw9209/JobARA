@@ -132,13 +132,12 @@ public class CustomerController {
 	
 	@RequestMapping(value = "/customerupdateres.do", method = RequestMethod.POST)
 	public String CustomerUpdateRes(CustomerServiceDto CustomerDto,@RequestParam int customer_no_seq , Model model) {
-		System.out.println(customer_no_seq);
 		
 		CustomerDto.setCustomer_no_seq(customer_no_seq);
 		
 		int res = CustomerBiz.update(CustomerDto);
 		if(res > 0) {
-			model.addAttribute("selectone", CustomerBiz.selectone(customer_no_seq));
+			model.addAttribute("dto", CustomerBiz.selectone(customer_no_seq));
 			return "customerone";
 		} else {
 			return "customerupdate";

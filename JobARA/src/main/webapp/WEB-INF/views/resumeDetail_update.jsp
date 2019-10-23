@@ -13,6 +13,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<%@ include file="/WEB-INF/include/header.jspf"%>
+<%@ include file="/WEB-INF/include/header.jsp"%>
 <title>Insert title here</title>
 <link rel="stylesheet"
 	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -55,8 +57,21 @@
 		
 	}
 </script>
+
+<style type="text/css">
+
+#update_body{
+
+padding-left: 300px;
+height: 1500px;
+
+}
+
+
+</style>
 </head>
 <body>
+<div id="update_body">
 	<h3>이력서</h3>
 	<form action="updateDetailres.do?resume_no_seq=${selectOneResume.userresumedetaildto.resume_no_seq }&member_no_seq=${seq}" method="post" onsubmit="return check();">
 		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
@@ -323,5 +338,6 @@
 
 		<input type="submit" value="수정완료">
 	</form>
+	</div>
 </body>
 </html>

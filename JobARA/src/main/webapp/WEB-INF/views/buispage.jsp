@@ -276,10 +276,10 @@ color: #575757;
 				<c:forEach items="${hire_enroll_list}" var="dto" varStatus="stat">
 					<tr>
 						<td>${stat.count }</td>
-						<td><div class="td_content"><a href="">${dto.hire_company_title}</a></div></td>
+						<td><div class="td_content"><a href="/recruitdetil.do?hire_no_seq=${dto.hire_no_seq }&member_no_seq=${dto.member_no_seq}">${dto.hire_company_title}</a></div></td>
 						<td><div class="td_content">${dto.hire_endday}</div></td>					
-						<td><div class="td_content"><a href="">수정</a></div></td>
-						<td><div class="td_content"><a href="">삭제</a></div></td>
+						<td><div class="td_content"><a href="#">수정</a></div></td>
+						<td><div class="td_content"><a href="#">삭제</a></div></td>
 					</tr>
 				</c:forEach>
 				</c:otherwise>

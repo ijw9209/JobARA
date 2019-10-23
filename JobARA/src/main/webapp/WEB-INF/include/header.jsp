@@ -95,7 +95,7 @@
    						<li class="float-right"><b><a href="login.do">로그인</a></b></li>
 					</sec:authorize>
 					<sec:authorize access="isAuthenticated()">
-   					<form action="logout" method="post" id="logout">
+   					<form action="/logout" method="post" id="logout">
 						<li class="float-right" id="logout"><a id="a_tag" style="font-weight: 600;" onclick="logoutsubmit()">로그아웃</a></li>
 						<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 					</form>
