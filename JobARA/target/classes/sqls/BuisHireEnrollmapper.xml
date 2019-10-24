@@ -31,5 +31,9 @@
 	<select id="cnt_hire_enroll" parameterType="int" resultType="int">
 		SELECT COUNT(*) FROM BUIS_HIRE_ENROLL WHERE MEMBER_NO_SEQ = #{member_no_seq}
 	</select>
+	
+	<select id="myselectList" parameterType="int" resultType="BuisHireEnrollDto">
+		SELECT * FROM BUIS_HIRE_ENROLL WHERE MEMBER_NO_SEQ = #{member_no_seq} ORDER BY HIRE_NO_SEQ DESC
+	</select>
   
 </mapper>

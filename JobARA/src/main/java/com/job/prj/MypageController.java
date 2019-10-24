@@ -55,7 +55,7 @@ public class MypageController {
 		 model.addAttribute("companyInfo", CompanyInfoBiz.company_detail(dto.getMember_no_seq()));
 		 model.addAttribute("hire_enroll_count", BuisHireEnrollBiz.count_buis_hire_enroll(dto.getMember_no_seq()));
 		 model.addAttribute("dto", dto);
-		 model.addAttribute("hire_enroll_list", BuisHireEnrollBiz.selectList());
+		 model.addAttribute("hire_enroll_list", BuisHireEnrollBiz.myselectList(dto.getMember_no_seq()));
 		 return "buispage";
 	  }
 	  

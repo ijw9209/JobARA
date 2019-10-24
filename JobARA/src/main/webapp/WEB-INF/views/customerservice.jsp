@@ -8,9 +8,18 @@
 <%@ include file="/WEB-INF/include/header.jspf"  %>
 <%@ include file="/WEB-INF/include/header.jsp"  %>
 <title>Insert title here</title>
+<style type="text/css">
+.wrap{
+height: 500px;
+text-align: center;
+margin-right: 100px;
+}
+
+
+</style>
 </head>
 <body>
-<div id="container">
+<div class="container wrap">
 	<table border="1">
 		<thead>
 			<tr>

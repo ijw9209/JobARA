@@ -41,13 +41,13 @@
 								<tr>
 									<th>비밀번호</th>
 									<td>
-										<input type="text" name="member_pw" id="job_pw" onchange="pwchk()" class="form-control" placeholder="비밀번호">
+										<input type="password" name="member_pw" id="job_pw" onchange="pwchk()" class="form-control" placeholder="비밀번호">
 										<span id="pw_span"></span>
 									</td>
 								</tr>
 								<tr>
 									<th>비밀번호확인</th>
-									<td><input type="text" id="chk_pw" onchange="repwchk()" class="form-control" placeholder="비밀번호 확인">
+									<td><input type="password" id="chk_pw" onchange="repwchk()" class="form-control" placeholder="비밀번호 확인">
 										<span id="repw_span"></span></td>
 								</tr> 
 								<tr>
@@ -198,7 +198,7 @@ var pwConfirm2 = false;
 			var gender = $(':input[name=member_gender]:radio:checked').val();
 
 			if(gender){
-				alert(gender + "를 선택했습니다");
+				alert("가입완료.");
 				//$("#snsLogin").submit();
 				return true;
 			}else{

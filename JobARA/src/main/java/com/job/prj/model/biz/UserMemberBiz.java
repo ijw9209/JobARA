@@ -23,7 +23,7 @@ public interface UserMemberBiz extends UserDetailsService {
 	public int updateMember(UserMemberDto dto);
 	//회원탈퇴
 	public int exitMember(int member_no_seq);
-	//어드민 가입한 회원정보 숫자가져오기
+	//어드민 가입한 유저회원정보 숫자가져오기
 	public int cnt_1_usermember();
 	public int cnt_2_usermember();
 	public int cnt_3_usermember();
@@ -36,5 +36,17 @@ public interface UserMemberBiz extends UserDetailsService {
 	public int cnt_10_usermember();
 	public int cnt_11_usermember();
 	public int cnt_12_usermember();
-	
+	//어드민 가입한 기업회원정보 숫자 가져오기
+	public int cnt_1_buismember();
+	public int cnt_2_buismember();
+	public int cnt_3_buismember();
+	public int cnt_4_buismember();
+	public int cnt_5_buismember();
+	public int cnt_6_buismember();
+	public int cnt_7_buismember();
+	public int cnt_8_buismember();
+	public int cnt_9_buismember();
+	public int cnt_10_buismember();
+	public int cnt_11_buismember();
+	public int cnt_12_buismember();
 }

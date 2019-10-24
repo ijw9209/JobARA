@@ -92,4 +92,41 @@
 	<select id="cnt_12_usermember" resultType="int">
 	SELECT COUNT(*) FROM USER_MEMBER WHERE MEMBER_REGDATE &lt;= '2019-12-31' AND MEMBER_REGDATE &gt;= '2019-12-01' AND MEMBER_ROLE = 'ROLE_USER'
 	</select>
+	
+	<select id="cnt_1_buismember" resultType="int">
+	SELECT COUNT(*) FROM USER_MEMBER WHERE MEMBER_REGDATE &lt;= '2019-01-31' AND MEMBER_REGDATE &gt;= '2019-01-01' AND MEMBER_ROLE = 'ROLE_BUIS'
+	</select>
+	<select id="cnt_2_buismember" resultType="int">
+	SELECT COUNT(*) FROM USER_MEMBER WHERE MEMBER_REGDATE &lt;= '2019-02-28' AND MEMBER_REGDATE &gt;= '2019-02-01' AND MEMBER_ROLE = 'ROLE_BUIS'
+	</select>
+	<select id="cnt_3_buismember" resultType="int">
+	SELECT COUNT(*) FROM USER_MEMBER WHERE MEMBER_REGDATE &lt;= '2019-03-31' AND MEMBER_REGDATE &gt;= '2019-03-01' AND MEMBER_ROLE = 'ROLE_BUIS'
+	</select>
+	<select id="cnt_4_buismember" resultType="int">
+	SELECT COUNT(*) FROM USER_MEMBER WHERE MEMBER_REGDATE &lt;= '2019-04-29' AND MEMBER_REGDATE &gt;= '2019-04-01' AND MEMBER_ROLE = 'ROLE_BUIS'
+	</select>
+	<select id="cnt_5_buismember" resultType="int">
+	SELECT COUNT(*) FROM USER_MEMBER WHERE MEMBER_REGDATE &lt;= '2019-05-31' AND MEMBER_REGDATE &gt;= '2019-05-01' AND MEMBER_ROLE = 'ROLE_BUIS'
+	</select>
+	<select id="cnt_6_buismember" resultType="int">
+	SELECT COUNT(*) FROM USER_MEMBER WHERE MEMBER_REGDATE &lt;= '2019-06-28' AND MEMBER_REGDATE &gt;= '2019-06-01' AND MEMBER_ROLE = 'ROLE_BUIS'
+	</select>
+	<select id="cnt_7_buismember" resultType="int">
+	SELECT COUNT(*) FROM USER_MEMBER WHERE MEMBER_REGDATE &lt;= '2019-07-31' AND MEMBER_REGDATE &gt;= '2019-07-01' AND MEMBER_ROLE = 'ROLE_BUIS'
+	</select>
+	<select id="cnt_8_buismember" resultType="int">
+	SELECT COUNT(*) FROM USER_MEMBER WHERE MEMBER_REGDATE &lt;= '2019-08-31' AND MEMBER_REGDATE &gt;= '2019-08-01' AND MEMBER_ROLE = 'ROLE_BUIS'
+	</select>
+	<select id="cnt_9_buismember" resultType="int">
+	SELECT COUNT(*) FROM USER_MEMBER WHERE MEMBER_REGDATE &lt;= '2019-09-28' AND MEMBER_REGDATE &gt;= '2019-09-01' AND MEMBER_ROLE = 'ROLE_BUIS'
+	</select>
+	<select id="cnt_10_buismember" resultType="int">
+	SELECT COUNT(*) FROM USER_MEMBER WHERE MEMBER_REGDATE &lt;= '2019-10-31' AND MEMBER_REGDATE &gt;= '2019-10-01' AND MEMBER_ROLE = 'ROLE_BUIS'
+	</select>
+	<select id="cnt_11_buismember" resultType="int">
+	SELECT COUNT(*) FROM USER_MEMBER WHERE MEMBER_REGDATE &lt;= '2019-11-28' AND MEMBER_REGDATE &gt;= '2019-11-01' AND MEMBER_ROLE = 'ROLE_BUIS'
+	</select>
+	<select id="cnt_12_buismember" resultType="int">
+	SELECT COUNT(*) FROM USER_MEMBER WHERE MEMBER_REGDATE &lt;= '2019-12-31' AND MEMBER_REGDATE &gt;= '2019-12-01' AND MEMBER_ROLE = 'ROLE_BUIS'
+	</select>
 </mapper>

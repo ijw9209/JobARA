@@ -323,4 +323,148 @@ public class UserMemberDaoImpl implements UserMemberDao {
 		
 		return res;
 	}
+
+	@Override
+	public int cnt_1_buismember() {
+		int res = 0;
+		
+		try {
+			res = sqlSession.selectOne(namespace + "cnt_1_buismember");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return res;
+	}
+
+	@Override
+	public int cnt_2_buismember() {
+		int res = 0;
+		
+		try {
+			res = sqlSession.selectOne(namespace + "cnt_2_buismember");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return res;
+	}
+
+	@Override
+	public int cnt_3_buismember() {
+		int res = 0;
+		
+		try {
+			res = sqlSession.selectOne(namespace + "cnt_3_buismember");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return res;
+	}
+
+	@Override
+	public int cnt_4_buismember() {
+		int res = 0;
+		
+		try {
+			res = sqlSession.selectOne(namespace + "cnt_4_buismember");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return res;
+	}
+
+	@Override
+	public int cnt_5_buismember() {
+		int res = 0;
+		
+		try {
+			res = sqlSession.selectOne(namespace + "cnt_5_buismember");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return res;
+	}
+
+	@Override
+	public int cnt_6_buismember() {
+		int res = 0;
+		
+		try {
+			res = sqlSession.selectOne(namespace + "cnt_6_buismember");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return res;
+	}
+
+	@Override
+	public int cnt_7_buismember() {
+		int res = 0;
+		
+		try {
+			res = sqlSession.selectOne(namespace + "cnt_7_buismember");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return res;
+	}
+
+	@Override
+	public int cnt_8_buismember() {
+		int res = 0;
+		
+		try {
+			res = sqlSession.selectOne(namespace + "cnt_8_buismember");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return res;
+	}
+
+	@Override
+	public int cnt_9_buismember() {
+		int res = 0;
+		
+		try {
+			res = sqlSession.selectOne(namespace + "cnt_9_buismember");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return res;
+	}
+
+	@Override
+	public int cnt_10_buismember() {
+		int res = 0;
+		
+		try {
+			res = sqlSession.selectOne(namespace + "cnt_10_buismember");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return res;
+	}
+
+	@Override
+	public int cnt_11_buismember() {
+		int res = 0;
+		
+		try {
+			res = sqlSession.selectOne(namespace + "cnt_11_buismember");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return res;
+	}
+
+	@Override
+	public int cnt_12_buismember() {
+		int res = 0;
+		
+		try {
+			res = sqlSession.selectOne(namespace + "cnt_12_buismember");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return res;
+	}
 }

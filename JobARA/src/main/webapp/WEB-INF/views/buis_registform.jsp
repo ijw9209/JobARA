@@ -217,7 +217,7 @@ var buisNumConfirm = false;
 			var gender = $(':input[name=member_gender]:radio:checked').val();
 
 			if(gender){
-				alert(gender + "를 선택했습니다");
+				alert("가입완료.");
 				//$("#snsLogin").submit();
 				return true;
 			}else{

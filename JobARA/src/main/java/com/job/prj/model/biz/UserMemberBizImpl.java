@@ -160,6 +160,78 @@ public class UserMemberBizImpl implements UserMemberBiz,UserDetailsService {
 		// TODO Auto-generated method stub
 		return dao.cnt_12_usermember();
 	}
+
+	@Override
+	public int cnt_1_buismember() {
+		// TODO Auto-generated method stub
+		return dao.cnt_1_buismember();
+	}
+
+	@Override
+	public int cnt_2_buismember() {
+		// TODO Auto-generated method stub
+		return dao.cnt_2_buismember();
+	}
+
+	@Override
+	public int cnt_3_buismember() {
+		// TODO Auto-generated method stub
+		return dao.cnt_3_buismember();
+	}
+
+	@Override
+	public int cnt_4_buismember() {
+		// TODO Auto-generated method stub
+		return dao.cnt_4_buismember();
+	}
+
+	@Override
+	public int cnt_5_buismember() {
+		// TODO Auto-generated method stub
+		return dao.cnt_5_buismember();
+	}
+
+	@Override
+	public int cnt_6_buismember() {
+		// TODO Auto-generated method stub
+		return dao.cnt_6_buismember();
+	}
+
+	@Override
+	public int cnt_7_buismember() {
+		// TODO Auto-generated method stub
+		return dao.cnt_7_buismember();
+	}
+
+	@Override
+	public int cnt_8_buismember() {
+		// TODO Auto-generated method stub
+		return dao.cnt_8_buismember();
+	}
+
+	@Override
+	public int cnt_9_buismember() {
+		// TODO Auto-generated method stub
+		return dao.cnt_9_buismember();
+	}
+
+	@Override
+	public int cnt_10_buismember() {
+		// TODO Auto-generated method stub
+		return dao.cnt_10_buismember();
+	}
+
+	@Override
+	public int cnt_11_buismember() {
+		// TODO Auto-generated method stub
+		return dao.cnt_11_buismember();
+	}
+
+	@Override
+	public int cnt_12_buismember() {
+		// TODO Auto-generated method stub
+		return dao.cnt_12_buismember();
+	}
 	
 
 }

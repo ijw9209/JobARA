@@ -199,7 +199,7 @@ color: #575757;
      				<strong>${dto.member_name}</strong>님
      				</div>
      				<div class="resume_view">
-						<a href="ResumeInsert.do?member_no_seq=${seq}">이력서 등록</a>
+						<a href="/user/ResumeInsert.do?member_no_seq=${seq}">이력서 등록</a>
      				</div>
      			</div>
      		</aside>	
@@ -221,7 +221,7 @@ color: #575757;
      		<aside class="aside_wrap_two">
      			<ul>
      				<li class="aside_menu">이력서관리</li>
-     				<li class="aside_menu_resume"><a href="ResumeInsert.do?member_no_seq=${seq}">ㄴ이력서등록</a></li>
+     				<li class="aside_menu_resume"><a href="/user/ResumeInsert.do?member_no_seq=${seq}">ㄴ이력서등록</a></li>
      				<li class="aside_menu_resume"><a>ㄴ이력서수정</a></li>
      				<li class="aside_menu">개인정보관리</li>
      				<li class="aside_menu_resume"><a href="/updatemember">ㄴ개인정보수정</a></li>
@@ -271,10 +271,10 @@ color: #575757;
 			<c:forEach items="${resumedetail}" var="dto" varStatus="stat">
 					<tr>
 						<td>${stat.count }</td>
-						<td><div class="td_content"><a href="selectOneResume.do?resume_no_seq=${dto.resume_no_seq}&member_no_seq=${seq}">${dto.resume_title}</a></div></td>
+						<td><div class="td_content"><a href="/selectOneResume.do?resume_no_seq=${dto.resume_no_seq}&member_no_seq=${seq}">${dto.resume_title}</a></div></td>
 						<td><div class="td_content">${dto.reg}</div></td>					
-						<td><div class="td_content"><a href="updateResumeres.do?resume_no_seq=${dto.resume_no_seq }&member_no_seq=${seq}">수정</a></div></td>
-						<td><div class="td_content"><a href="deleteResumeDetail.do?resume_no_seq=${dto.resume_no_seq}&member_no_seq=${seq}">삭제</a></div></td>
+						<td><div class="td_content"><a href="/user/updateResumeres.do?resume_no_seq=${dto.resume_no_seq }&member_no_seq=${seq}">수정</a></div></td>
+						<td><div class="td_content"><a href="/user/deleteResumeDetail.do?resume_no_seq=${dto.resume_no_seq}&member_no_seq=${seq}">삭제</a></div></td>
 					</tr>
 			</c:forEach>
 			</c:otherwise>

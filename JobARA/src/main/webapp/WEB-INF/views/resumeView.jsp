@@ -104,6 +104,14 @@ color: #575757;
 	border: 1px solid #70a4e5;
     background-color: #70a4e5;
 }
+.img_box{
+
+padding-left: 40px;
+}
+.padding-left-50px{
+padding-left:50px;
+
+}
 </style>
 </head>
 <body>
@@ -130,7 +138,7 @@ color: #575757;
 							<div class="th_title">번호</div>
 						</th>
 						<th>
-							<div class="th_title padding-left-90px">사진</div>
+							<div class="th_title padding-left-50px">사진</div>
 						</th>
 						<th>
 							<div class="th_title">이력서제목</div> 
@@ -154,7 +162,7 @@ color: #575757;
 				<c:forEach items="${resume_list}" var="dto" varStatus="stat">
 					<tr>
 						<td>${stat.count }</td>
-						<td><div class="td_content"><a href="#"><img alt="사진" src="${dto.resume_photo}"/></a></div></td>
+						<td><div class="td_content img_box"><a href="#"><img style="width: 100px; height: 100px;" alt="사진" src="${dto.resume_photo}"/></a></div></td>
 						<td><div class="td_content"><a href="#">${dto.resume_title}</a></div></td>					
 						<td><div class="td_content">${dto.member_name }</div></td>
 						<td><div class="td_content">${dto.resume_date }</div></td>

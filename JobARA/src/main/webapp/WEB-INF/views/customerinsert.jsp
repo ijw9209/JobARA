@@ -13,9 +13,16 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.js"></script>
 <script src="/resources/js/summernote-ko-KR.js"></script>
 <title>Insert title here</title>
+<style type="text/css">
+
+.wrap{
+    height: 500px;
+    text-align: center;
+}
+</style>
 </head>
 <body>
-<div id="container">
+<div class="container wrap">
 	<form action="customerinsertres.do" method="post">
 	<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
 		<table border="1">

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>	
 <%
 	request.setCharacterEncoding("UTF-8");
 %>
@@ -14,7 +15,12 @@
 <head>
 <meta charset="UTF-8">
 <%@ include file="/WEB-INF/include/header.jspf"%>
+<c:if test="${empty role or role eq 'ROLE_USER'}">
 <%@ include file="/WEB-INF/include/header.jsp"%>
+</c:if>
+<c:if test="${not empty role and role eq 'ROLE_BUIS'}">
+<%@ include file="/WEB-INF/include/header_Buis.jsp"%>
+</c:if>
 <title>Insert title here</title>
 <script type="text/javascript">
 	function del() {
@@ -174,4 +180,5 @@
 	
 	</div>
 </body>
+<%@ include file="/WEB-INF/include/footer.jsp"%>
 </html>

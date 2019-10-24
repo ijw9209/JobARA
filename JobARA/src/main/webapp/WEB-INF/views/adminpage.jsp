@@ -208,6 +208,18 @@
 <input type="hidden" id="cnt_11_usermember" value="${cnt_11_usermember}"/>
 <input type="hidden" id="cnt_12_usermember" value="${cnt_12_usermember}"/>
 
+<input type="hidden" id="cnt_1_buismember" value="${cnt_1_buismember}"/>
+<input type="hidden" id="cnt_2_buismember" value="${cnt_2_buismember}"/>
+<input type="hidden" id="cnt_3_buismember" value="${cnt_3_buismember}"/>
+<input type="hidden" id="cnt_4_buismember" value="${cnt_4_buismember}"/>
+<input type="hidden" id="cnt_5_buismember" value="${cnt_5_buismember}"/>
+<input type="hidden" id="cnt_6_buismember" value="${cnt_6_buismember}"/>
+<input type="hidden" id="cnt_7_buismember" value="${cnt_7_buismember}"/>
+<input type="hidden" id="cnt_8_buismember" value="${cnt_8_buismember}"/>
+<input type="hidden" id="cnt_9_buismember" value="${cnt_9_buismember}"/>
+<input type="hidden" id="cnt_10_buismember" value="${cnt_10_buismember}"/>
+<input type="hidden" id="cnt_11_buismember" value="${cnt_11_buismember}"/>
+<input type="hidden" id="cnt_12_buismember" value="${cnt_12_buismember}"/>
 </body>
 <link rel="stylesheet" href="/resources/css/billboard.css">
 <script type="text/javascript">
@@ -233,13 +245,25 @@ window.onload = function() {
  	var cnt_11_user = $("#cnt_11_usermember").val();
  	var cnt_12_user = $("#cnt_12_usermember").val();
  	
+ 	var cnt_1_buis = $("#cnt_1_buismember").val();
+ 	var cnt_2_buis = $("#cnt_2_buismember").val();
+ 	var cnt_3_buis = $("#cnt_3_buismember").val();
+ 	var cnt_4_buis = $("#cnt_4_buismember").val();
+ 	var cnt_5_buis = $("#cnt_5_buismember").val();
+ 	var cnt_6_buis = $("#cnt_6_buismember").val();
+ 	var cnt_7_buis = $("#cnt_7_buismember").val();
+ 	var cnt_8_buis = $("#cnt_8_buismember").val();
+ 	var cnt_9_buis = $("#cnt_9_buismember").val();
+ 	var cnt_10_buis = $("#cnt_10_buismember").val();
+ 	var cnt_11_buis = $("#cnt_11_buismember").val();
+ 	var cnt_12_buis = $("#cnt_12_buismember").val();
  	
  	console.log(cnt_1_user);
-    var series = ["일반회원","기업회원"];
+    var series = ["기업회원","일반회원"];
  
     var dataset = [
-    	{'1월': cnt_1_user, '2월':cnt_2_user, '3월':cnt_3_user, '4월':cnt_4_user, '5월':cnt_5_user, '6월':cnt_6_user, '7월':cnt_7_user, '8월':cnt_8_user, '9월':cnt_9_user, '10월':cnt_10_user, '11월':cnt_11_user, '12월':cnt_12_user},
-        {'1월': 9, '2월':19, '3월':29, '4월':39, '5월':29, '6월':19, '7월':9, '8월':7, '9월':17, '10월':27, '11월':17, '12월':7}];
+    	 {'1월': cnt_1_buis, '2월':cnt_2_buis, '3월':cnt_3_buis, '4월':cnt_4_buis, '5월':cnt_5_buis, '6월':cnt_6_buis, '7월':cnt_7_buis, '8월':cnt_8_buis, '9월':cnt_9_buis, '10월':cnt_10_buis, '11월':cnt_11_buis, '12월':cnt_12_buis},
+    	{'1월': cnt_1_user, '2월':cnt_2_user, '3월':cnt_3_user, '4월':cnt_4_user, '5월':cnt_5_user, '6월':cnt_6_user, '7월':cnt_7_user, '8월':cnt_8_user, '9월':cnt_9_user, '10월':cnt_10_user, '11월':cnt_11_user, '12월':15}];
  
     var keys = d3.keys(dataset[0]);
     var data = [];

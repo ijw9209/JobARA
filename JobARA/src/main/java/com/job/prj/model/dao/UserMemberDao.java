@@ -42,4 +42,18 @@ public interface UserMemberDao {
 	public int cnt_10_usermember();
 	public int cnt_11_usermember();
 	public int cnt_12_usermember();
+	
+	//어드민 가입한 기업회원정보 숫자 가져오기
+	public int cnt_1_buismember();
+	public int cnt_2_buismember();
+	public int cnt_3_buismember();
+	public int cnt_4_buismember();
+	public int cnt_5_buismember();
+	public int cnt_6_buismember();
+	public int cnt_7_buismember();
+	public int cnt_8_buismember();
+	public int cnt_9_buismember();
+	public int cnt_10_buismember();
+	public int cnt_11_buismember();
+	public int cnt_12_buismember();
 }

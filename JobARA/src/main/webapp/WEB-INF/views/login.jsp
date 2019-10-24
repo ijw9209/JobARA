@@ -34,7 +34,7 @@
 								<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 								<ul>
 									<li class="margin-20px-bottom"><input type="text" name="id" placeholder="아이디" class="form-control"/></li>
-									<li class="margin-20px-bottom"><input type="text" name="password" placeholder="패스워드" class="form-control"/></li>
+									<li class="margin-20px-bottom"><input type="password" name="password" placeholder="패스워드" class="form-control"/></li>
 								</ul>
 								<c:if test="${not empty SPRING_SECURITY_LAST_EXCEPTION}">
 							    <font color="red">

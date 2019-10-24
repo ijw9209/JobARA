@@ -13,9 +13,16 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.js"></script>
 <script src="/resources/js/summernote-ko-KR.js"></script>
 <title>Insert title here</title>
+<style type="text/css">
+.wrap{
+    height: 500px;
+}
+
+
+</style>
 </head>
 <body>
-	<div id="container">
+	<div class="container wrap">
 		<form action="customerupdateres.do" method="post" novalidate onsubmit="inquiryres()">
 			<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
 			<input type="hidden" name="customer_no_seq" value="${dto.customer_no_seq }"/>
@@ -49,8 +56,8 @@
 <script type="text/javascript">
 	$('#summernote').summernote({
 		tabsize : 2,
-		width : 700,
-		height : 500
+		minHeight : 370,
+		maxHeight : null
 	});
 	
 	function inquiryres() {

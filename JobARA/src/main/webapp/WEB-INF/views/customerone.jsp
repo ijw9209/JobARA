@@ -11,9 +11,17 @@
 <%@ include file="/WEB-INF/include/header.jspf"  %>
 <%@ include file="/WEB-INF/include/header.jsp"  %>
 <title>Insert title here</title>
+<style type="text/css">
+.wrap{
+    height: 500px;
+    text-align: center;
+    margin-right: 50px;
+}
+
+</style>
 </head>
 <body>
-<div id="container">
+<div class="container wrap">
 	<form action="customerone.do" method="post">
 		<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
 		<input type="hidden" name="customer_no_seq" value="${dto.customer_no_seq }"/>

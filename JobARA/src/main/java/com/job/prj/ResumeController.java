@@ -5,12 +5,18 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.security.Principal;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -136,8 +142,23 @@ public class ResumeController {
 
 	}
 
-	@RequestMapping(value = "/user/selectOneResume.do", method = RequestMethod.GET)
-	public String ResumeOne(Authentication authentication, UserResumeDetailDto dto, Model model) {
+	@RequestMapping(value = "/selectOneResume.do", method = RequestMethod.GET)
+	public String ResumeOne(Authentication authentication, UserResumeDetailDto dto, Model model, Principal account) {
+		
+			if(account != null) {
+				// 시큐리티 컨텍스트 객체를 얻습니다. 
+				  SecurityContext context = SecurityContextHolder.getContext(); 
+				  // 인증 객체를 얻습니다. 
+				  authentication = context.getAuthentication(); 
+				  // 사용자가 가진 모든 롤 정보를 얻습니다. 
+				  Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities(); 
+				  Iterator<? extends GrantedAuthority> iter = authorities.iterator(); 
+				  while (iter.hasNext()) { 
+					  GrantedAuthority auth = iter.next(); 
+					  model.addAttribute("role",auth.getAuthority());
+					 }
+			}
+		
 		UserMemberDto memberdto = (UserMemberDto) authentication.getPrincipal();
 		String id=memberdto.getMember_id();
 		model.addAttribute("seq", memberdto.getMember_no_seq());

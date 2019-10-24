@@ -77,4 +77,19 @@ public class BuisHireEnrollDaoImpl implements BuisHireEnrollDao {
 		return cnt;
 	}
 
+	@Override
+	public List<BuisHireEnrollDto> myselectList(int member_no_seq) {
+		
+		List<BuisHireEnrollDto> list = new ArrayList<BuisHireEnrollDto>();
+		
+		try {
+			list = sqlSession.selectList(namespace + "myselectList", member_no_seq);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+
 }

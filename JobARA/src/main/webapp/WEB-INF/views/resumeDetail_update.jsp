@@ -63,7 +63,7 @@
 #update_body{
 
 padding-left: 300px;
-height: 1500px;
+height: 3100px;
 
 }
 
@@ -336,8 +336,9 @@ height: 1500px;
 </table>
 </fieldset>
 
-		<input type="submit" value="수정완료">
+		<input type="submit" value="수정완료" >
 	</form>
 	</div>
 </body>
+<%@ include file="/WEB-INF/include/footer.jsp"%>
 </html>

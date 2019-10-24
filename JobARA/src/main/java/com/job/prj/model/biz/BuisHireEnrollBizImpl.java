@@ -41,5 +41,11 @@ public class BuisHireEnrollBizImpl implements BuisHireEnrollBiz {
 		return dao.count_buis_hire_enroll(member_no_seq);
 	}
 
+	@Override
+	public List<BuisHireEnrollDto> myselectList(int member_no_seq) {
+		// TODO Auto-generated method stub
+		return dao.myselectList(member_no_seq);
+	}
+
 
 }
